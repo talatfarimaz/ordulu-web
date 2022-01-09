@@ -31,7 +31,7 @@ const DefaultTheme = createTheme({
         ,
         secondary: {
             main: '#FF0000',
-            dark: '#71904d',
+            dark: '#ff3333',
             contrastText: '#FFFFFF',
             light: "#2EFF22",
             alternativeDark: "#117520",

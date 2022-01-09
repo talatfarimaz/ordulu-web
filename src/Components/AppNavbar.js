@@ -138,7 +138,7 @@ function AppNavbar(props) {
                                             __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                         }}
                                     >
-                                        <Typography>
+                                        <Typography className={classes.tabFont}>
                                             {t('MainPage')}
                                         </Typography>
                                     </Link>
@@ -154,7 +154,7 @@ function AppNavbar(props) {
                                             __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                         }}
                                     >
-                                        <Typography>
+                                        <Typography className={classes.tabFont}>
                                             {t('Products')}
                                         </Typography>
                                     </Link>
@@ -170,7 +170,7 @@ function AppNavbar(props) {
                                             __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                         }}
                                     >
-                                        <Typography>
+                                        <Typography className={classes.tabFont}>
                                             {t('CareerLife')}
                                         </Typography>
                                     </Link>
@@ -186,7 +186,7 @@ function AppNavbar(props) {
                                             __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                         }}
                                     >
-                                        <Typography>
+                                        <Typography className={classes.tabFont}>
                                             {t('Blog')}
                                         </Typography>
                                     </Link>
@@ -202,7 +202,7 @@ function AppNavbar(props) {
                                             __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                         }}
                                     >
-                                        <Typography>
+                                        <Typography className={classes.tabFont}>
                                             {t('Contact')}
                                         </Typography>
                                     </Link>

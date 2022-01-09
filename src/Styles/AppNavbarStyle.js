@@ -105,8 +105,8 @@ const AppNavbarStyle = makeStyles(theme => ({
         color: DefaultTheme.palette.success.contrastText,
     },
     mainLogo: {
-        height: "58px",
-        width: "55px",
+        height: "58px !important",
+        width: "55px !important",
         marginLeft: "auto",
         marginRight: "auto",
         display: "block"
@@ -117,15 +117,17 @@ const AppNavbarStyle = makeStyles(theme => ({
         textAlign: "center"
     },
     tabGrid: {
-        margin: "auto"
+        margin: "auto !important"
     },
     dividerColor: {
-        backgroundColor: DefaultTheme.palette.success.contrastText,
+        backgroundColor: DefaultTheme.palette.secondary.contrastText + " !important"
     },
     dividerVertical: {
-        width: "1px",
-        height: "50%",
-        marginTop: "15px"
+        height: "50% !important",
+        marginTop: "15px !important"
+    },
+    tabFont: {
+        color: DefaultTheme.palette.success.contrastText
     }
 }));
 
