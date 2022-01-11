@@ -13,6 +13,9 @@ const AppFooterStyle = makeStyles(theme => ({
         fontSize: "18px",
         paddingBottom: "20px",
         color: DefaultTheme.palette.secondary.contrastText,
+        [theme.breakpoints.only('xs')]: {
+            paddingBottom: "10px",
+        },
     },
     subGrids: {
         textAlign: "center"
@@ -27,7 +30,10 @@ const AppFooterStyle = makeStyles(theme => ({
     },
     dividerGrid: {
         paddingTop: "20px",
-        paddingBottom: "20px"
+        paddingBottom: "20px",
+        [theme.breakpoints.only('xs')]: {
+            order: 4
+        },
     },
     dividerColor: {
         backgroundColor: DefaultTheme.palette.primary.light + " !important"
@@ -44,19 +50,34 @@ const AppFooterStyle = makeStyles(theme => ({
     },
     grid1: {
         [theme.breakpoints.only('xs')]: {
-            order: 2
+            order: 2,
+            marginTop: "10px",
+            marginBottom: "10px"
         },
     },
     grid2: {
         [theme.breakpoints.only('xs')]: {
-            order: 3
+            order: 3,
+            marginTop: "10px",
+            marginBottom: "10px"
         },
     },
     grid3: {
         [theme.breakpoints.only('xs')]: {
-            order: 1
+            order: 1,
+            marginTop: "10px",
+            marginBottom: "10px"
         },
     },
+    grid4: {
+        order: 5,
+    },
+    grid5: {
+        order: 6,
+    },
+    grid6: {
+        order: 7,
+    }
 
 }));
 

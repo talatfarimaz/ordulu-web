@@ -1,8 +1,8 @@
 import {useTranslation} from "react-i18next";
-import AppContentStyle from "../Styles/AppContentStyle";
+import AppContentStyle from "../../Styles/AppContentStyle";
 import React from "react";
-import kazim from '../assets/images/kazım.png';
-import nizam from '../assets/images/nizam.png';
+import kazim from '../../assets/images/kazım.png';
+import nizam from '../../assets/images/nizam.png';
 
 import {Button, CardActionArea, Grid, Typography} from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";

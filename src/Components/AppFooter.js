@@ -57,7 +57,7 @@ function AppFooter() {
                         root: classes.dividerColor
                     }}/>
                 </Grid>
-                <Grid item sm={4} xs={12} className={classes.subGrids}>
+                <Grid item sm={4} xs={12} className={classNames(classes.subGrids, classes.grid4)}>
                     <Button startIcon={<MailOutlineIcon style={{color: DefaultTheme.palette.inherit.main}}/>}
                             onClick={() => {
                                 handleSendEmail()
@@ -67,7 +67,7 @@ function AppFooter() {
                         </Typography>
                     </Button>
                 </Grid>
-                <Grid item sm={4} xs={12} className={classes.subGrids}>
+                <Grid item sm={4} xs={12} className={classNames(classes.subGrids, classes.grid5)}>
                     <Grid container direction="row"
                           justifyContent="center"
                           alignItems="center">
@@ -92,7 +92,7 @@ function AppFooter() {
                                 </Grid>
                     </Grid>
                 </Grid>
-                <Grid item sm={4} xs={12} className={classes.subGrids}>
+                <Grid item sm={4} xs={12} className={classNames(classes.subGrids, classes.grid6)}>
                     <Button disabled={true} startIcon={<HomeIcon style={{color: DefaultTheme.palette.inherit.main}}/>}>
                         <Typography className={classes.mailTo}>
                             {t('Address')}

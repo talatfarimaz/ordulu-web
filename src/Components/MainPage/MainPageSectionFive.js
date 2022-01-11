@@ -1,10 +1,10 @@
 import {useTranslation} from "react-i18next";
-import AppContentStyle from "../Styles/AppContentStyle";
+import AppContentStyle from "../../Styles/AppContentStyle";
 import React from "react";
 import {Button, Grid, Typography} from "@material-ui/core";
-import saha from '../assets/images/saha.png';
-import yildiz from '../assets/images/yildiz.png';
-import kariyer from '../assets/images/kariyer.png';
+import saha from '../../assets/images/saha.png';
+import yildiz from '../../assets/images/yildiz.png';
+import kariyer from '../../assets/images/kariyer.png';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 function MainPageSectionFive() {

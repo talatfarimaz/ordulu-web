@@ -1,8 +1,8 @@
 import {useTranslation} from "react-i18next";
-import AppContentStyle from "../Styles/AppContentStyle";
+import AppContentStyle from "../../Styles/AppContentStyle";
 import React from "react";
-import mainpageThreeImg from '../assets/images/mainpageThreeImg.png';
-import aboutMobile from '../assets/images/aboutMobile.png';
+import mainpageThreeImg from '../../assets/images/mainpageThreeImg.png';
+import aboutMobile from '../../assets/images/aboutMobile.png';
 import {Hidden} from "@material-ui/core";
 
 

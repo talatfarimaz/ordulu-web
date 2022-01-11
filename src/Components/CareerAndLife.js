@@ -1,7 +1,7 @@
 import AppContent from "./AppContent";
 
 
-function Home() {
+function CareerAndLife() {
     return (
         <div>
             <AppContent/>
@@ -9,4 +9,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default CareerAndLife;

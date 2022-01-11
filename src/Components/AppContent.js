@@ -1,11 +1,11 @@
 import {withTranslation} from "react-i18next";
 import React from "react";
-import MainPageSectionOne from "./MainPageSectionOne";
+import MainPageSectionOne from "./MainPage/MainPageSectionOne";
 import AppContentStyle from "../Styles/AppContentStyle";
-import MainPageSectionTwo from "./MainPageSectionTwo";
-import MainPageSectionThree from "./MainPageSectionThree";
-import MainPageSectionFour from "./MainPageSectionFour";
-import MainPageSectionFive from "./MainPageSectionFive";
+import MainPageSectionTwo from "./MainPage/MainPageSectionTwo";
+import MainPageSectionThree from "./MainPage/MainPageSectionThree";
+import MainPageSectionFour from "./MainPage/MainPageSectionFour";
+import MainPageSectionFive from "./MainPage/MainPageSectionFive";
 
 
 function AppContent(props) {
