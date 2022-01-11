@@ -79,6 +79,9 @@ const AppNavbarStyle = makeStyles(theme => ({
         [theme.breakpoints.only('xs')]: {
             paddingRight: "0px"
         },
+        [theme.breakpoints.down('md')]: {
+            height: "60px",
+        },
     },
     languageSelection: {
         padding: "5px",
@@ -109,7 +112,11 @@ const AppNavbarStyle = makeStyles(theme => ({
         width: "55px !important",
         marginLeft: "auto",
         marginRight: "auto",
-        display: "block"
+        display: "block",
+        [theme.breakpoints.down('md')]: {
+            height: "40px !important",
+            width: "38px !important",
+        },
     },
     tabStyle: {
         color: DefaultTheme.palette.success.contrastText,
@@ -117,7 +124,15 @@ const AppNavbarStyle = makeStyles(theme => ({
         textAlign: "center"
     },
     tabGrid: {
-        margin: "auto !important"
+        margin: "auto !important",
+        display: "flex",
+        justifyContent: "end"
+    },
+    tabButtons: {
+        marginLeft: "100px",
+        "@media screen and (max-width: 1400px) and (min-width: 1280px)": {
+            marginLeft: "unset",
+        },
     },
     dividerColor: {
         backgroundColor: DefaultTheme.palette.secondary.contrastText + " !important"
@@ -127,7 +142,24 @@ const AppNavbarStyle = makeStyles(theme => ({
         marginTop: "15px !important"
     },
     tabFont: {
-        color: DefaultTheme.palette.success.contrastText
+        color: DefaultTheme.palette.success.contrastText,
+        [theme.breakpoints.only('xl')]: {
+            fontSize: "15px !important"
+        },
+        [theme.breakpoints.down('lg')]: {
+            fontSize: "12px !important"
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: "11px !important"
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "10px !important"
+
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "15px !important"
+
+        },
     }
 }));
 

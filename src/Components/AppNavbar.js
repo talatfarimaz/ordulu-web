@@ -120,14 +120,14 @@ function AppNavbar(props) {
             <AppBar position="fixed" color={"default"} className={classes.appBarMain}>
                 <Toolbar className={classes.toolBarMain}>
                     <Grid container>
-                        <Grid item xs={2}>
+                        <Grid item lg={2} md={1} sm={2} xs={2} style={{margin: "auto"}}>
                             <Avatar className={classes.mainLogo} src={logo}/>
                         </Grid>
-                        <Grid item xs={2}/>
-                        <Grid item xs={6} className={classes.tabGrid}>
-                            <Grid container>
+                        <Grid item lg={1} md={0} sm={1} xs={2}/>
+                        <Grid item lg={7} md={9} sm={8} xs={6} className={classes.tabGrid}>
+                            <Grid container className={classes.tabButtons}>
                                 <Grid ite xs={2}/>
-                                <Grid item xs={2}>
+                                <Grid item xs={2} style={{margin: "auto"}}>
                                     <Link
                                         underline={"none"}
                                         className={classes.tabStyle}
@@ -143,7 +143,7 @@ function AppNavbar(props) {
                                         </Typography>
                                     </Link>
                                 </Grid>
-                                <Grid item xs={2}>
+                                <Grid item xs={2} style={{margin: "auto"}}>
                                     <Link
                                         underline={"none"}
                                         className={classes.tabStyle}
@@ -159,7 +159,7 @@ function AppNavbar(props) {
                                         </Typography>
                                     </Link>
                                 </Grid>
-                                <Grid item xs={2}>
+                                <Grid item xs={2} style={{margin: "auto"}}>
                                     <Link
                                         underline={"none"}
                                         className={classes.tabStyle}
@@ -175,7 +175,7 @@ function AppNavbar(props) {
                                         </Typography>
                                     </Link>
                                 </Grid>
-                                <Grid item xs={2}>
+                                <Grid item xs={2} style={{margin: "auto"}}>
                                     <Link
                                         underline={"none"}
                                         className={classes.tabStyle}
@@ -191,7 +191,7 @@ function AppNavbar(props) {
                                         </Typography>
                                     </Link>
                                 </Grid>
-                                <Grid item xs={2}>
+                                <Grid item xs={2} style={{margin: "auto"}}>
                                     <Link
                                         underline={"none"}
                                         className={classes.tabStyle}
@@ -209,7 +209,7 @@ function AppNavbar(props) {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item xs={1}>
+                        <Grid item lg={1} md={1} sm={0} xs={1}>
                                 <Grid container>
                                     <Grid item xs={3}>
                                         <Divider orientation={"vertical"} classes={{
@@ -220,7 +220,7 @@ function AppNavbar(props) {
                                     <Grid item xs={9}>
                                         <IconButton color="primary" onClick={handleClickLanguage}
                                                     className={classes.languageButton}>
-                                            <Typography className={classes.languageText}>{activeLanguage}</Typography>
+                                            <Typography className={classes.tabFont}>{activeLanguage}</Typography>
                                         </IconButton>
                                         <Menu
                                             id="simple-menu"
@@ -250,7 +250,7 @@ function AppNavbar(props) {
                             </Grid>
 
                         </Grid>
-                        <Grid item xs={1}/>
+                        <Grid item lg={1} md={1} sm={1} xs={1}/>
                     </Grid>
                 </Toolbar>
             </AppBar>

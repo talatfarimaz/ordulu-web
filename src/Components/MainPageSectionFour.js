@@ -1,9 +1,7 @@
 import {useTranslation} from "react-i18next";
 import AppContentStyle from "../Styles/AppContentStyle";
 import React from "react";
-import mainpageThreeImg from '../assets/images/mainpageThreeImg.png';
-import aboutMobile from '../assets/images/aboutMobile.png';
-import {Box, Grid, Hidden} from "@material-ui/core";
+import {Grid, Typography} from "@material-ui/core";
 import cumhur from '../assets/images/cumhur.png';
 import fors from '../assets/images/fors.png';
 import katar from '../assets/images/katar.png';
@@ -13,51 +11,172 @@ import deniz from '../assets/images/deniz.png';
 import baykar from '../assets/images/baykar.png';
 import azer from '../assets/images/azer.png';
 import orman from '../assets/images/orman.png';
+import DefaultTheme from "../Themes/DefaultTheme";
 
 
 function MainPageSectionFour() {
     const {t} = useTranslation();
     const classes = AppContentStyle();
+    const [changeText, setChangeText] = React.useState(false);
+    const [selectedDiv, setSelectedDiv] = React.useState("")
+    const handleChangeTextDisplayTrue = (event) => {
+        setChangeText(true);
+        if (event.target.id !== "" && event.target.id !== null) {
+            setSelectedDiv(event.target.id);
+            var element = document.getElementById(event.target.id);
+            element.style.backgroundColor = DefaultTheme.palette.primary.lightAlternative
+        } else {
+            setSelectedDiv(event.target.parentNode.id);
+            var element = document.getElementById(event.target.parentNode.id);
+            element.style.backgroundColor = DefaultTheme.palette.primary.lightAlternative
+        }
+    }
 
+    const handleChangeTextDisplayFalse = (event) => {
+        setChangeText(false);
+        if (event.target.id !== "" && event.target.id !== null) {
+            var element = document.getElementById(event.target.id);
+            element.style.backgroundColor = DefaultTheme.palette.primary.dark
+        } else {
+            var element = document.getElementById(event.target.parentNode.id);
+            element.style.backgroundColor = DefaultTheme.palette.primary.dark
+        }
+    }
+
+    const handleGetText = (event) => {
+      if (event.target.parentNode.id === selectedDiv) {
+          return true
+      }
+      else {
+          return false;
+      }
+    }
     return (
         <div className={classes.referanceArea}>
-            <Grid container spacing={2}   direction="row"
+            <Grid container direction="row"
                   justifyContent="center"
                   alignItems="center">
-                <Grid item md={2} sm={4} xs={6}>
-                    <img src={cumhur} alt=""/>
+                <Grid item md={12} sm={12} xs={12}>
+                    <Typography className={classes.referenceText}>
+                        {t('References')}
+                    </Typography>
                 </Grid>
-                <Grid item md={2} sm={4} xs={6}>
-                    <img src={fors} alt=""/>
-
+                <Grid id={"cumhur"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                      onMouseEnter={(event) => {
+                          handleChangeTextDisplayTrue(event)
+                      }}
+                      onMouseLeave={(event) => {
+                          handleChangeTextDisplayFalse(event)
+                      }}>
+                    <img src={cumhur} alt="" className={classes.referanceImg}/>
+                    {changeText &&
+                    <Typography className={classes.referenceName}>
+                        {t('Cumhur')}
+                    </Typography>}
                 </Grid>
-                <Grid item md={2} sm={4} xs={6}>
-                    <img src={katar} alt=""/>
-
+                <Grid id={"fors"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                      onMouseEnter={(event) => {
+                          handleChangeTextDisplayTrue(event)
+                      }}
+                      onMouseLeave={(event) => {
+                          handleChangeTextDisplayFalse(event)
+                      }}>
+                    <img src={fors} alt="" className={classes.referanceImg}/>
+                    {changeText &&
+                    <Typography className={classes.referenceName}>
+                        {t('Fors')}
+                    </Typography>}
                 </Grid>
-                <Grid item md={2} sm={4} xs={6}>
-                    <img src={jandarma} alt=""/>
-
+                <Grid id={"katar"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                      onMouseEnter={(event) => {
+                          handleChangeTextDisplayTrue(event)
+                      }}
+                      onMouseLeave={(event) => {
+                          handleChangeTextDisplayFalse(event)
+                      }}>
+                    <img src={katar} alt="" className={classes.referanceImg}/>
+                    {changeText &&
+                    <Typography className={classes.referenceName}>
+                        {t('Katar')}
+                    </Typography>}
                 </Grid>
-                <Grid item md={2} sm={4} xs={6}>
-                    <img src={kara} alt=""/>
-
+                <Grid id={"jandarma"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                      onMouseEnter={(event) => {
+                          handleChangeTextDisplayTrue(event)
+                      }}
+                      onMouseLeave={(event) => {
+                          handleChangeTextDisplayFalse(event)
+                      }}>
+                    <img src={jandarma} alt="" className={classes.referanceImg}/>
+                    {changeText &&
+                    <Typography className={classes.referenceName}>
+                        {t('Jandarma')}
+                    </Typography>}
                 </Grid>
-                <Grid item md={2} sm={4} xs={6}>
-                    <img src={deniz} alt=""/>
-
+                <Grid id={"kara"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                      onMouseEnter={(event) => {
+                          handleChangeTextDisplayTrue(event)
+                      }}
+                      onMouseLeave={(event) => {
+                          handleChangeTextDisplayFalse(event)
+                      }}>
+                    <img src={kara} alt="" className={classes.referanceImg}/>
+                    {changeText &&
+                    <Typography className={classes.referenceName}>
+                        {t('Kara')}
+                    </Typography>}
                 </Grid>
-                <Grid item md={2} sm={4} xs={6}>
-                    <img src={baykar} alt=""/>
-
+                <Grid id={"deniz"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                      onMouseEnter={(event) => {
+                          handleChangeTextDisplayTrue(event)
+                      }}
+                      onMouseLeave={(event) => {
+                          handleChangeTextDisplayFalse(event)
+                      }}>
+                    <img src={deniz} alt="" className={classes.referanceImg}/>
+                    {changeText &&
+                    <Typography className={classes.referenceName}>
+                        {t('Deniz')}
+                    </Typography>}
                 </Grid>
-                <Grid item md={2} sm={4} xs={6}>
-                    <img src={azer} alt=""/>
-
+                <Grid id={"baykar"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                      onMouseEnter={(event) => {
+                          handleChangeTextDisplayTrue(event)
+                      }}
+                      onMouseLeave={(event) => {
+                          handleChangeTextDisplayFalse(event)
+                      }}>
+                    <img src={baykar} alt="" className={classes.referanceImg}/>
+                    {changeText &&
+                    <Typography className={classes.referenceName}>
+                        {t('Baykar')}
+                    </Typography>}
                 </Grid>
-                <Grid item md={2} sm={4} xs={6}>
-                    <img src={orman} alt=""/>
-
+                <Grid id={"azer"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                      onMouseEnter={(event) => {
+                          handleChangeTextDisplayTrue(event)
+                      }}
+                      onMouseLeave={(event) => {
+                          handleChangeTextDisplayFalse(event)
+                      }}>
+                    <img src={azer} alt="" className={classes.referanceImg}/>
+                    {changeText &&
+                    <Typography className={classes.referenceName}>
+                        {t('Azer')}
+                    </Typography>}
+                </Grid>
+                <Grid id={"ogm"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                      onMouseEnter={(event) => {
+                          handleChangeTextDisplayTrue(event)
+                      }}
+                      onMouseLeave={(event) => {
+                          handleChangeTextDisplayFalse(event)
+                      }}>
+                    <img src={orman} alt="" className={classes.referanceImg}/>
+                    {changeText &&
+                    <Typography className={classes.referenceName}>
+                        {t('OGM')}
+                    </Typography>}
                 </Grid>
             </Grid>
         </div>

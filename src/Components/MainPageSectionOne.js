@@ -24,7 +24,7 @@ import FormatShapesIcon from '@material-ui/icons/FormatShapes';
 function MainPageSectionOne() {
     const {t} = useTranslation();
     const classes = AppContentStyle();
-    const [changeImg, setChangeImg] = React.useState(true); //TODO false yap
+    const [changeImg, setChangeImg] = React.useState(false); //TODO false yap
 
     const handleChangeWidthAndHeight = (event) => {
         event.stopPropagation();
@@ -38,6 +38,7 @@ function MainPageSectionOne() {
         event.preventDefault();
         var element = document.getElementById(event.target.id);
         element.style.padding = "0px"
+
     }
     const handleGetImg = () => {
         if (changeImg) {
