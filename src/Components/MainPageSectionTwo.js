@@ -4,7 +4,8 @@ import React from "react";
 import kazim from '../assets/images/kazım.png';
 import nizam from '../assets/images/nizam.png';
 
-import {Button, Grid, Typography} from "@material-ui/core";
+import {Button, CardActionArea, Grid, Typography} from "@material-ui/core";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 function MainPageSectionTwo() {
     const {t} = useTranslation();
@@ -20,17 +21,21 @@ function MainPageSectionTwo() {
                     <Typography className={classes.orduluInfo}>
                         {t('OrduluInfo')}
                     </Typography>
-                    <Button color={"secondary"} variant={"contained"} className={classes.alignRight}>
+                    <Button color={"secondary"} variant={"contained"} className={classes.alignRight} endIcon={<ArrowForwardIosIcon/>}>
                         <Typography>
                             {t('InspectALl')}
                         </Typography>
                     </Button>
                 </Grid>
                 <Grid item md={4} sm={4} xs={12}>
+                    <CardActionArea>
                     <img src={kazim} alt="" className={classes.sectionTwoImg}/>
+                    </CardActionArea>
                 </Grid>
                 <Grid item md={4} sm={4} xs={12}>
+                    <CardActionArea>
                     <img src={nizam} alt="" className={classes.sectionTwoImg}/>
+                    </CardActionArea>
                 </Grid>
             </Grid>
         </div>

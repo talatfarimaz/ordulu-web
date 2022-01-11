@@ -5,6 +5,7 @@ import AppContentStyle from "../Styles/AppContentStyle";
 import MainPageSectionTwo from "./MainPageSectionTwo";
 import MainPageSectionThree from "./MainPageSectionThree";
 import MainPageSectionFour from "./MainPageSectionFour";
+import MainPageSectionFive from "./MainPageSectionFive";
 
 
 function AppContent(props) {
@@ -15,6 +16,7 @@ function AppContent(props) {
             <MainPageSectionTwo/>
             <MainPageSectionThree/>
             <MainPageSectionFour/>
+            <MainPageSectionFive/>
         </div>
     );
 }

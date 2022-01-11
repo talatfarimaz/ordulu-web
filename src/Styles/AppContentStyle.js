@@ -8,15 +8,16 @@ import sahin from '../assets/images/sahin.png';
 import kuzgun from '../assets/images/kuzgun.png';
 import gam from '../assets/images/gam.png';
 import section2img from '../assets/images/section2img.png';
-import mainpageThreeImg from '../assets/images/mainpageThreeImg.png';
-
 
 const AppContentStyle = makeStyles(theme => ({
     imageAnimation: {
         backgroundColor: DefaultTheme.palette.primary.main
     },
     bodyDivStyle: {
-        marginTop: "80px"
+        marginTop: "80px",
+        [theme.breakpoints.down('md')]: {
+            marginTop: "60px",
+        },
     },
     mainImgStyle: {
         width: "100%",
@@ -31,7 +32,16 @@ const AppContentStyle = makeStyles(theme => ({
     mainTextStyle: {
         fontSize: "100px",
         color: DefaultTheme.palette.secondary.contrastText,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        [theme.breakpoints.down('md')]: {
+            fontSize: "80px",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "50px",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "25px",
+        },
     },
     mediaIcons: {
         position: "absolute",
@@ -77,19 +87,19 @@ const AppContentStyle = makeStyles(theme => ({
         left: "60%",
     },
     ulak: {
-        width: "9%",
-        height: "9%",
+        width: "11%",
+        height: "11%",
         backgroundImage: `url(${ulak})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain",
         position: "absolute",
-        top: "44%",
-        left: "88%",
+        top: "42%",
+        left: "85%",
     },
     gam: {
-        width: "7%",
-        height: "7%",
+        width: "9%",
+        height: "9%",
         backgroundImage: `url(${gam})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
@@ -99,8 +109,8 @@ const AppContentStyle = makeStyles(theme => ({
         left: "28%",
     },
     kuzgun: {
-        width: "7%",
-        height: "7%",
+        width: "9%",
+        height: "9%",
         backgroundImage: `url(${kuzgun})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
@@ -111,8 +121,8 @@ const AppContentStyle = makeStyles(theme => ({
     }
     ,
     sahin: {
-        width: "10%",
-        height: "10%",
+        width: "12%",
+        height: "12%",
         backgroundImage: `url(${sahin})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
@@ -123,14 +133,14 @@ const AppContentStyle = makeStyles(theme => ({
     }
     ,
     arz: {
-        width: "9%",
-        height: "9%",
+        width: "11%",
+        height: "11%",
         backgroundImage: `url(${arz})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain",
         position: "absolute",
-        top: "52%",
+        top: "50%",
         left: "47%",
     },
     infoIcons: {
@@ -171,6 +181,9 @@ const AppContentStyle = makeStyles(theme => ({
         },
         [theme.breakpoints.down('sm')]: {
             fontSize: "9px",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "7px",
         },
     },
     iconText: {
@@ -235,7 +248,7 @@ const AppContentStyle = makeStyles(theme => ({
         width: "100%",
         display: "block",
         margin: "auto",
-        top:0,
+        top: 0,
         left: 0,
         right: 0,
         bottom: 0,
@@ -246,7 +259,7 @@ const AppContentStyle = makeStyles(theme => ({
         width: "100%",
         display: "block",
         margin: "auto",
-        top:0,
+        top: 0,
         left: 0,
         right: 0,
         bottom: 0,
@@ -259,12 +272,147 @@ const AppContentStyle = makeStyles(theme => ({
     },
     referanceArea: {
         textAlign: "center",
-        backgroundColor: DefaultTheme.palette.primary.main
+        backgroundColor: DefaultTheme.palette.primary.dark
     },
     referanceImg: {
-
+        marginTop: "10px",
+        height: "140px"
+    },
+    referenceText: {
+        fontSize: "50px",
+        fontWeight: "bolder",
+        color: DefaultTheme.palette.primary.light,
+        marginTop: "10px",
+        marginBottom: "10px",
+        [theme.breakpoints.only('sm')]: {
+            fontSize: "40px",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "30px",
+        },
+    },
+    referenceName: {
+        fontSize: "11px",
+        color: DefaultTheme.palette.secondary.contrastText,
+        fontWeight: "bold",
+        margin: "10px"
+    },
+    referenceImgText: {
+        marginTop: "10px",
+        marginBottom: "10px",
+        height: "200px",
+        borderRadius: "4px"
+    },
+    pageFiveImg1: {
+        position: "relative"
+    },
+    pageFiveImg2: {
+        position: "relative",
+        marginTop: "20px"
+    },
+    pageFiveImg3: {
+        position: "relative"
+    },
+    sectionFiveBackground: {
+        backgroundColor: DefaultTheme.palette.primary.main,
+        display: "flex",
+        justifyContent: "center",
+        background: "linear-gradient(to bottom, " + DefaultTheme.palette.primary.main + " 50%," + DefaultTheme.palette.secondary.contrastText + " 50%)",
+    },
+    sectionFiveGrid: {
+        paddingTop: "100px",
+        paddingBottom: "100px",
+        width: "90%",
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+        },
+    },
+    sectionFiveGrid1: {
+        height: "50%",
+        display: "flex"
+    },
+    sectionFiveGrid2: {
+        height: "50%",
+    },
+    sectionFiveGrid3: {
+        height: "100%",
+        [theme.breakpoints.down('sm')]: {
+            height: "unset"
+        },
+    },
+    careerAndLife: {
+        fontSize: "30px",
+        fontWeight: "bold",
+        color: DefaultTheme.palette.secondary.contrastText,
+        display: "inline-block",
+        alignSelf: "flex-end",
+        [theme.breakpoints.down('sm')]: {
+            color: DefaultTheme.palette.dark.alternative,
+        },
+    },
+    sectionFiveText1: {
+        fontSize: "40px",
+        fontWeight: "bolder",
+        color: DefaultTheme.palette.secondary.main,
+        [theme.breakpoints.down('md')]: {
+            fontSize: "25px",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "25px",
+        },
+    },
+    sectionFiveText2: {
+        fontSize: "40px",
+        fontWeight: "bolder",
+        color: DefaultTheme.palette.dark.alternative,
+        [theme.breakpoints.down('md')]: {
+            fontSize: "25px",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "25px",
+        },
+    },
+    sectionFiveText3: {
+        fontSize: "20px",
+        fontWeight: "bolder",
+        color: DefaultTheme.palette.dark.alternative,
+        [theme.breakpoints.down('md')]: {
+            fontSize: "15px",
+        },
+    },
+    sectionFiveButtons: {
+        position: "absolute",
+        top: "80%",
+        left: "40%",
+    },
+    sectionFiveButtons2: {
+        position: "absolute",
+        top: "92%",
+        left: "42%",
+    },
+    sectionFiveButtonText: {
+        color: DefaultTheme.palette.secondary.contrastText,
+        fontSize: "20px",
+        fontWeight: "bolder",
+        [theme.breakpoints.only('md')]: {
+            fontSize: "15px",
+        },
+        [theme.breakpoints.only('sm')]: {
+            fontSize: "12px",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "13px",
+        },
+    },
+    gridHeight: {
+        height: "100%",
+        [theme.breakpoints.down('sm')]: {
+            height: "unset"
+        },
+        [theme.breakpoints.only('xs')]: {
+            paddingLeft: "10px",
+        },
     }
-
 }));
 
 export default AppContentStyle;

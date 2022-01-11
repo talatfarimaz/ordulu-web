@@ -1,5 +1,6 @@
 import AppNavbar from "./AppNavbar";
 import AppContent from "./AppContent";
+import AppFooter from "./AppFooter";
 
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
         <div>
             <AppNavbar/>
             <AppContent/>
+            <AppFooter/>
         </div>
     );
 }

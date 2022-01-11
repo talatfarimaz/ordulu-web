@@ -3,7 +3,10 @@ import {createTheme} from '@material-ui/core/styles';
 const DefaultTheme = createTheme({
     palette: {
         primary: {
-            main: "#151c29"
+            main: "#151c29",
+            dark: "#050911",
+            light: "#FFFFFF6D",
+            lightAlternative: "#373a40",
         },
         danger: {
             main: "#ff5757",
@@ -108,6 +111,9 @@ const DefaultTheme = createTheme({
         },
         purple: {
             main: "#ddd4ef"
+        },
+        inherit: {
+            main: "#E73851"
         }
 
     },
