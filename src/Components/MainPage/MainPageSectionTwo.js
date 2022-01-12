@@ -13,7 +13,8 @@ function MainPageSectionTwo() {
 
     return (
         <div className={classes.sectionTwoBackground}>
-            <Grid container className={classes.sectionTwoPadding} spacing={3}
+            <Grid container className={classes.sectionTwoPadding}
+                  spacing={3}
                   direction="row"
                   justifyContent="center"
                   alignItems="center">

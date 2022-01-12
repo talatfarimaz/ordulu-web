@@ -165,6 +165,9 @@ const CareerAndLifeStyle = makeStyles(theme => ({
         [theme.breakpoints.only('xs')]: {
             width: "95% !important",
         }
+    },
+    sectionFive: {
+
     }
 }));
 

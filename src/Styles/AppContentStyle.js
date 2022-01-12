@@ -191,6 +191,10 @@ const AppContentStyle = makeStyles(theme => ({
     },
     sectionTwoBackground: {
         backgroundImage: `url(${section2img})`,
+        padding: "12px",
+        [theme.breakpoints.only('xs')]: {
+            background: DefaultTheme.palette.primary.main
+        },
     },
     orduluInfo: {
         color: DefaultTheme.palette.secondary.contrastText,
