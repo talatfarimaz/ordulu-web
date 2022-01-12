@@ -130,8 +130,11 @@ const AppNavbarStyle = makeStyles(theme => ({
     },
     tabButtons: {
         marginLeft: "100px",
-        "@media screen and (max-width: 1400px) and (min-width: 1280px)": {
+        "@media screen and (max-width: 1500px) and (min-width: 1300px)": {
             marginLeft: "unset",
+        },
+        "@media screen and (max-width: 1300px) and (min-width: 1280px)": {
+            marginLeft: "-10px",
         },
     },
     dividerColor: {
@@ -147,7 +150,7 @@ const AppNavbarStyle = makeStyles(theme => ({
             fontSize: "15px !important"
         },
         [theme.breakpoints.down('lg')]: {
-            fontSize: "12px !important"
+            fontSize: "13px !important"
         },
         [theme.breakpoints.down('md')]: {
             fontSize: "11px !important"

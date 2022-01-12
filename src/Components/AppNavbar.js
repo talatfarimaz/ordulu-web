@@ -137,6 +137,7 @@ function AppNavbar(props) {
                                         onMouseOut={(__Event) => {
                                             __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                         }}
+                                        href={'/'}
                                     >
                                         <Typography className={classes.tabFont}>
                                             {t('MainPage')}
@@ -169,6 +170,7 @@ function AppNavbar(props) {
                                         onMouseOut={(__Event) => {
                                             __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                         }}
+                                        href={'/careerandlife'}
                                     >
                                         <Typography className={classes.tabFont}>
                                             {t('CareerLife')}

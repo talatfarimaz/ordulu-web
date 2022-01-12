@@ -3,9 +3,9 @@ import {ThemeProvider} from '@material-ui/core/styles';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import DefaultTheme from "./Themes/DefaultTheme";
 import Home from "./Components/Home";
-import MainPageSectionFive from "./Components/MainPage/MainPageSectionFive";
 import AppNavbar from "./Components/AppNavbar";
 import AppFooter from "./Components/AppFooter";
+import CareerAndLife from "./Components/CareerAndLife";
 
 const theme = DefaultTheme;
 
@@ -16,7 +16,7 @@ function App() {
             <Router>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
-                    <Route path='/careerandlife' element={<MainPageSectionFive/>}/>
+                    <Route path='/careerandlife' element={<CareerAndLife/>}/>
                 </Routes>
             </Router>
             <AppFooter/>

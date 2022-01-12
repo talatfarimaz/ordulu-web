@@ -9,12 +9,13 @@ const DefaultTheme = createTheme({
             lightAlternative: "#373a40",
         },
         danger: {
-            main: "#ff5757",
+            main: "#8F0000AA",
         }
         ,
         light: {
             main: "#00BCD4",
-            contrastText: "#DADCE0"
+            contrastText: "#DADCE0",
+            dark: "#004E7ABA"
         }
         ,
         dark: {

@@ -30,17 +30,17 @@ const AppContentStyle = makeStyles(theme => ({
         transform: "translate(-50%, -50%)",
     },
     mainTextStyle: {
-        fontSize: "100px",
+        fontSize: "100px !important",
         color: DefaultTheme.palette.secondary.contrastText,
-        fontWeight: "bold",
+        fontWeight: "bold !important",
         [theme.breakpoints.down('md')]: {
-            fontSize: "80px",
+            fontSize: "80px !important",
         },
         [theme.breakpoints.down('sm')]: {
-            fontSize: "50px",
+            fontSize: "50px !important",
         },
         [theme.breakpoints.only('xs')]: {
-            fontSize: "25px",
+            fontSize: "25px !important",
         },
     },
     mediaIcons: {
@@ -53,15 +53,15 @@ const AppContentStyle = makeStyles(theme => ({
     },
     mediaIconStyle: {
         color: DefaultTheme.palette.secondary.contrastText,
-        fontSize: "40px",
+        fontSize: "40px !important",
         [theme.breakpoints.down('md')]: {
-            fontSize: "30px",
+            fontSize: "30px !important",
         },
         [theme.breakpoints.down('sm')]: {
-            fontSize: "20px",
+            fontSize: "20px !important",
         },
         [theme.breakpoints.only('xs')]: {
-            fontSize: "15px",
+            fontSize: "15px !important",
         },
     },
     akinci2: {
@@ -145,15 +145,15 @@ const AppContentStyle = makeStyles(theme => ({
     },
     infoIcons: {
         color: DefaultTheme.palette.secondary.contrastText,
-        fontSize: "50px",
+        fontSize: "50px !important",
         [theme.breakpoints.down('lg')]: {
-            fontSize: "40px",
+            fontSize: "40px !important",
         },
         [theme.breakpoints.down('md')]: {
-            fontSize: "30px",
+            fontSize: "30px !important",
         },
         [theme.breakpoints.down('sm')]: {
-            fontSize: "25px",
+            fontSize: "25px !important",
         },
     },
     infoArea: {
@@ -171,19 +171,19 @@ const AppContentStyle = makeStyles(theme => ({
     },
     infoText: {
         color: DefaultTheme.palette.secondary.contrastText,
-        fontSize: "18px",
+        fontSize: "18px !important",
         marginTop: "10px",
         [theme.breakpoints.down('lg')]: {
-            fontSize: "15px",
+            fontSize: "15px !important",
         },
         [theme.breakpoints.down('md')]: {
-            fontSize: "13px",
+            fontSize: "13px !important",
         },
         [theme.breakpoints.down('sm')]: {
-            fontSize: "9px",
+            fontSize: "9px !important",
         },
         [theme.breakpoints.only('xs')]: {
-            fontSize: "7px",
+            fontSize: "7px !important",
         },
     },
     iconText: {
@@ -194,17 +194,17 @@ const AppContentStyle = makeStyles(theme => ({
     },
     orduluInfo: {
         color: DefaultTheme.palette.secondary.contrastText,
-        fontSize: "60px",
-        fontWeight: "bold",
+        fontSize: "60px !important",
+        fontWeight: "bold !important",
         textAlign: "right",
         [theme.breakpoints.down('lg')]: {
-            fontSize: "50px",
+            fontSize: "50px !important",
         },
         [theme.breakpoints.down('md')]: {
-            fontSize: "40px",
+            fontSize: "40px !important",
         },
         [theme.breakpoints.down('sm')]: {
-            fontSize: "30px",
+            fontSize: "30px !important",
             textAlign: "center",
         },
     },
@@ -279,16 +279,16 @@ const AppContentStyle = makeStyles(theme => ({
         height: "140px"
     },
     referenceText: {
-        fontSize: "50px",
-        fontWeight: "bolder",
+        fontSize: "50px !important",
+        fontWeight: "bolder !important",
         color: DefaultTheme.palette.primary.light,
         marginTop: "10px",
         marginBottom: "10px",
         [theme.breakpoints.only('sm')]: {
-            fontSize: "40px",
+            fontSize: "40px !important",
         },
         [theme.breakpoints.only('xs')]: {
-            fontSize: "30px",
+            fontSize: "30px !important",
         },
     },
     referenceName: {
@@ -322,9 +322,9 @@ const AppContentStyle = makeStyles(theme => ({
     sectionFiveGrid: {
         paddingTop: "100px",
         paddingBottom: "100px",
-        width: "90%",
+        width: "90% !important",
         [theme.breakpoints.down('sm')]: {
-            width: "100%",
+            width: "100% !important",
         },
     },
     sectionFiveGrid1: {
@@ -341,8 +341,8 @@ const AppContentStyle = makeStyles(theme => ({
         },
     },
     careerAndLife: {
-        fontSize: "30px",
-        fontWeight: "bold",
+        fontSize: "30px !important",
+        fontWeight: "bold !important",
         color: DefaultTheme.palette.secondary.contrastText,
         display: "inline-block",
         alignSelf: "flex-end",
@@ -351,33 +351,33 @@ const AppContentStyle = makeStyles(theme => ({
         },
     },
     sectionFiveText1: {
-        fontSize: "40px",
-        fontWeight: "bolder",
+        fontSize: "40px !important",
+        fontWeight: "bolder !important",
         color: DefaultTheme.palette.secondary.main,
         [theme.breakpoints.down('md')]: {
-            fontSize: "25px",
+            fontSize: "25px !important",
         },
         [theme.breakpoints.down('sm')]: {
-            fontSize: "25px",
+            fontSize: "25px !important",
         },
     },
     sectionFiveText2: {
-        fontSize: "40px",
-        fontWeight: "bolder",
+        fontSize: "40px !important",
+        fontWeight: "bolder !important",
         color: DefaultTheme.palette.dark.alternative,
         [theme.breakpoints.down('md')]: {
-            fontSize: "25px",
+            fontSize: "25px !important",
         },
         [theme.breakpoints.down('sm')]: {
-            fontSize: "25px",
+            fontSize: "25px !important",
         },
     },
     sectionFiveText3: {
-        fontSize: "20px",
-        fontWeight: "bolder",
+        fontSize: "20px !important",
+        fontWeight: "bolder !important",
         color: DefaultTheme.palette.dark.alternative,
         [theme.breakpoints.down('md')]: {
-            fontSize: "15px",
+            fontSize: "15px !important",
         },
     },
     sectionFiveButtons: {
