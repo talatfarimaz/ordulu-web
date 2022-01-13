@@ -101,6 +101,7 @@ const CareerAndLifeStyle = makeStyles(theme => ({
         fontWeight: "bolder !important",
         [theme.breakpoints.down('md')]: {
             fontSize: "25px !important",
+            top: "80%",
         },
         [theme.breakpoints.down('sm')]: {
             fontSize: "20px !important",
@@ -167,7 +168,58 @@ const CareerAndLifeStyle = makeStyles(theme => ({
         }
     },
     sectionFive: {
-
+        backgroundColor: DefaultTheme.palette.primary.main,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    sendButton: {
+        color: DefaultTheme.palette.secondary.contrastText,
+    },
+    notchedOutline: {
+        borderColor: DefaultTheme.palette.secondary.contrastText+ " !important",
+    },
+    margin: {
+        margin: theme.spacing(1),
+    },
+    root: {
+        "& label": {
+            width: "100%",
+            textAlign: "center",
+            transformOrigin: "center",
+            "&.Mui-focused": {
+                transformOrigin: "center"
+            }
+        }
+    },
+    sendMessageText: {
+        fontSize: "25px !important",
+        color: DefaultTheme.palette.secondary.contrastText,
+        fontWeight: "bolder !important",
+        paddingBottom: theme.spacing(3),
+        [theme.breakpoints.down('md')]: {
+            fontSize: "20px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "20px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "15px !important",
+        },
+    },
+    sendMessageTex2: {
+        fontSize: "15px !important",
+        color: DefaultTheme.palette.secondary.contrastText,
+        fontWeight: "bolder !important",
+        [theme.breakpoints.down('md')]: {
+            fontSize: "13px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "13px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "10px !important",
+        },
     }
 }));
 

@@ -27,23 +27,25 @@ function CareerAndLifeSectionFour() {
                             {t('CareerSentence2')}
                         </Typography>
                     </Grid>
-                    <Grid item md={3} sm={6} xs={12}>
+                    <Grid item md={3} sm={3} xs={6}>
                         <Paper elevation={3}>
                             <img src={adv1} alt={""} width={"100%"}/>
                         </Paper>
                     </Grid>
-                    <Grid item md={3} sm={6} xs={12}>
+                    <Grid item md={3} sm={3} xs={6}>
                         <Paper elevation={3}>
                             <img src={adv2} alt={""} width={"100%"}/>
                         </Paper>
                     </Grid>
-                    <Grid item md={3} sm={6} xs={12}>
+                    <Grid item md={3} sm={3} xs={6}>
                         <Paper elevation={3}>
                             <img src={adv3} alt={""} width={"100%"}/>
                         </Paper>
                     </Grid>
-                    <Grid item md={3} sm={6} xs={12}>
-                            <img src={adv4} alt={""} width={"100%"}/>
+                    <Grid item md={3} sm={3} xs={6}>
+                        <Paper elevation={3}>
+                        <img src={adv4} alt={""} width={"100%"}/>
+                        </Paper>
                     </Grid>
                 </Grid>
         </div>

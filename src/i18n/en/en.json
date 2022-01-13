@@ -38,6 +38,19 @@
   "Job": "Job Application",
   "Intern": "Intern Application",
   "CareerSentence1": "We offer you the opportunity for a successful career journey.",
-  "CareerSentence2": "Take advantage of the opportunities we have put into practice to develop the managerial skills of our talented employees and enable them to stand out with their talents."
-
+  "CareerSentence2": "Take advantage of the opportunities we have put into practice to develop the managerial skills of our talented employees and enable them to stand out with their talents.",
+  "SendMessage": "WRITE US",
+  "SendMessage2": "You can send us your suggestions, comments and complaints.",
+  "Message": "Message",
+  "Send": "Send",
+  "Hello": "Hello!",
+  "FormText": "You can have our office staff get back to you by filling out the contact form.",
+  "NameSurname": "Name Surname",
+  "Subject": "Subject",
+  "EMail": "E-Mail",
+  "YourMessage": "Your Message",
+  "Phone": "Your Phone Number",
+  "SenMessage": "Send Message",
+  "KVKK2": "KVKK",
+  "Acceptance": "I have read and confirm."
 }

@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import AppNavbar from "./Components/AppNavbar";
 import AppFooter from "./Components/AppFooter";
 import CareerAndLife from "./Components/CareerAndLife";
+import Contact from "./Components/Contact";
 
 const theme = DefaultTheme;
 
@@ -17,6 +18,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/careerandlife' element={<CareerAndLife/>}/>
+                    <Route path='/contact' element={<Contact/>}/>
                 </Routes>
             </Router>
             <AppFooter/>

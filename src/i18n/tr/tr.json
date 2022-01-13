@@ -38,5 +38,19 @@
   "Job": "İş Başvurusu",
   "Intern": "Staj Başvurusu",
   "CareerSentence1": "Sizlere başarı dolu bir kariyer yolculuğu fırsatı sunuyoruz.",
-  "CareerSentence2": "Yetenekli çalışanlarımızın yönetsel becerilerini geliştirmek ve yetenekleriyle ön plana çıkmalarını sağlamak için hayata geçirdiğimiz imkanlardan faydalanın."
+  "CareerSentence2": "Yetenekli çalışanlarımızın yönetsel becerilerini geliştirmek ve yetenekleriyle ön plana çıkmalarını sağlamak için hayata geçirdiğimiz imkanlardan faydalanın.",
+  "SendMessage": "BİZE YAZIN",
+  "SendMessage2": "Öneri, yorum ve şikayetlerinizi bize İletebilirsiniz.",
+  "Message": "Mesaj",
+  "Send": "Gönder",
+  "Hello": "Merhaba!",
+  "FormText": "İletişim formunu doldurarak ofis personelimizin size dönüş yapmasını sağlayabilirsiniz.",
+  "NameSurname": "Ad Soyad",
+  "Subject": "Konu",
+  "EMail": "E-Posta",
+  "YourMessage": "Mesajınız",
+  "Phone": "Telefon Numaranız",
+  "SenMessage": "Mesaj Gönder",
+  "KVKK2": "KVKK'yı",
+  "Acceptance": " okudum ve onaylıyorum."
 }

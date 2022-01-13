@@ -385,27 +385,27 @@ const AppContentStyle = makeStyles(theme => ({
         },
     },
     sectionFiveButtons: {
-        position: "absolute",
-        top: "80%",
-        left: "40%",
+        position: "absolute !important",
+        top: "80% !important",
+        left: "40% !important",
     },
     sectionFiveButtons2: {
-        position: "absolute",
-        top: "92%",
-        left: "42%",
+        position: "absolute !important",
+        top: "92% !important",
+        left: "42% !important",
     },
     sectionFiveButtonText: {
         color: DefaultTheme.palette.secondary.contrastText,
-        fontSize: "20px",
-        fontWeight: "bolder",
+        fontSize: "20px !important",
+        fontWeight: "bolder !important",
         [theme.breakpoints.only('md')]: {
-            fontSize: "15px",
+            fontSize: "15px !important",
         },
         [theme.breakpoints.only('sm')]: {
-            fontSize: "12px",
+            fontSize: "12px !important",
         },
         [theme.breakpoints.only('xs')]: {
-            fontSize: "13px",
+            fontSize: "13px !important",
         },
     },
     gridHeight: {

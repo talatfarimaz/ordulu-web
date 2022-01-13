@@ -39,8 +39,8 @@ const DefaultTheme = createTheme({
             contrastText: '#FFFFFF',
             light: "#2EFF22",
             alternativeDark: "#117520",
-            alternativeLight: "#64c270",
-            secondAlternative: "#4dbd74",
+            alternativeLight: "#FF5971",
+            secondAlternative: "#E7334C",
             mainAlternative: "#dfeecf"
         },
         success: {
