@@ -1,5 +1,7 @@
 import ContactStyle from "../Styles/ContactStyle";
 import ContactSectionOne from "./Contact/ContactSectionOne";
+import ContactSectionTwo from "./Contact/ContactSectionTwo";
+import ContactSectionThree from "./Contact/ContactSectionThree";
 
 
 function Contact() {
@@ -7,6 +9,8 @@ function Contact() {
     return (
         <div className={classes.bodyDivStyle}>
             <ContactSectionOne/>
+            <ContactSectionTwo/>
+            <ContactSectionThree/>
         </div>
     );
 }

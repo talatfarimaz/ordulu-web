@@ -31,6 +31,7 @@ function MainPageSectionOne() {
         event.preventDefault();
         var element = document.getElementById(event.target.id);
         element.style.padding = "20px"
+        element.style.marginTop = "-20px"
     }
 
     const handleResetWidthAndHeight = (event) => {
@@ -38,6 +39,7 @@ function MainPageSectionOne() {
         event.preventDefault();
         var element = document.getElementById(event.target.id);
         element.style.padding = "0px"
+        element.style.marginTop = "0px"
 
     }
     const handleGetImg = () => {

@@ -95,7 +95,7 @@ const ContactStyle = makeStyles(theme => ({
     },
     kvkk: {
         marginTop: theme.spacing(1),
-        marginLeft: theme.spacing(-2),
+        marginLeft: theme.spacing(-1.5),
         [theme.breakpoints.down('sm')]: {
             marginTop: theme.spacing(-0.5),
         },
@@ -143,6 +143,106 @@ const ContactStyle = makeStyles(theme => ({
         [theme.breakpoints.only('sm')]: {
             transform: "scale(0.8)"
         },
+    },
+    paddingTop: {
+        [theme.breakpoints.only('xs')]: {
+            paddingTop: "0px !important"
+        },
+    },
+    sectionTwoBackground: {
+        paddingTop: theme.spacing(12),
+        paddingBottom: theme.spacing(6),
+        backgroundColor: DefaultTheme.palette.primary.main,
+        margin: "auto",
+        display: "flex",
+        justifyContent: "center"
+    },
+    sectionTwoGrid: {
+        width: "70% !important",
+        [theme.breakpoints.down('sm')]: {
+            width: "90% !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            width: "100% !important",
+        },
+    },
+    locationTitle1: {
+        fontSize: "30px !important",
+        color: DefaultTheme.palette.secondary.contrastText,
+        [theme.breakpoints.down('md')]: {
+            fontSize: "25px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "20px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "15px !important",
+        },
+    },
+    locationTitle2: {
+        fontSize: "30px !important",
+        color: DefaultTheme.palette.secondary.contrastText,
+        fontWeight: "bolder !important",
+        [theme.breakpoints.down('md')]: {
+            fontSize: "25px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "20px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "15px !important",
+        },
+    },
+    addressText1: {
+        fontSize: "25px !important",
+        color: DefaultTheme.palette.dark.alternative,
+        fontWeight: "bolder !important",
+        [theme.breakpoints.down('md')]: {
+            fontSize: "20px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "15px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "13px !important",
+        },
+    },
+    addressText2: {
+        fontSize: "15px !important",
+        color: DefaultTheme.palette.dark.alternative,
+        [theme.breakpoints.down('md')]: {
+            fontSize: "12px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "10px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "9px !important",
+        },
+    },
+    cardAction: {
+        backgroundColor: DefaultTheme.palette.secondary.contrastText,
+        padding: theme.spacing(6),
+        borderRadius: "2px",
+        height: "100%",
+        [theme.breakpoints.only('sm')]: {
+            padding: theme.spacing(3),
+        },
+        [theme.breakpoints.only('xs')]: {
+            padding: theme.spacing(2),
+        },
+
+    },
+    location: {
+        margin: "auto",
+        display: "flex",
+        justifyContent: "center",
+        [theme.breakpoints.only('xs')]: {
+            display: "none",
+        },
+    },
+    mapsArea: {
+        paddingBottom: theme.spacing(6),
     }
 }));
 

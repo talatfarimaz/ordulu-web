@@ -121,7 +121,12 @@ function AppNavbar(props) {
                 <Toolbar className={classes.toolBarMain}>
                     <Grid container>
                         <Grid item lg={2} md={1} sm={2} xs={2} style={{margin: "auto"}}>
+                            <Link
+                                underline={"none"}
+                                href={'/'}
+                            >
                             <Avatar className={classes.mainLogo} src={logo}/>
+                            </Link>
                         </Grid>
                         <Grid item lg={1} md={0} sm={1} xs={2}/>
                         <Grid item lg={7} md={9} sm={8} xs={6} className={classes.tabGrid}>
@@ -187,6 +192,7 @@ function AppNavbar(props) {
                                         onMouseOut={(__Event) => {
                                             __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                         }}
+                                        href={'/blog'}
                                     >
                                         <Typography className={classes.tabFont}>
                                             {t('Blog')}
