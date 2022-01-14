@@ -7,6 +7,7 @@ import AppNavbar from "./Components/AppNavbar";
 import AppFooter from "./Components/AppFooter";
 import CareerAndLife from "./Components/CareerAndLife";
 import Contact from "./Components/Contact";
+import Blog from "./Components/Blog";
 
 const theme = DefaultTheme;
 
@@ -19,6 +20,7 @@ function App() {
                     <Route path='/' element={<Home/>}/>
                     <Route path='/careerandlife' element={<CareerAndLife/>}/>
                     <Route path='/contact' element={<Contact/>}/>
+                    <Route path='/blog' element={<Blog/>}/>
                 </Routes>
             </Router>
             <AppFooter/>

@@ -55,7 +55,7 @@ function ContactSectionOne() {
                             {t('FormText')}
                         </Typography>
                     </Grid>
-                    <Grid item md={4} sm={6} xs={12}>
+                    <Grid item md={4} sm={6} xs={12} className={classes.paddingTop}>
                         <Grid container>
                             <Grid item xs={12}>
                                 <Typography className={classes.formElemetText}>
