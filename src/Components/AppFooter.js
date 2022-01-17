@@ -76,7 +76,7 @@ function AppFooter() {
                         <Grid item md={3} sm={6} xs={12}>
                             <Link
                                 underline={"none"}
-                                href={'/contracts?code=kvkk'}
+                                href={'/contracts/kvkk'}
                             >
                                 <Typography className={classes.mailTo}>
                                     {t('KVKK')}
@@ -86,7 +86,7 @@ function AppFooter() {
                         <Grid item md={3} sm={6} xs={12}>
                             <Link
                                 underline={"none"}
-                                href={'/contracts?code=society'}
+                                href={'/contracts/society'}
                             >
                                 <Typography className={classes.mailTo}>
                                     {t('InfoFooter')}
@@ -96,7 +96,7 @@ function AppFooter() {
                         <Grid item md={3} sm={6} xs={12}>
                             <Link
                                 underline={"none"}
-                                href={'/contracts?code=press'}
+                                href={'/contracts/press'}
                             >
                                 <Typography className={classes.mailTo}>
                                     {t('InfoFooter2')}
@@ -106,7 +106,7 @@ function AppFooter() {
                         <Grid item md={3} sm={6} xs={12}>
                             <Link
                                 underline={"none"}
-                                href={'/contracts?code=contact'}
+                                href={'/contracts/contact'}
                             >
                                 <Typography className={classes.mailTo}>
                                     {t('Contact')}

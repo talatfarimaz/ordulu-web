@@ -1,6 +1,14 @@
 import {makeStyles} from "@material-ui/core/styles";
+import DefaultTheme from "../Themes/DefaultTheme";
 
 const ContractsStyle = makeStyles(theme => ({
+    bodyDivStyle: {
+        marginTop: "80px !important",
+        backgroundColor: DefaultTheme.palette.primary.main,
+        [theme.breakpoints.down('md')]: {
+            marginTop: "60px !important",
+        },
+    },
     menuItem: {
         "&:focus": {
             backgroundColor: theme.palette.primary.main,

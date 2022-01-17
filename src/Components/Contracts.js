@@ -9,12 +9,11 @@ import {useParams} from "react-router-dom";
 function Contracts(props) {
     const classes = ContractsStyle();
     const {t} = useTranslation();
-    const { id } = useParams();
+    const {code} = useParams();
     const [selectedCode, setSelectedCode] = React.useState("");
     React.useEffect(() => {
-        const params = new URLSearchParams(window.location.search);
-        let code = params.get('code');
         setSelectedCode(code)
+        setSelectedDetail(t(code)) //TODO detayı getir
     }, [])
     const [openMenu, setOpenMenu] = React.useState(false);
     const [selectedDetail, setSelectedDetail] = React.useState("");
@@ -178,7 +177,7 @@ function Contracts(props) {
     }
 
     return (
-        <div>
+        <div className={classes.bodyDivStyle}>
             <Hidden xsDown>
                 {handleGetWeb()}
             </Hidden>
