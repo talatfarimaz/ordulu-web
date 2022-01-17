@@ -8,6 +8,7 @@ import AppFooter from "./Components/AppFooter";
 import CareerAndLife from "./Components/CareerAndLife";
 import Contact from "./Components/Contact";
 import Blog from "./Components/Blog";
+import Contracts from "./Components/Contracts";
 
 const theme = DefaultTheme;
 
@@ -21,6 +22,7 @@ function App() {
                     <Route path='/careerandlife' element={<CareerAndLife/>}/>
                     <Route path='/contact' element={<Contact/>}/>
                     <Route path='/blog' element={<Blog/>}/>
+                    <Route path='/contracts/:code' element={<Contracts/>}/>
                 </Routes>
             </Router>
             <AppFooter/>

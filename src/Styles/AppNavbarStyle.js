@@ -163,6 +163,22 @@ const AppNavbarStyle = makeStyles(theme => ({
             fontSize: "15px !important"
 
         },
+    },
+    menuItem: {
+        color: DefaultTheme.palette.dark.alternative,
+        fontWeight: "bolder !important",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "11px !important"
+        },
+
+    },
+    menuItem2: {
+        color: DefaultTheme.palette.secondary.main,
+        fontWeight: "bolder !important",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "12px !important"
+        },
+
     }
 }));
 

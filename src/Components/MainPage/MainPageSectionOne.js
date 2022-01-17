@@ -15,31 +15,44 @@ import IconButton from "@material-ui/core/IconButton";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import SettingsInputAntennaIcon from '@material-ui/icons/SettingsInputAntenna';
-import LiveTvIcon from '@material-ui/icons/LiveTv';
-import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponent';
-import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import SettingsInputAntennaOutlinedIcon from '@material-ui/icons/SettingsInputAntennaOutlined';
+import QueuePlayNextOutlinedIcon from '@material-ui/icons/QueuePlayNextOutlined';
+import SettingsInputComponentOutlinedIcon from '@material-ui/icons/SettingsInputComponentOutlined';
+import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
 import FormatShapesIcon from '@material-ui/icons/FormatShapes';
 
 function MainPageSectionOne() {
     const {t} = useTranslation();
     const classes = AppContentStyle();
     const [changeImg, setChangeImg] = React.useState(false); //TODO false yap
+    const [kuzgun, setKuzgun] = React.useState(false);
+    const [sahin, setSahin] = React.useState(false);
+    const [arz, setArz] = React.useState(false);
+    const [ulak, setUlak] = React.useState(false);
+    const [gam, setGam] = React.useState(false);
 
     const handleChangeWidthAndHeight = (event) => {
-        event.stopPropagation();
-        event.preventDefault();
-        var element = document.getElementById(event.target.id);
-        element.style.padding = "20px"
-        element.style.marginTop = "-20px"
+        if (event.target.id !== "" && event.target.id !== null) {
+            var element = document.getElementById(event.target.id);
+            element.style.padding = "20px"
+            element.style.marginTop = "-20px"
+        } else if (event.target.parentNode.id !== "" && event.target.parentNode.id !== null) {
+            var element = document.getElementById(event.target.parentNode.id);
+            element.style.padding = "20px"
+            element.style.marginTop = "-20px"
+        }
     }
 
     const handleResetWidthAndHeight = (event) => {
-        event.stopPropagation();
-        event.preventDefault();
-        var element = document.getElementById(event.target.id);
-        element.style.padding = "0px"
-        element.style.marginTop = "0px"
+        if (event.target.id !== "" && event.target.id !== null) {
+            var element = document.getElementById(event.target.id);
+            element.style.padding = "0px"
+            element.style.marginTop = "0px"
+        } else if (event.target.parentNode.id !== "" && event.target.parentNode.id !== null) {
+            var element = document.getElementById(event.target.parentNode.id);
+            element.style.padding = "0px"
+            element.style.marginTop = "0px"
+        }
 
     }
     const handleGetImg = () => {
@@ -51,34 +64,94 @@ function MainPageSectionOne() {
                     <div id={"akinci1"} className={classes.akinci1}/>
                     <div id={"kuzgun"} onMouseEnter={(event) => {
                         handleChangeWidthAndHeight(event)
+                        setKuzgun(true)
                     }}
                          onMouseLeave={(event) => {
                              handleResetWidthAndHeight(event)
-                         }} className={classes.kuzgun}/>
+                             setKuzgun(false)
+                         }} className={classes.kuzgun}>
+                        {kuzgun &&
+                            <div className={classes.productNameDiv}>
+                                <Typography className={classes.productName}>
+                                    KUZGUN
+                                </Typography>
+                                <Typography className={classes.productDef}>
+                                    {t('Kuzgun')}
+                                </Typography>
+                            </div>}
+                    </div>
                     <div id={"gam"} onMouseEnter={(event) => {
                         handleChangeWidthAndHeight(event)
+                        setGam(true)
                     }}
                          onMouseLeave={(event) => {
                              handleResetWidthAndHeight(event)
-                         }} className={classes.gam}/>
+                             setGam(false)
+                         }} className={classes.gam}>
+                        {gam &&
+                            <div className={classes.productNameDiv}>
+                                <Typography className={classes.productName}>
+                                    GAM
+                                </Typography>
+                                <Typography className={classes.productDef}>
+                                    {t('Gam')}
+                                </Typography>
+                            </div>}
+                    </div>
                     <div id={"arz"} onMouseEnter={(event) => {
                         handleChangeWidthAndHeight(event)
+                        setArz(true)
                     }}
                          onMouseLeave={(event) => {
                              handleResetWidthAndHeight(event)
-                         }} className={classes.arz}/>
+                             setArz(false)
+                         }} className={classes.arz}>
+                        {arz &&
+                            <div className={classes.productNameDiv}>
+                                <Typography className={classes.productName}>
+                                    ARZ
+                                </Typography>
+                                <Typography className={classes.productDef}>
+                                    {t('Arz')}
+                                </Typography>
+                            </div>}
+                    </div>
                     <div id={"sahin"} onMouseEnter={(event) => {
                         handleChangeWidthAndHeight(event)
+                        setSahin(true)
                     }}
                          onMouseLeave={(event) => {
                              handleResetWidthAndHeight(event)
-                         }} className={classes.sahin}/>
+                             setSahin(false)
+                         }} className={classes.sahin}>
+                        {sahin &&
+                            <div className={classes.productNameDiv}>
+                                <Typography className={classes.productName}>
+                                    ŞAHİN
+                                </Typography>
+                                <Typography className={classes.productDef}>
+                                    {t('Şahin')}
+                                </Typography>
+                            </div>}
+                    </div>
                     <div id={"ulak"} onMouseEnter={(event) => {
                         handleChangeWidthAndHeight(event)
+                        setUlak(true)
                     }}
                          onMouseLeave={(event) => {
                              handleResetWidthAndHeight(event)
-                         }} className={classes.ulak}/>
+                             setUlak(false)
+                         }} className={classes.ulak}>
+                        {ulak &&
+                            <div className={classes.productNameDiv}>
+                                <Typography className={classes.productName}>
+                                    ULAK
+                                </Typography>
+                                <Typography className={classes.productDef}>
+                                    {t('Ulak')}
+                                </Typography>
+                            </div>}
+                    </div>
                     <div className={classes.mediaIcons}>
                         <Grid container spacing={1}>
                             <Grid item xs={4}>
@@ -147,31 +220,33 @@ function MainPageSectionOne() {
                 <Grid container spacing={1}>
                     <Grid item xs={1}/>
                     <Grid item xs={2} className={classes.iconText}>
-                        <SettingsInputAntennaIcon className={classes.infoIcons}/>
+                        <SettingsInputAntennaOutlinedIcon
+                            className={!kuzgun ? classes.infoIcons : classes.infoIconsActive}/>
                         <Typography className={classes.infoText}>
                             {t('Info1')}
                         </Typography>
                     </Grid>
                     <Grid item xs={2} className={classes.iconText}>
-                        <LiveTvIcon className={classes.infoIcons}/>
+                        <QueuePlayNextOutlinedIcon className={!gam ? classes.infoIcons : classes.infoIconsActive}/>
                         <Typography className={classes.infoText}>
                             {t('Info2')}
                         </Typography>
                     </Grid>
                     <Grid item xs={2} className={classes.iconText}>
-                        <SettingsInputComponentIcon className={classes.infoIcons}/>
+                        <SettingsInputComponentOutlinedIcon
+                            className={!sahin ? classes.infoIcons : classes.infoIconsActive}/>
                         <Typography className={classes.infoText}>
                             {t('Info3')}
                         </Typography>
                     </Grid>
                     <Grid item xs={2} className={classes.iconText}>
-                        <QuestionAnswerIcon className={classes.infoIcons}/>
+                        <ForumOutlinedIcon className={!ulak ? classes.infoIcons : classes.infoIconsActive}/>
                         <Typography className={classes.infoText}>
                             {t('Info4')}
                         </Typography>
                     </Grid>
                     <Grid item xs={2} className={classes.iconText}>
-                        <FormatShapesIcon className={classes.infoIcons}/>
+                        <FormatShapesIcon className={!arz ? classes.infoIcons : classes.infoIconsActive}/>
                         <Typography className={classes.infoText}>
                             {t('Info5')}
                         </Typography>
