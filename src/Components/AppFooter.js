@@ -1,5 +1,5 @@
 import {useTranslation} from "react-i18next";
-import {Button, Divider, Grid, Typography} from "@material-ui/core";
+import {Button, Divider, Grid, Link, Typography} from "@material-ui/core";
 import React from "react";
 import AppFooterStyle from "../Styles/AppFooterStyle";
 import ordulu from '../assets/images/ordulu.png';
@@ -11,6 +11,7 @@ import DefaultTheme from "../Themes/DefaultTheme";
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import HomeIcon from '@material-ui/icons/Home';
 import classNames from "classnames";
+import Contracts from "./Contracts";
 
 
 function AppFooter() {
@@ -25,7 +26,7 @@ function AppFooter() {
             <Grid container
                   direction="row"
                   justifyContent="center"
-                  alignItems="flex-end"
+                  alignItems="center"
             >
                 <Grid item sm={4} xs={12} className={classNames(classes.subGrids, classes.grid1)}>
                     <Typography className={classes.groupCompany}>
@@ -68,28 +69,50 @@ function AppFooter() {
                     </Button>
                 </Grid>
                 <Grid item sm={4} xs={12} className={classNames(classes.subGrids, classes.grid5)}>
-                    <Grid container direction="row"
-                          justifyContent="center"
-                          alignItems="center">
-                                <Grid item xs={5} style={{textAlign: "right"}}>
-                                    <Button>
-                                        <Typography className={classes.mailTo}>
-                                            {t('KVKK')}
-                                        </Typography>
-                                    </Button>
-                                </Grid>
-                                <Grid item xs={2} className={classes.footerDivider} >
-                                    <Divider orientation={"vertical"} light={true} classes={{
-                                        root: classes.dividerColor
-                                    }}/>
-                                </Grid>
-                                <Grid item xs={5} style={{textAlign: "left"}}>
-                                    <Button>
-                                        <Typography className={classes.mailTo}>
-                                            {t('Contact')}
-                                        </Typography>
-                                    </Button>
-                                </Grid>
+                    <Grid spacing={1} container
+                          justifyContent="space-evenly"
+                          alignItems="center"
+                    >
+                        <Grid item md={3} sm={6} xs={12}>
+                            <Link
+                                underline={"none"}
+                                href={'/contracts?code=kvkk'}
+                            >
+                                <Typography className={classes.mailTo}>
+                                    {t('KVKK')}
+                                </Typography>
+                            </Link>
+                        </Grid>
+                        <Grid item md={3} sm={6} xs={12}>
+                            <Link
+                                underline={"none"}
+                                href={'/contracts?code=society'}
+                            >
+                                <Typography className={classes.mailTo}>
+                                    {t('InfoFooter')}
+                                </Typography>
+                            </Link>
+                        </Grid>
+                        <Grid item md={3} sm={6} xs={12}>
+                            <Link
+                                underline={"none"}
+                                href={'/contracts?code=press'}
+                            >
+                                <Typography className={classes.mailTo}>
+                                    {t('InfoFooter2')}
+                                </Typography>
+                            </Link>
+                        </Grid>
+                        <Grid item md={3} sm={6} xs={12}>
+                            <Link
+                                underline={"none"}
+                                href={'/contracts?code=contact'}
+                            >
+                                <Typography className={classes.mailTo}>
+                                    {t('Contact')}
+                                </Typography>
+                            </Link>
+                        </Grid>
                     </Grid>
                 </Grid>
                 <Grid item sm={4} xs={12} className={classNames(classes.subGrids, classes.grid6)}>

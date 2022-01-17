@@ -64,6 +64,7 @@ const BlogStyle = makeStyles(theme => ({
         fontSize: "60px !important",
         color: DefaultTheme.palette.secondary.contrastText,
         fontWeight: "bolder !important",
+        paddingBottom: theme.spacing(4),
         [theme.breakpoints.down('md')]: {
             fontSize: "45px !important",
         },
@@ -177,6 +178,19 @@ const BlogStyle = makeStyles(theme => ({
             fontSize: "10px !important",
         },
     },
+    newsDate2: {
+        color: DefaultTheme.palette.dark.alternative,
+        fontSize: "13px !important",
+        [theme.breakpoints.down('md')]: {
+            fontSize: "11px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "10px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "10px !important",
+        },
+    },
     newsText: {
         color: DefaultTheme.palette.secondary.contrastText,
         margin: theme.spacing(2),
@@ -190,7 +204,31 @@ const BlogStyle = makeStyles(theme => ({
         [theme.breakpoints.only('xs')]: {
             fontSize: "12px !important",
         },
-    }
+    },
+    newsText2: {
+        color: DefaultTheme.palette.dark.alternative,
+        margin: theme.spacing(2),
+        fontSize: "15px !important",
+        [theme.breakpoints.down('md')]: {
+            fontSize: "13px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "12px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "12px !important",
+        },
+    },
+    readMoreButton: {
+        display: "flex",
+        justifyContent: "flex-end"
+    },
+    root: {
+        "&:hover $focusHighlight": {
+            opacity: 0
+        }
+    },
+    focusHighlight: {}
 }));
 
 export default BlogStyle;

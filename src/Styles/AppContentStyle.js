@@ -87,19 +87,25 @@ const AppContentStyle = makeStyles(theme => ({
         left: "60%",
     },
     ulak: {
-        width: "11%",
-        height: "11%",
+        width: "13%",
+        height: "13%",
         backgroundImage: `url(${ulak})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain",
         position: "absolute",
         top: "42%",
-        left: "85%",
+        left: "82%",
+        [theme.breakpoints.down('sm')]: {
+            left: "80%",
+        },
+        [theme.breakpoints.only('xs')]: {
+            left: "75%",
+        },
     },
     gam: {
-        width: "9%",
-        height: "9%",
+        width: "11%",
+        height: "11%",
         backgroundImage: `url(${gam})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
@@ -109,8 +115,8 @@ const AppContentStyle = makeStyles(theme => ({
         left: "28%",
     },
     kuzgun: {
-        width: "9%",
-        height: "9%",
+        width: "11%",
+        height: "11%",
         backgroundImage: `url(${kuzgun})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
@@ -121,8 +127,8 @@ const AppContentStyle = makeStyles(theme => ({
     }
     ,
     sahin: {
-        width: "12%",
-        height: "12%",
+        width: "14%",
+        height: "14%",
         backgroundImage: `url(${sahin})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
@@ -133,8 +139,8 @@ const AppContentStyle = makeStyles(theme => ({
     }
     ,
     arz: {
-        width: "11%",
-        height: "11%",
+        width: "13%",
+        height: "13%",
         backgroundImage: `url(${arz})`,
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
@@ -145,6 +151,19 @@ const AppContentStyle = makeStyles(theme => ({
     },
     infoIcons: {
         color: DefaultTheme.palette.secondary.contrastText,
+        fontSize: "50px !important",
+        [theme.breakpoints.down('lg')]: {
+            fontSize: "40px !important",
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: "30px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "25px !important",
+        },
+    },
+    infoIconsActive: {
+        color: DefaultTheme.palette.inherit.main,
         fontSize: "50px !important",
         [theme.breakpoints.down('lg')]: {
             fontSize: "40px !important",
@@ -168,6 +187,10 @@ const AppContentStyle = makeStyles(theme => ({
         [theme.breakpoints.only('sm')]: {
             width: "100%",
         },
+        [theme.breakpoints.only('xs')]: {
+            paddingTop: "40px",
+        },
+
     },
     infoText: {
         color: DefaultTheme.palette.secondary.contrastText,
@@ -185,6 +208,63 @@ const AppContentStyle = makeStyles(theme => ({
         [theme.breakpoints.only('xs')]: {
             fontSize: "7px !important",
         },
+    },
+    infoTextActive: {
+        color: DefaultTheme.palette.inherit.main,
+        fontSize: "18px !important",
+        marginTop: "10px",
+        [theme.breakpoints.down('lg')]: {
+            fontSize: "15px !important",
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: "13px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "9px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "7px !important",
+        },
+    },
+    productName: {
+        color: DefaultTheme.palette.secondary.contrastText,
+        fontSize: "25px !important",
+        fontWeight:"bolder !important",
+        [theme.breakpoints.down('lg')]: {
+            fontSize: "20px !important",
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: "18px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "15px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "12px !important",
+        },
+    },
+    productDef: {
+        color: DefaultTheme.palette.secondary.contrastText,
+        fontSize: "15px !important",
+        [theme.breakpoints.down('lg')]: {
+            fontSize: "13px !important",
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: "11px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "8px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "6px !important",
+        },
+    },
+    productNameDiv: {
+        position: "absolute",
+        top: "100%",
+        left: "20%",
+        right: "20%",
+        textAlign: "center"
     },
     iconText: {
         textAlign: "center"
@@ -296,7 +376,7 @@ const AppContentStyle = makeStyles(theme => ({
         },
     },
     referenceName: {
-        fontSize: "11px",
+        fontSize: "11px !important",
         color: DefaultTheme.palette.secondary.contrastText,
         fontWeight: "bold",
         margin: "10px"
@@ -416,6 +496,34 @@ const AppContentStyle = makeStyles(theme => ({
         [theme.breakpoints.only('xs')]: {
             paddingLeft: "10px",
         },
+    },
+    animatedItem: {
+        animation: `$myEffect 3000ms ${theme.transitions.easing.easeInOut}`
+    },
+    animatedItemExiting: {
+        animation: `$myEffectExit 3000ms ${theme.transitions.easing.easeInOut}`,
+        opacity: 0,
+        transform: "translateY(-200%)"
+    },
+    "@keyframes myEffect": {
+        "0%": {
+            opacity: 0,
+            transform: "translateY(-200%)"
+        },
+        "100%": {
+            opacity: 1,
+            transform: "translateY(0)"
+        }
+    },
+    "@keyframes myEffectExit": {
+        "0%": {
+            opacity: 1,
+            transform: "translateY(0)"
+        },
+        "100%": {
+            opacity: 0,
+            transform: "translateY(-200%)"
+        }
     }
 }));
 

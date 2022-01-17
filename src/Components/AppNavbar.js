@@ -11,10 +11,11 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import {useTranslation, withTranslation} from 'react-i18next';
 import i18n from '../i18n/i18n';
 import AppNavbarStyle from "../Styles/AppNavbarStyle";
-import {Avatar, Divider, Grid, Link, Typography} from "@material-ui/core";
+import {Avatar, Button, Divider, Grid, Hidden, Link, Typography} from "@material-ui/core";
 import logo from '../assets/images/logo.png'
 import DefaultTheme from "../Themes/DefaultTheme";
 import LanguagesEnum from "../i18n/LanguagesEnum";
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 function AppNavbar(props) {
@@ -24,6 +25,7 @@ function AppNavbar(props) {
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
     const [anchorElMenu, setAnchorElMenu] = React.useState(null);
     const [activeLanguage, setActiveLanguage] = React.useState(i18n.language);
+    const [anchorElMobile, setAnchorElMobile] = React.useState(null);
     const changeLanguageSelection = (lng) => {
         i18n.changeLanguage(lng);
         setActiveLanguage(lng);
@@ -114,7 +116,107 @@ function AppNavbar(props) {
             </MenuItem>
         </Menu>
     );
+    const handleGetMobileMenu = () => {
+        return (
+            <div>
+                <IconButton onClick={handleClickMobile}>
+                    <MenuIcon fontSize={"large"} style={{color: DefaultTheme.palette.secondary.contrastText}}/>
+                </IconButton>
+                <Menu
+                    id="simple-menu"
+                    anchorEl={anchorElMobile}
+                    keepMounted
+                    open={Boolean(anchorElMobile)}
+                    onClose={handleCloseMobile}
+                >
+                    <MenuItem onClick={handleCloseMobile}>
+                        <Link
+                            underline={"none"}
+                            className={classes.tabStyle}
+                            href={'/'}
+                        >
+                            <Typography className={classes.menuItem}>
+                                {t('MainPage')}
+                            </Typography>
+                        </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseMobile}>
+                        <Link
+                            underline={"none"}
+                            className={classes.tabStyle}
+                            href={'/products'}
+                        >
+                            <Typography className={classes.menuItem}>
+                                {t('Products')}
+                            </Typography>
+                        </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseMobile}>
+                        <Link
+                            underline={"none"}
+                            className={classes.tabStyle}
+                            href={'/careerandlife'}
+                        >
+                            <Typography className={classes.menuItem}>
+                                {t('CareerLife')}
+                            </Typography>
+                        </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseMobile}>
+                        <Link
+                            underline={"none"}
+                            className={classes.tabStyle}
+                            href={'/blog'}
+                        >
+                            <Typography className={classes.menuItem}>
+                                {t('Blog')}
+                            </Typography>
+                        </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseMobile}>
+                        <Link
+                            underline={"none"}
+                            className={classes.tabStyle}
+                            href={'/contact'}
+                        >
+                            <Typography className={classes.menuItem}>
+                                {t('Contact')}
+                            </Typography>
+                        </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseMobile}>
+                        <Grid container>
+                            <Grid item xs={6}>
+                                <Button onClick={() => {
+                                    changeLanguageSelection(LanguagesEnum.English);
+                                }}>
+                                    <Typography className={classes.menuItem2}>
+                                        {LanguagesEnum.English}
+                                    </Typography>
+                                </Button>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <Button onClick={() => {
+                                    changeLanguageSelection(LanguagesEnum.Turkish);
+                                }}>
+                                    <Typography className={classes.menuItem2}>
+                                        {LanguagesEnum.Turkish}
+                                    </Typography>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </MenuItem>
+                </Menu>
+            </div>
+        )
+    }
+    const handleClickMobile = (event) => {
+        setAnchorElMobile(event.currentTarget);
+    };
 
+    const handleCloseMobile = () => {
+        setAnchorElMobile(null);
+    };
     return (
         <div className={classes.grow}>
             <AppBar position="fixed" color={"default"} className={classes.appBarMain}>
@@ -125,100 +227,106 @@ function AppNavbar(props) {
                                 underline={"none"}
                                 href={'/'}
                             >
-                            <Avatar className={classes.mainLogo} src={logo}/>
+                                <Avatar className={classes.mainLogo} src={logo}/>
                             </Link>
                         </Grid>
                         <Grid item lg={1} md={0} sm={1} xs={2}/>
                         <Grid item lg={7} md={9} sm={8} xs={6} className={classes.tabGrid}>
-                            <Grid container className={classes.tabButtons}>
-                                <Grid ite xs={2}/>
-                                <Grid item xs={2} style={{margin: "auto"}}>
-                                    <Link
-                                        underline={"none"}
-                                        className={classes.tabStyle}
-                                        onMouseEnter={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.secondary.main
-                                        }}
-                                        onMouseOut={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.success.contrastText
-                                        }}
-                                        href={'/'}
-                                    >
-                                        <Typography className={classes.tabFont}>
-                                            {t('MainPage')}
-                                        </Typography>
-                                    </Link>
+                            <Hidden smDown>
+                                <Grid container className={classes.tabButtons}>
+                                    <Grid ite xs={2}/>
+                                    <Grid item xs={2} style={{margin: "auto"}}>
+                                        <Link
+                                            underline={"none"}
+                                            className={classes.tabStyle}
+                                            onMouseEnter={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.secondary.main
+                                            }}
+                                            onMouseOut={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                            }}
+                                            href={'/'}
+                                        >
+                                            <Typography className={classes.tabFont}>
+                                                {t('MainPage')}
+                                            </Typography>
+                                        </Link>
+                                    </Grid>
+                                    <Grid item xs={2} style={{margin: "auto"}}>
+                                        <Link
+                                            underline={"none"}
+                                            className={classes.tabStyle}
+                                            onMouseEnter={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.secondary.main
+                                            }}
+                                            onMouseOut={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                            }}
+                                        >
+                                            <Typography className={classes.tabFont}>
+                                                {t('Products')}
+                                            </Typography>
+                                        </Link>
+                                    </Grid>
+                                    <Grid item xs={2} style={{margin: "auto"}}>
+                                        <Link
+                                            underline={"none"}
+                                            className={classes.tabStyle}
+                                            onMouseEnter={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.secondary.main
+                                            }}
+                                            onMouseOut={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                            }}
+                                            href={'/careerandlife'}
+                                        >
+                                            <Typography className={classes.tabFont}>
+                                                {t('CareerLife')}
+                                            </Typography>
+                                        </Link>
+                                    </Grid>
+                                    <Grid item xs={2} style={{margin: "auto"}}>
+                                        <Link
+                                            underline={"none"}
+                                            className={classes.tabStyle}
+                                            onMouseEnter={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.secondary.main
+                                            }}
+                                            onMouseOut={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                            }}
+                                            href={'/blog'}
+                                        >
+                                            <Typography className={classes.tabFont}>
+                                                {t('Blog')}
+                                            </Typography>
+                                        </Link>
+                                    </Grid>
+                                    <Grid item xs={2} style={{margin: "auto"}}>
+                                        <Link
+                                            underline={"none"}
+                                            className={classes.tabStyle}
+                                            onMouseEnter={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.secondary.main
+                                            }}
+                                            onMouseOut={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                            }}
+                                            href={'/contact'}
+                                        >
+                                            <Typography className={classes.tabFont}>
+                                                {t('Contact')}
+                                            </Typography>
+                                        </Link>
+                                    </Grid>
                                 </Grid>
-                                <Grid item xs={2} style={{margin: "auto"}}>
-                                    <Link
-                                        underline={"none"}
-                                        className={classes.tabStyle}
-                                        onMouseEnter={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.secondary.main
-                                        }}
-                                        onMouseOut={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.success.contrastText
-                                        }}
-                                    >
-                                        <Typography className={classes.tabFont}>
-                                            {t('Products')}
-                                        </Typography>
-                                    </Link>
-                                </Grid>
-                                <Grid item xs={2} style={{margin: "auto"}}>
-                                    <Link
-                                        underline={"none"}
-                                        className={classes.tabStyle}
-                                        onMouseEnter={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.secondary.main
-                                        }}
-                                        onMouseOut={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.success.contrastText
-                                        }}
-                                        href={'/careerandlife'}
-                                    >
-                                        <Typography className={classes.tabFont}>
-                                            {t('CareerLife')}
-                                        </Typography>
-                                    </Link>
-                                </Grid>
-                                <Grid item xs={2} style={{margin: "auto"}}>
-                                    <Link
-                                        underline={"none"}
-                                        className={classes.tabStyle}
-                                        onMouseEnter={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.secondary.main
-                                        }}
-                                        onMouseOut={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.success.contrastText
-                                        }}
-                                        href={'/blog'}
-                                    >
-                                        <Typography className={classes.tabFont}>
-                                            {t('Blog')}
-                                        </Typography>
-                                    </Link>
-                                </Grid>
-                                <Grid item xs={2} style={{margin: "auto"}}>
-                                    <Link
-                                        underline={"none"}
-                                        className={classes.tabStyle}
-                                        onMouseEnter={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.secondary.main
-                                        }}
-                                        onMouseOut={(__Event) => {
-                                            __Event.target.style.color = DefaultTheme.palette.success.contrastText
-                                        }}
-                                        href={'/contact'}
-                                    >
-                                        <Typography className={classes.tabFont}>
-                                            {t('Contact')}
-                                        </Typography>
-                                    </Link>
-                                </Grid>
-                            </Grid>
+                            </Hidden>
+                            <Hidden mdUp>
+                                {handleGetMobileMenu()}
+                            </Hidden>
                         </Grid>
                         <Grid item lg={1} md={1} sm={0} xs={1}>
+                            <Hidden smDown>
                                 <Grid container>
                                     <Grid item xs={3}>
                                         <Divider orientation={"vertical"} classes={{
@@ -256,17 +364,13 @@ function AppNavbar(props) {
                                             </MenuItem>
                                         </Menu>
                                     </Grid>
-                            </Grid>
-
+                                </Grid>
+                            </Hidden>
                         </Grid>
                         <Grid item lg={1} md={1} sm={1} xs={1}/>
                     </Grid>
                 </Toolbar>
             </AppBar>
-            {/*
-            {renderMobileMenu}
-*/}
-            {renderMenu}
         </div>
     );
 }
