@@ -186,6 +186,9 @@ function AppNavbar(props) {
                     </MenuItem>
                     <MenuItem onClick={handleCloseMobile}>
                         <Grid container>
+                            <Grid item xs={12}>
+                                <Divider orientation={"horizontal"} variant={"fullWidth"}/>
+                            </Grid>
                             <Grid item xs={6}>
                                 <Button onClick={() => {
                                     changeLanguageSelection(LanguagesEnum.English);
@@ -203,6 +206,9 @@ function AppNavbar(props) {
                                         {LanguagesEnum.Turkish}
                                     </Typography>
                                 </Button>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Divider orientation={"horizontal"} variant={"fullWidth"}/>
                             </Grid>
                         </Grid>
                     </MenuItem>
@@ -262,6 +268,7 @@ function AppNavbar(props) {
                                             onMouseOut={(__Event) => {
                                                 __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                             }}
+                                            href={'/products'}
                                         >
                                             <Typography className={classes.tabFont}>
                                                 {t('Products')}
@@ -367,7 +374,7 @@ function AppNavbar(props) {
                                 </Grid>
                             </Hidden>
                         </Grid>
-                        <Grid item lg={1} md={1} sm={1} xs={1}/>
+                        <Grid item lg={1} md={1} sm={1} xs={0}/>
                     </Grid>
                 </Toolbar>
             </AppBar>

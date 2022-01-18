@@ -21,6 +21,7 @@ const ContractsStyle = makeStyles(theme => ({
         paddingBottom: "unset"
     },
     primary: {
+        fontWeight: "bold",
         [theme.breakpoints.down("xs")]: {
             fontSize: "14px",
         },
@@ -37,7 +38,7 @@ const ContractsStyle = makeStyles(theme => ({
     icon: {},
     contractTextPaper: {
         [theme.breakpoints.down("xs")]: {
-            padding: "3px",
+            padding: "15px",
         },
         [theme.breakpoints.up("sm")]: {
             padding: "10px",
@@ -55,31 +56,27 @@ const ContractsStyle = makeStyles(theme => ({
         },
     },
     mainGrid: {
-        overflowX: "hidden",
-        overflowY: "hidden",
-        overflow: "hidden",
-        [theme.breakpoints.down("xs")]: {
-            padding: "10px",
+        width: "100% !important",
+        paddingTop: theme.spacing(4),
+            [theme.breakpoints.down("xs")]: {
             marginBlockStart: "30px",
+                margin: "unset !important"
         },
         [theme.breakpoints.up("sm")]: {
-            padding: "20px",
             marginBlockStart: "60px",
             margin: "unset"
         },
         [theme.breakpoints.up("md")]: {
-            padding: "30px",
             marginBlockStart: "30px",
             margin: "unset"
         },
         [theme.breakpoints.up("lg")]: {
-            padding: "35px",
             margin: "unset"
         },
     },
     selectButton: {
         textTransform: "none",
-        fontFamily: "Montserrat",
+        fontWeight: "bold"
     },
     listItemTex: {
         fontFamily: "Montserrat",

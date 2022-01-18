@@ -3,8 +3,8 @@ import DefaultTheme from "../Themes/DefaultTheme";
 
 const AppFooterStyle = makeStyles(theme => ({
     footerBackground: {
-        paddingTop: "100px",
-        paddingBottom: "100px",
+        paddingTop: theme.spacing(4),
+        paddingBottom: theme.spacing(4),
         backgroundColor: DefaultTheme.palette.primary.main
     }
     ,

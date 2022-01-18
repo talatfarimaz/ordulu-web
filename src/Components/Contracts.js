@@ -13,7 +13,7 @@ function Contracts(props) {
     const [selectedCode, setSelectedCode] = React.useState("");
     React.useEffect(() => {
         setSelectedCode(code)
-        setSelectedDetail(t(code)) //TODO detayı getir
+        setSelectedDetail(contracts.filter(item => item.Code === code)[0].Detail) //TODO detayı getir
     }, [])
     const [openMenu, setOpenMenu] = React.useState(false);
     const [selectedDetail, setSelectedDetail] = React.useState("");
@@ -27,8 +27,8 @@ function Contracts(props) {
             <Grid
                 key={selectedCode}
                 container
-                spacing={2}
                 className={classes.mainGrid}
+                spacing={2}
             >
                 <Grid
                     item
@@ -117,10 +117,10 @@ function Contracts(props) {
                             onClick={() => {
                                 setOpenMenu(!openMenu);
                             }}
+                            endIcon={openMenu ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
                         >
                             {t(selectedCode)}
                         </Button>
-                        {openMenu ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
                         {openMenu && (
                             <Paper>
                                 <List component="nav" className={classes.menuItem}>
@@ -137,6 +137,7 @@ function Contracts(props) {
                                                     onClick={() => {
                                                         setSelectedCode(contract.Code);
                                                         setSelectedDetail(contract.Detail);
+                                                        setOpenMenu(false);
                                                     }
                                                     }
                                                 >
