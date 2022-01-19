@@ -93,5 +93,19 @@
   "contact": "CONTACT",
   "press": "PRESS ROOM",
   "society": "INFORMATION SOCIETY SERVICES",
-  "PlayVideo": "Play Video"
+  "PlayVideo": "Play Video",
+  "KuzgunText1": "Low Bandwidth",
+  "KuzgunText2": "End-to-End Encryption",
+  "KuzgunText3": "Packet Filtering Solution",
+  "KuzgunText4": "One Way Data Transfer",
+  "KuzgunText5": "Remote Update",
+  "KuzgunText6": "Effective Broadcast and Device Management",
+  "KuzgunMainText": "Kuzgun is a system that provides instantaneous transmission of live broadcasts from air and land vehicles from the secure network to the mobile internet network in an end-to-end encrypted manner.",
+  "SahinText1": "Real Time Video Processing",
+  "SahinText2": "Motion Detection",
+  "SahinText3": "Object Classification",
+  "SahinText4": "Geographic Indexing",
+  "SahinText5": "Archive Image Exploitation",
+  "SahinText6": "Advanced Target Tracking",
+  "SahinMainText": "ŞAHİN performs real-time data processing and analysis over images by integrating with imaging systems in UAVs and armored vehicles."
 }

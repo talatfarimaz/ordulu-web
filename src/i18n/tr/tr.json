@@ -88,5 +88,21 @@
   "contact": "İLETİŞİM",
   "press": "BASIN ODASI",
   "society": "BİLGİ TOPLUMU HİZMETLERİ",
-  "PlayVideo": "Videoyu Oynat"
+  "PlayVideo": "Videoyu Oynat",
+  "KuzgunText1": "Düşük Bant Genişliği",
+  "KuzgunText2": "Uçtan Uca Şifreleme",
+  "KuzgunText3": "Paket Filtreleme Çözümü",
+  "KuzgunText4": "Tek Yönlü Veri Aktarımı",
+  "KuzgunText5": "Uzaktan Güncelleme",
+  "KuzgunText6": "Etkin Yayın ve Cihaz Yönetimi",
+  "KuzgunMainText": "KUZGUN, hava ve kara araçlarından alınan canlı yayınları güvenli ağdan mobil internet ağına uçtan uça şifreli bir şekilde anlık olarak aktarımını sağlayan bir sistemdir.",
+  "SahinText1": "Gerçek Zamanlı Video İşleme",
+  "SahinText2": "Hareket Algılama",
+  "SahinText3": "Nesne Sınıflandırma",
+  "SahinText4": "Coğrafi İndexleme",
+  "SahinText5": "Arşiv Görüntü Kıymetlendirme",
+  "SahinText6": "Gelişmiş Hedef Takibi",
+  "SahinMainText": "ŞAHİN, İHA’larda ve zırhlı araçlarda bulunan görüntüleme sistemlerine entegre olarak görüntüler üzerinden gerçek zamanlı veri işleme ve analizler gerçekleştirmektedir."
+
+
 }
