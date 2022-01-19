@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/mailsender/mail-sender.iml" filepath="$PROJECT_DIR$/mailsender/mail-sender.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ordulu-web.iml" filepath="$PROJECT_DIR$/.idea/ordulu-web.iml" />
     </modules>
   </component>

@@ -524,7 +524,16 @@ const AppContentStyle = makeStyles(theme => ({
             opacity: 0,
             transform: "translateY(-200%)"
         }
-    }
+    },
+    backdrop: {
+        backgroundColor: "rgb(0 0 0 / 80%) !important"
+    },
+    paper: {},
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 }));
 
 export default AppContentStyle;

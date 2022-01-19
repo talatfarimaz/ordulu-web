@@ -7,6 +7,7 @@ import contact2 from "../../assets/images/contact2.png";
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import DefaultTheme from "../../Themes/DefaultTheme";
 import MaskedInput from "react-text-mask";
+import axios from "axios";
 
 function TextMaskCustom(props) {
     const {inputRef, ...other} = props;
@@ -33,6 +34,19 @@ function ContactSectionOne() {
     const [message, setMessage] = React.useState(null);
     const [checked, setChecked] = React.useState(false);
 
+    const handleSendMail = () => {
+        axios.post('/mail/sendcontactmail', {
+            nameSurname: nameSurname,
+            email: email,
+            phone: phone,
+            subject: subject,
+            message: message
+        }).then(function (response) {
+            console.log("fdsfds")
+        }).catch(function (error) {
+            console.log("fdsfds")
+        })
+    }
     return (
         <div className={classes.sectionOneBackground}>
             <Hidden smUp>
@@ -188,7 +202,7 @@ function ContactSectionOne() {
                     <Grid item md={4} sm={6} xs={12}/>
                     <Grid item md={4} sm={6} xs={12}>
                         <div className={classes.sendButton}>
-                            <Button variant={"contained"} color={"secondary"} endIcon={<SendOutlinedIcon/>}>
+                            <Button variant={"contained"} color={"secondary"} endIcon={<SendOutlinedIcon/>} onClick={handleSendMail}>
                                 <Typography className={classes.buttonText}>
                                     {t('SenMessage')}
                                 </Typography>
