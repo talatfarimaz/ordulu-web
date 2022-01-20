@@ -102,7 +102,29 @@
   "SahinText4": "Coğrafi İndexleme",
   "SahinText5": "Arşiv Görüntü Kıymetlendirme",
   "SahinText6": "Gelişmiş Hedef Takibi",
-  "SahinMainText": "ŞAHİN, İHA’larda ve zırhlı araçlarda bulunan görüntüleme sistemlerine entegre olarak görüntüler üzerinden gerçek zamanlı veri işleme ve analizler gerçekleştirmektedir."
-
-
+  "SahinMainText": "ŞAHİN, İHA’larda ve zırhlı araçlarda bulunan görüntüleme sistemlerine entegre olarak görüntüler üzerinden gerçek zamanlı veri işleme ve analizler gerçekleştirmektedir.",
+  "ArzText1": "Vektör ve Raster Katman",
+  "ArzText2": "Adres Bilgi Sistemi",
+  "ArzText3": "3D Küre Üzerinde Arazi Modeli",
+  "ArzText4": "Yetkilendirme Mekanizması",
+  "ArzText5": "Gerçek Uydu Görüntüleri",
+  "ArzText6": "Uçuş Simulasyonu",
+  "ArzMainText": "ARZ, Coğrafi Bilgi Sistemi yeni nesil 3 Boyutlu sanal küre uygulamasıdır. ARZ Coğrafi Bilgi Sistemi esnek yapısı ve kolay yönetilebilir arayüzü ile savunma teknolojileri alanında CBS ihtiyaçlarına çözüm sağlamaktadır.",
+  "GamText1": "Canlı Yayın Akışı",
+  "GamText2": "Video Arşivleme",
+  "GamText3": "Kullanıcı Yetkilendirme",
+  "GamText4": "Güvenlik ve Sızma Engelleme",
+  "GamText5": "Olay Yönetimi",
+  "GamText6": "Kolay ve Etkin Sistem Yönetimi",
+  "GamMainText": "Hava ve kara araçların da, operasyon faaliyetlerinden önce yetkili personel tarafından kullanıcı bazlı izin verilerek bu sürecin yönetimini kullanıcı dostu arayüzü sayesinde hızlı bir şekilde gerçekleştirilebilmektedir.",
+  "UlakText1": "Genel ve Özel Bulut",
+  "UlakText2": "Sesli ve Görüntülü Konuşma",
+  "UlakText3": "Anlık Mesajlaşma",
+  "UlakText4": "Milli Mühendislik",
+  "UlakText5": "Konferans Görüşme",
+  "UlakText6": "Güvenli Mesajlaşma",
+  "UlakMainText": "ULAK.IM yerli ve milli kaynaklar ile geliştirilen anlık mesajlaşma uygulamasıdır. Bilgi gizliliği ve güvenliğinin ön planda olduğu çağımızda,yabancı menşeli uygulamalara alternatif olarak geliştirilen ULAK.IM bilginin ülke dışına çıkmasını engelleyerek iletişim güvenliğini ve gizliliğini sağlamaktadır.",
+  "Podcast1": "#T3PODCAST 17. BÖLÜM:",
+  "Podcast2": "YAPAY ZEKANIN CAN SUYU: BÜYÜK VERİ",
+  "Podcast3": "NİZAMEDDİN ORDULU"
 }

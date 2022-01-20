@@ -4,7 +4,7 @@ import React from "react";
 import kazim from '../../assets/images/kazım.png';
 import nizam from '../../assets/images/nizam.png';
 
-import {Backdrop, Button, CardActionArea, Dialog, Fade, Grid, Typography} from "@material-ui/core";
+import {Backdrop, Button, CardActionArea, Dialog, Fade, Grid, Link, Typography} from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import ReactPlayer from "react-player";
 import classNames from "classnames";
@@ -42,14 +42,14 @@ function MainPageSectionTwo() {
                 <Fade in={open}>
                     <div
                         className="embed-responsive embed-responsive-16by9"
-                        style={{ borderRadius: "4px" }}
+                        style={{borderRadius: "4px"}}
                     >
                         <iframe
                             className="embed-responsive-item"
-                            src={"https://www.youtube.com/embed/" + "YUsSLDgFsQQ" + "?rel=0"}                            allowFullScreen={true}
+                            src={"https://www.youtube.com/embed/" + "YUsSLDgFsQQ" + "?rel=0"} allowFullScreen={true}
                         />
                     </div>
-      {/*              <iframe className="embed-responsive-item"
+                    {/*              <iframe className="embed-responsive-item"
                             src={"https://www.youtube.com/embed/" + "YUsSLDgFsQQ" + "?rel=0"}
                             allowFullScreen></iframe>*/}
                     {/*<ReactPlayer
@@ -76,21 +76,26 @@ function MainPageSectionTwo() {
                     <Typography className={classes.orduluInfo}>
                         {t('OrduluInfo')}
                     </Typography>
-                    <Button color={"secondary"} variant={"contained"} className={classes.alignRight} endIcon={<ArrowForwardIosIcon/>}>
+                    <Button color={"secondary"} variant={"contained"} className={classes.alignRight} href={"/careerandlife"}
+                            endIcon={<ArrowForwardIosIcon/>}>
                         <Typography>
                             {t('InspectALl')}
                         </Typography>
                     </Button>
                 </Grid>
                 <Grid item md={4} sm={4} xs={12}>
-                    <CardActionArea>
-                    <img src={kazim} alt="" className={classes.sectionTwoImg}/>
-                    </CardActionArea>
+                    <Link href="/blog#reportage1">
+                        <CardActionArea>
+                            <img src={kazim} alt="" className={classes.sectionTwoImg}/>
+                        </CardActionArea>
+                    </Link>
                 </Grid>
                 <Grid item md={4} sm={4} xs={12}>
-                    <CardActionArea onClick={handleOpen}>
-                    <img src={nizam} alt="" className={classes.sectionTwoImg}/>
-                    </CardActionArea>
+                    <Link href="/blog#reportage2">
+                        <CardActionArea>
+                            <img src={nizam} alt="" className={classes.sectionTwoImg}/>
+                        </CardActionArea>
+                    </Link>
                 </Grid>
             </Grid>
             {handleGetModal()}

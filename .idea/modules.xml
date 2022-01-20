@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mailsender/mail-sender.iml" filepath="$PROJECT_DIR$/mailsender/mail-sender.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ordulu-web.iml" filepath="$PROJECT_DIR$/.idea/ordulu-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mail-sender/spring-boot-hibernate.iml" filepath="$PROJECT_DIR$/mail-sender/spring-boot-hibernate.iml" />
     </modules>
   </component>
 </project>

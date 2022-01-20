@@ -1,11 +1,14 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 import AppContentStyle from "../../Styles/AppContentStyle";
-import {Grid, Typography} from "@material-ui/core";
+import {Grid, Link, Typography} from "@material-ui/core";
 import mainImg from '../../assets/images/mainImg.png';
 import mainImg2 from '../../assets/images/mainImg2.png';
 import akinci1 from '../../assets/images/akinci1.png';
 import akinci2 from '../../assets/images/akinci2.png';
+import akinciBackground from '../../assets/images/akıncıBackground.png';
+import kuzgunBackground from '../../assets/images/kuzgunBackground.png';
+import sahinBackground from '../../assets/images/sahinBackground.png';
 import ulak from '../../assets/images/ulak.png';
 import arz from '../../assets/images/arz.png';
 import sahin from '../../assets/images/sahin.png';
@@ -30,6 +33,7 @@ function MainPageSectionOne() {
     const [arz, setArz] = React.useState(false);
     const [ulak, setUlak] = React.useState(false);
     const [gam, setGam] = React.useState(false);
+    const [backgroundImg, setBackgroundImg] = React.useState(akinciBackground);
 
     const handleChangeWidthAndHeight = (event) => {
         if (event.target.id !== "" && event.target.id !== null) {
@@ -59,99 +63,113 @@ function MainPageSectionOne() {
         if (changeImg) {
             return (
                 <div style={{position: "relative"}}>
-                    <img src={mainImg2} alt="" className={classes.mainImgStyle}/>
-                    <div id={"akinci2"} className={classes.akinci2}/>
-                    <div id={"akinci1"} className={classes.akinci1}/>
-                    <div id={"kuzgun"} onMouseEnter={(event) => {
-                        handleChangeWidthAndHeight(event)
-                        setKuzgun(true)
-                    }}
-                         onMouseLeave={(event) => {
-                             handleResetWidthAndHeight(event)
-                             setKuzgun(false)
-                         }} className={classes.kuzgun}>
-                        {kuzgun &&
-                            <div className={classes.productNameDiv}>
-                                <Typography className={classes.productName}>
-                                    KUZGUN
-                                </Typography>
-                                <Typography className={classes.productDef}>
-                                    {t('Kuzgun')}
-                                </Typography>
-                            </div>}
-                    </div>
-                    <div id={"gam"} onMouseEnter={(event) => {
-                        handleChangeWidthAndHeight(event)
-                        setGam(true)
-                    }}
-                         onMouseLeave={(event) => {
-                             handleResetWidthAndHeight(event)
-                             setGam(false)
-                         }} className={classes.gam}>
-                        {gam &&
-                            <div className={classes.productNameDiv}>
-                                <Typography className={classes.productName}>
-                                    GAM
-                                </Typography>
-                                <Typography className={classes.productDef}>
-                                    {t('Gam')}
-                                </Typography>
-                            </div>}
-                    </div>
-                    <div id={"arz"} onMouseEnter={(event) => {
-                        handleChangeWidthAndHeight(event)
-                        setArz(true)
-                    }}
-                         onMouseLeave={(event) => {
-                             handleResetWidthAndHeight(event)
-                             setArz(false)
-                         }} className={classes.arz}>
-                        {arz &&
-                            <div className={classes.productNameDiv}>
-                                <Typography className={classes.productName}>
-                                    ARZ
-                                </Typography>
-                                <Typography className={classes.productDef}>
-                                    {t('Arz')}
-                                </Typography>
-                            </div>}
-                    </div>
-                    <div id={"sahin"} onMouseEnter={(event) => {
-                        handleChangeWidthAndHeight(event)
-                        setSahin(true)
-                    }}
-                         onMouseLeave={(event) => {
-                             handleResetWidthAndHeight(event)
-                             setSahin(false)
-                         }} className={classes.sahin}>
-                        {sahin &&
-                            <div className={classes.productNameDiv}>
-                                <Typography className={classes.productName}>
-                                    ŞAHİN
-                                </Typography>
-                                <Typography className={classes.productDef}>
-                                    {t('Şahin')}
-                                </Typography>
-                            </div>}
-                    </div>
-                    <div id={"ulak"} onMouseEnter={(event) => {
-                        handleChangeWidthAndHeight(event)
-                        setUlak(true)
-                    }}
-                         onMouseLeave={(event) => {
-                             handleResetWidthAndHeight(event)
-                             setUlak(false)
-                         }} className={classes.ulak}>
-                        {ulak &&
-                            <div className={classes.productNameDiv}>
-                                <Typography className={classes.productName}>
-                                    ULAK
-                                </Typography>
-                                <Typography className={classes.productDef}>
-                                    {t('Ulak')}
-                                </Typography>
-                            </div>}
-                    </div>
+                    <img src={backgroundImg} alt="" className={classes.mainImgStyle}/>
+                   {/* <div id={"akinci2"} className={classes.akinci2}/>
+                    <div id={"akinci1"} className={classes.akinci1}/>*/}
+                    <Link href="/products#kuzgunproduct">
+                        <div id={"kuzgun"} onMouseEnter={(event) => {
+                            handleChangeWidthAndHeight(event)
+                            setKuzgun(true)
+                            setBackgroundImg(kuzgunBackground)
+                        }}
+                             onMouseLeave={(event) => {
+                                 handleResetWidthAndHeight(event)
+                                 setKuzgun(false)
+                                 setBackgroundImg(akinciBackground)
+                             }} className={classes.kuzgun}>
+                            {kuzgun &&
+                                <div className={classes.productNameDiv}>
+                                    <Typography className={classes.productName}>
+                                        KUZGUN
+                                    </Typography>
+                                    <Typography className={classes.productDef}>
+                                        {t('Kuzgun')}
+                                    </Typography>
+                                </div>}
+                        </div>
+                    </Link>
+                    <Link href="/products#gamproduct">
+                        <div id={"gam"} onMouseEnter={(event) => {
+                            handleChangeWidthAndHeight(event)
+                            setGam(true)
+                        }}
+                             onMouseLeave={(event) => {
+                                 handleResetWidthAndHeight(event)
+                                 setGam(false)
+                             }} className={classes.gam}>
+                            {gam &&
+                                <div className={classes.productNameDiv}>
+                                    <Typography className={classes.productName}>
+                                        GAM
+                                    </Typography>
+                                    <Typography className={classes.productDef}>
+                                        {t('Gam')}
+                                    </Typography>
+                                </div>}
+                        </div>
+                    </Link>
+                    <Link href="/products#arzproduct">
+                        <div id={"arz"} onMouseEnter={(event) => {
+                            handleChangeWidthAndHeight(event)
+                            setArz(true)
+                        }}
+                             onMouseLeave={(event) => {
+                                 handleResetWidthAndHeight(event)
+                                 setArz(false)
+                             }} className={classes.arz}>
+                            {arz &&
+                                <div className={classes.productNameDiv}>
+                                    <Typography className={classes.productName}>
+                                        ARZ
+                                    </Typography>
+                                    <Typography className={classes.productDef}>
+                                        {t('Arz')}
+                                    </Typography>
+                                </div>}
+                        </div>
+                    </Link>
+                    <Link href="/products#sahinproduct">
+                        <div id={"sahin"} onMouseEnter={(event) => {
+                            handleChangeWidthAndHeight(event)
+                            setSahin(true)
+                            setBackgroundImg(sahinBackground)
+                        }}
+                             onMouseLeave={(event) => {
+                                 handleResetWidthAndHeight(event)
+                                 setSahin(false)
+                                 setBackgroundImg(akinciBackground)
+                             }} className={classes.sahin}>
+                            {sahin &&
+                                <div className={classes.productNameDiv}>
+                                    <Typography className={classes.productName}>
+                                        ŞAHİN
+                                    </Typography>
+                                    <Typography className={classes.productDef}>
+                                        {t('Şahin')}
+                                    </Typography>
+                                </div>}
+                        </div>
+                    </Link>
+                    <Link href="/products#ulakproduct">
+                        <div id={"ulak"} onMouseEnter={(event) => {
+                            handleChangeWidthAndHeight(event)
+                            setUlak(true)
+                        }}
+                             onMouseLeave={(event) => {
+                                 handleResetWidthAndHeight(event)
+                                 setUlak(false)
+                             }} className={classes.ulak}>
+                            {ulak &&
+                                <div className={classes.productNameDiv}>
+                                    <Typography className={classes.productName}>
+                                        ULAK
+                                    </Typography>
+                                    <Typography className={classes.productDef}>
+                                        {t('Ulak')}
+                                    </Typography>
+                                </div>}
+                        </div>
+                    </Link>
                     <div className={classes.mediaIcons}>
                         <Grid container spacing={1}>
                             <Grid item xs={4}>

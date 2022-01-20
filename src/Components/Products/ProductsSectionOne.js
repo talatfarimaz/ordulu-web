@@ -21,7 +21,7 @@ import greyulak from "../../assets/images/products/ulak.png";
 import Carousel from "react-material-ui-carousel";
 
 
-function ProductsSectionOne() {
+function ProductsSectionOne(props) {
     const {t} = useTranslation();
     const classes = ProductsStyle();
     const [open, setOpen] = React.useState(false);
@@ -44,6 +44,9 @@ function ProductsSectionOne() {
         setOpen(false);
     };
 
+    const handleGoSelectedProduct = (selectedProduct) => {
+        props.handleGoSelectedProduct(selectedProduct)
+    }
 
     const handleGetModal = () => {
         return (
@@ -95,53 +98,62 @@ function ProductsSectionOne() {
                             <Grid container spacing={4} className={classes.productGridWeb}>
                                 <Grid item sm={1}/>
                                 <Grid item sm={2}>
-                                    <img src={kuzgun} alt={""} width={"100%"} id={"kuzgun"}
-                                         onMouseEnter={(event) => {
-                                             setKuzgun(kuzgunlogo)
-                                         }}
+                                    <img src={kuzgun} alt={""} width={"100%"} onMouseEnter={(event) => {
+                                        setKuzgun(kuzgunlogo)
+                                    }}
                                          onMouseLeave={(event) => {
                                              setKuzgun(greykuzgun)
                                          }}
+                                         onClick={() =>
+                                             handleGoSelectedProduct("kuzgunproduct")}
                                     />
                                 </Grid>
                                 <Grid item sm={2}>
-                                    <img src={gam} alt={""} width={"100%"} id={"gam"}
+                                    <img src={gam} alt={""} width={"100%"}
                                          onMouseEnter={(event) => {
                                              setGam(gamlogo)
                                          }}
                                          onMouseLeave={(event) => {
                                              setGam(greygam)
                                          }}
+                                         onClick={() =>
+                                             handleGoSelectedProduct("gamproduct")}
                                     />
                                 </Grid>
                                 <Grid item sm={2}>
-                                    <img src={sahin} alt={""} width={"100%"} id={"sahin"}
+                                    <img src={sahin} alt={""} width={"100%"}
                                          onMouseEnter={(event) => {
                                              setSahin(sahinlogo)
                                          }}
                                          onMouseLeave={(event) => {
                                              setSahin(greysahin)
                                          }}
+                                         onClick={() =>
+                                             handleGoSelectedProduct("sahinproduct")}
                                     />
                                 </Grid>
                                 <Grid item sm={2}>
-                                    <img src={arz} alt={""} width={"100%"} id={"arz"}
+                                    <img src={arz} alt={""} width={"100%"}
                                          onMouseEnter={(event) => {
                                              setArz(arzlogo)
                                          }}
                                          onMouseLeave={(event) => {
                                              setArz(greyarz)
                                          }}
+                                         onClick={() =>
+                                             handleGoSelectedProduct("arzproduct")}
                                     />
                                 </Grid>
                                 <Grid item sm={2}>
-                                    <img src={ulak} alt={""} width={"100%"} id={"ulak"}
+                                    <img src={ulak} alt={""} width={"100%"}
                                          onMouseEnter={(event) => {
                                              setUlak(ulaklogo)
                                          }}
                                          onMouseLeave={(event) => {
                                              setUlak(greyulak)
                                          }}
+                                         onClick={() =>
+                                             handleGoSelectedProduct("ulakproduct")}
                                     />
                                 </Grid>
                                 <Grid item sm={1}/>

@@ -41,18 +41,90 @@ const ProductsStyle = makeStyles(theme => ({
             top: "0%",
         },
     },
-    mainDiv3: {
+    mainDiv2Mobile: {
         position: "absolute",
-        top: "64%",
-        left: "19%",
-        right: "14%",
+        top: "25%",
+        left: "13%",
+        right: "13%",
         [theme.breakpoints.down('sm')]: {
             top: "25%",
+        },
+        [theme.breakpoints.only('xs')]: {
+            top: "7%",
+        },
+    },
+    mainDiv2Mobile2: {
+        position: "absolute",
+        top: "25%",
+        left: "13%",
+        right: "13%",
+        [theme.breakpoints.down('sm')]: {
+            top: "25%",
+        },
+        [theme.breakpoints.only('xs')]: {
+            top: "5%",
+        },
+    },
+    mainDiv2Mobile3: {
+        position: "absolute",
+        top: "25%",
+        left: "13%",
+        right: "10%",
+        [theme.breakpoints.down('sm')]: {
+            top: "25%",
+        },
+        [theme.breakpoints.only('xs')]: {
+            top: "5%",
+        },
+    },
+    mainDiv3: {
+        position: "absolute",
+        top: "38%",
+        left: "14%",
+        right: "14%",
+        [theme.breakpoints.down('sm')]: {
+            top: "38%",
         },
         [theme.breakpoints.only('xs')]: {
             top: "0%",
         },
         textAlign: "right"
+    },
+    mainDiv4: {
+        position: "absolute",
+        top: "35%",
+        left: "13%",
+        right: "13%",
+        [theme.breakpoints.down('sm')]: {
+            top: "38%",
+        },
+        [theme.breakpoints.only('xs')]: {
+            top: "0%",
+        },
+    },
+    mainDiv5: {
+        position: "absolute",
+        top: "30%",
+        left: "13%",
+        right: "13%",
+        [theme.breakpoints.down('sm')]: {
+            top: "27%",
+        },
+        [theme.breakpoints.only('xs')]: {
+            top: "0%",
+        },
+    },
+    mainDiv6: {
+        position: "absolute",
+        top: "35%",
+        left: "13%",
+        right: "13%",
+        [theme.breakpoints.down('sm')]: {
+            top: "32%",
+        },
+        [theme.breakpoints.only('xs')]: {
+            top: "0%",
+        },
     },
     playIcon: {
         color: DefaultTheme.palette.secondary.contrastText,
@@ -146,7 +218,8 @@ const ProductsStyle = makeStyles(theme => ({
             fontSize: "7px !important",
         },
         [theme.breakpoints.only('xs')]: {
-            fontSize: "6px !important",
+            fontSize: "7px !important",
+            fontWeight: "unset  !important",
         },
     },
     iconText2: {
@@ -160,7 +233,10 @@ const ProductsStyle = makeStyles(theme => ({
             fontSize: "10px !important",
         },
         [theme.breakpoints.only('xs')]: {
-            fontSize: "8px !important",
+            fontSize: "10px !important",
+        },
+        "@media screen and (max-width: 600px) and (min-width: 450px)": {
+            fontSize: "12px !important",
         },
         "@media screen and (max-width: 1600px) and (min-width: 1280px)": {
             fontSize: "14px !important",
@@ -180,7 +256,7 @@ const ProductsStyle = makeStyles(theme => ({
             width: "40%"
         },
         [theme.breakpoints.only('xs')]: {
-            width: "80%"
+            width: "40%"
         },
         "@media screen and (max-width: 1600px) and (min-width: 1280px)": {
             width: "65%"
@@ -189,13 +265,16 @@ const ProductsStyle = makeStyles(theme => ({
     mainLogoGrid: {
         textAlign: "right"
     },
+    mainLogoGridMobile: {
+        textAlign: "center"
+    },
     mainLogoGrid2: {
         textAlign: "left"
     },
     miniIcons: {
         [theme.breakpoints.up('lg')]: {
-            width: "38px",
-            height: "38px"
+            width: "35px",
+            height: "35px"
         },
         [theme.breakpoints.down('md')]: {
             width: "27px",
@@ -206,8 +285,8 @@ const ProductsStyle = makeStyles(theme => ({
             height: "22px"
         },
         [theme.breakpoints.only('xs')]: {
-            width: "38px",
-            height: "38px"
+            width: "25px",
+            height: "25px"
         },
         "@media screen and (max-width: 1600px) and (min-width: 1280px)": {
             width: "30px",
@@ -230,6 +309,26 @@ const ProductsStyle = makeStyles(theme => ({
             paddingTop: "1px",
         },
     },
+    mainTextGrid5: {
+        paddingTop: theme.spacing(3),
+        textAlign: "right",
+        "@media screen and (max-width: 1600px) and (min-width: 1280px)": {
+            marginTop: theme.spacing(-1),
+            paddingTop: "unset"
+        },
+        "@media screen and (max-width: 1280px) and (min-width: 960px)": {
+            marginTop: theme.spacing(-1.2),
+            paddingTop: "unset"
+        },
+        [theme.breakpoints.only('sm')]: {
+            paddingTop: "1px",
+        },
+        "@media screen and (max-width: 680px) and (min-width: 600px)": {
+            marginTop: theme.spacing(-1.5),
+            paddingTop: "unset"
+        },
+
+    },
     mainTextGrid4: {
         paddingTop: theme.spacing(5),
         textAlign: "left",
@@ -240,7 +339,7 @@ const ProductsStyle = makeStyles(theme => ({
             paddingTop: "1px",
         },
     },
-    lineStyle : {
+    lineStyle: {
         [theme.breakpoints.down('sm')]: {
             display: "none"
         },
@@ -250,6 +349,13 @@ const ProductsStyle = makeStyles(theme => ({
             marginTop: "-12px"
         }
     },
+    iconsGrid2: {
+        paddingTop: theme.spacing(3),
+        [theme.breakpoints.only('sm')]: {
+            paddingTop: theme.spacing(1),
+        },
+    },
+
     mainTextGrid2: {
         marginRight: theme.spacing(-3.6),
         [theme.breakpoints.down('md')]: {
@@ -257,6 +363,15 @@ const ProductsStyle = makeStyles(theme => ({
         },
         [theme.breakpoints.down('sm')]: {
             marginRight: "unset",
+        },
+    },
+    mainTextGrid3: {
+        marginLeft: theme.spacing(-3.6),
+        [theme.breakpoints.down('md')]: {
+            marginLeft: theme.spacing(-3),
+        },
+        [theme.breakpoints.down('sm')]: {
+            marginLeft: "unset",
         },
     }
 }));

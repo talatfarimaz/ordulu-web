@@ -91,6 +91,26 @@ const BlogStyle = makeStyles(theme => ({
         paddingTop: theme.spacing(1),
         paddingBottom: theme.spacing(1),
     },
+    podcastText: {
+        textAlign: "center"
+    }
+    ,
+    questionTitle2: {
+        fontSize: "30px !important",
+        color: DefaultTheme.palette.inherit.main,
+        fontWeight: "bolder !important",
+        [theme.breakpoints.down('md')]: {
+            fontSize: "25px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "20px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "16px !important",
+        },
+        paddingTop: theme.spacing(1),
+        paddingBottom: theme.spacing(1),
+    },
     question: {
         fontSize: "18px !important",
         color: DefaultTheme.palette.inherit.main,
@@ -228,7 +248,21 @@ const BlogStyle = makeStyles(theme => ({
             opacity: 0
         }
     },
-    focusHighlight: {}
+    focusHighlight: {},
+    podcastGrid: {
+        paddingTop: theme.spacing(12)
+    },
+    underline: {
+        '&:before': {
+            borderBottom: '1px solid rgba(255, 133, 51, 0.42)'
+        },
+        '&:after': {
+            borderBottom: `2px solid ${theme.palette.secondary.main}`
+        },
+        '&:hover:not($disabled):not($focused):not($error):before': {
+            borderBottom: `2px solid ${theme.palette.secondary.main}`
+        }
+    }
 }));
 
 export default BlogStyle;
