@@ -9,7 +9,7 @@ import CareerAndLifeSectionFive from "./CareerAndLife/CareerAndLifeSectionFive";
 function CareerAndLife() {
     const classes = CareerAndLifeStyle();
     return (
-        <div className={classes.bodyDivStyle}>
+        <div className={classes.bodyDivStyle} id={"career"}>
             <CareerAndLifeSectionOne/>
             <CareerAndLifeSectionTwo/>
             <CareerAndLifeSectionThree/>

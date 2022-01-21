@@ -26,6 +26,7 @@ function AppNavbar(props) {
     const [anchorElMenu, setAnchorElMenu] = React.useState(null);
     const [activeLanguage, setActiveLanguage] = React.useState(i18n.language);
     const [anchorElMobile, setAnchorElMobile] = React.useState(null);
+    const [activeTab, setActiveTab] = React.useState(window.location.pathname);
     const changeLanguageSelection = (lng) => {
         i18n.changeLanguage(lng);
         setActiveLanguage(lng);
@@ -249,11 +250,14 @@ function AppNavbar(props) {
                                                 __Event.target.style.color = DefaultTheme.palette.secondary.main
                                             }}
                                             onMouseOut={(__Event) => {
-                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                if (activeTab !== "/") {
+                                                    __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                }
                                             }}
                                             href={'/'}
                                         >
-                                            <Typography className={classes.tabFont}>
+                                            <Typography
+                                                className={activeTab === "/" ? classes.tabFont2 : classes.tabFont}>
                                                 {t('MainPage')}
                                             </Typography>
                                         </Link>
@@ -266,11 +270,14 @@ function AppNavbar(props) {
                                                 __Event.target.style.color = DefaultTheme.palette.secondary.main
                                             }}
                                             onMouseOut={(__Event) => {
-                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                if (activeTab !== "/products") {
+                                                    __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                }
                                             }}
                                             href={'/products'}
                                         >
-                                            <Typography className={classes.tabFont}>
+                                            <Typography
+                                                className={activeTab === "/products" ? classes.tabFont2 : classes.tabFont}>
                                                 {t('Products')}
                                             </Typography>
                                         </Link>
@@ -283,11 +290,14 @@ function AppNavbar(props) {
                                                 __Event.target.style.color = DefaultTheme.palette.secondary.main
                                             }}
                                             onMouseOut={(__Event) => {
-                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                if (activeTab !== "/careerandlife") {
+                                                    __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                }
                                             }}
                                             href={'/careerandlife'}
                                         >
-                                            <Typography className={classes.tabFont}>
+                                            <Typography
+                                                className={activeTab === "/careerandlife" ? classes.tabFont2 : classes.tabFont}>
                                                 {t('CareerLife')}
                                             </Typography>
                                         </Link>
@@ -300,11 +310,14 @@ function AppNavbar(props) {
                                                 __Event.target.style.color = DefaultTheme.palette.secondary.main
                                             }}
                                             onMouseOut={(__Event) => {
-                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                if (activeTab !== "/blog") {
+                                                    __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                }
                                             }}
                                             href={'/blog'}
                                         >
-                                            <Typography className={classes.tabFont}>
+                                            <Typography
+                                                className={activeTab === "/blog" ? classes.tabFont2 : classes.tabFont}>
                                                 {t('Blog')}
                                             </Typography>
                                         </Link>
@@ -317,11 +330,14 @@ function AppNavbar(props) {
                                                 __Event.target.style.color = DefaultTheme.palette.secondary.main
                                             }}
                                             onMouseOut={(__Event) => {
-                                                __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                if (activeTab !== "/contact") {
+                                                    __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                }
                                             }}
                                             href={'/contact'}
                                         >
-                                            <Typography className={classes.tabFont}>
+                                            <Typography
+                                                className={activeTab === "/contact" ? classes.tabFont2 : classes.tabFont}>
                                                 {t('Contact')}
                                             </Typography>
                                         </Link>
@@ -357,7 +373,7 @@ function AppNavbar(props) {
                                                 changeLanguageSelection(LanguagesEnum.English);
                                                 handleClose()
                                             }}>
-                                                <Typography>
+                                                <Typography style={{fontWeight: "bolder",fontSize: "11px"}}>
                                                     {LanguagesEnum.English}
                                                 </Typography>
                                             </MenuItem>
@@ -365,7 +381,7 @@ function AppNavbar(props) {
                                                 changeLanguageSelection(LanguagesEnum.Turkish);
                                                 handleClose()
                                             }}>
-                                                <Typography>
+                                                <Typography style={{fontWeight: "bolder",fontSize: "11px"}}>
                                                     {LanguagesEnum.Turkish}
                                                 </Typography>
                                             </MenuItem>

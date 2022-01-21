@@ -23,6 +23,9 @@ import QueuePlayNextOutlinedIcon from '@material-ui/icons/QueuePlayNextOutlined'
 import SettingsInputComponentOutlinedIcon from '@material-ui/icons/SettingsInputComponentOutlined';
 import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
 import FormatShapesIcon from '@material-ui/icons/FormatShapes';
+import twitter from "../../assets/images/twitter.png";
+import linkedin from "../../assets/images/linkedin.png";
+import youtube from "../../assets/images/youtube.png";
 
 function MainPageSectionOne() {
     const {t} = useTranslation();
@@ -64,7 +67,7 @@ function MainPageSectionOne() {
             return (
                 <div style={{position: "relative"}}>
                     <img src={backgroundImg} alt="" className={classes.mainImgStyle}/>
-                   {/* <div id={"akinci2"} className={classes.akinci2}/>
+                    {/* <div id={"akinci2"} className={classes.akinci2}/>
                     <div id={"akinci1"} className={classes.akinci1}/>*/}
                     <Link href="/products#kuzgunproduct">
                         <div id={"kuzgun"} onMouseEnter={(event) => {
@@ -173,17 +176,19 @@ function MainPageSectionOne() {
                     <div className={classes.mediaIcons}>
                         <Grid container spacing={1}>
                             <Grid item xs={4}>
-                                <IconButton>
+                                <IconButton href={"https://www.linkedin.com/company/ordulu-bilgi/?originalSubdomain=tr"}
+                                            target={"blank"}>
                                     <LinkedInIcon className={classes.mediaIconStyle}/>
                                 </IconButton>
                             </Grid>
                             <Grid item xs={4}>
-                                <IconButton>
+                                <IconButton href={"https://www.youtube.com/channel/UCxmWID88tzpiAUCBv7A29NQ"}
+                                            target={"blank"}>
                                     <YouTubeIcon className={classes.mediaIconStyle}/>
                                 </IconButton>
                             </Grid>
                             <Grid item xs={4}>
-                                <IconButton>
+                                <IconButton href={"https://twitter.com/ordulutech"} target={"blank"}>
                                     <TwitterIcon className={classes.mediaIconStyle}/>
                                 </IconButton>
                             </Grid>

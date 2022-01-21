@@ -262,7 +262,15 @@ const BlogStyle = makeStyles(theme => ({
         '&:hover:not($disabled):not($focused):not($error):before': {
             borderBottom: `2px solid ${theme.palette.secondary.main}`
         }
-    }
+    },
+    backdrop: {
+        backgroundColor: "rgb(0 0 0 / 80%) !important"
+    },
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 }));
 
 export default BlogStyle;

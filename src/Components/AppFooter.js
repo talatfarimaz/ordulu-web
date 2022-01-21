@@ -12,6 +12,7 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import HomeIcon from '@material-ui/icons/Home';
 import classNames from "classnames";
 import Contracts from "./Contracts";
+import IconButton from "@material-ui/core/IconButton";
 
 
 function AppFooter() {
@@ -39,9 +40,18 @@ function AppFooter() {
                           justifyContent="center"
                           alignItems="center">
                         <Grid item xs={12}>
-                            <img src={twitter} alt="" className={classes.footerIcons}/>
-                            <img src={linkedin} alt="" className={classes.footerIcons}/>
-                            <img src={youtube} alt="" className={classes.footerIcons}/>
+                            <IconButton href={"https://twitter.com/ordulutech"} target={"blank"}>
+                                <img src={twitter} alt="" className={classes.footerIcons}/>
+
+                            </IconButton>
+                            <IconButton href={"https://www.linkedin.com/company/ordulu-bilgi/?originalSubdomain=tr"} target={"blank"}>
+                                <img src={linkedin} alt="" className={classes.footerIcons}/>
+
+                            </IconButton>
+                            <IconButton href={"https://www.youtube.com/channel/UCxmWID88tzpiAUCBv7A29NQ"} target={"blank"}>
+                                <img src={youtube} alt="" className={classes.footerIcons}/>
+
+                            </IconButton>
                         </Grid>
                         <Grid item xs={12}>
                             <Typography className={classes.copyRight}>

@@ -1,7 +1,7 @@
 import {useTranslation} from "react-i18next";
 import AppContentStyle from "../../Styles/AppContentStyle";
 import React from "react";
-import {Grid, Typography} from "@material-ui/core";
+import {Grid, Hidden, Typography} from "@material-ui/core";
 import cumhur from '../../assets/images/cumhur.png';
 import fors from '../../assets/images/fors.png';
 import katar from '../../assets/images/katar.png';
@@ -53,7 +53,8 @@ function MainPageSectionFour() {
     }
     return (
         <div className={classes.referanceArea}>
-            <Grid container direction="row"
+            <Hidden only={"xs"}>
+                <Grid container direction="row"
                   justifyContent="center"
                   alignItems="center">
                 <Grid item md={12} sm={12} xs={12}>
@@ -61,7 +62,7 @@ function MainPageSectionFour() {
                         {t('References')}
                     </Typography>
                 </Grid>
-                <Grid id={"cumhur"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                <Grid id={"cumhur"} item md={2} sm={3} className={classes.referenceImgText}
                       onMouseEnter={(event) => {
                           handleChangeTextDisplayTrue(event)
                       }}
@@ -74,7 +75,7 @@ function MainPageSectionFour() {
                         {t('Cumhur')}
                     </Typography>}
                 </Grid>
-                <Grid id={"fors"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                <Grid id={"fors"} item md={2} sm={3} className={classes.referenceImgText}
                       onMouseEnter={(event) => {
                           handleChangeTextDisplayTrue(event)
                       }}
@@ -87,7 +88,7 @@ function MainPageSectionFour() {
                         {t('Fors')}
                     </Typography>}
                 </Grid>
-                <Grid id={"katar"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                <Grid id={"katar"} item md={2} sm={3} className={classes.referenceImgText}
                       onMouseEnter={(event) => {
                           handleChangeTextDisplayTrue(event)
                       }}
@@ -100,7 +101,7 @@ function MainPageSectionFour() {
                         {t('Katar')}
                     </Typography>}
                 </Grid>
-                <Grid id={"jandarma"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                <Grid id={"jandarma"} item md={2} sm={3} className={classes.referenceImgText}
                       onMouseEnter={(event) => {
                           handleChangeTextDisplayTrue(event)
                       }}
@@ -113,7 +114,7 @@ function MainPageSectionFour() {
                         {t('Jandarma')}
                     </Typography>}
                 </Grid>
-                <Grid id={"kara"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                <Grid id={"kara"} item md={2} sm={3} className={classes.referenceImgText}
                       onMouseEnter={(event) => {
                           handleChangeTextDisplayTrue(event)
                       }}
@@ -126,7 +127,7 @@ function MainPageSectionFour() {
                         {t('Kara')}
                     </Typography>}
                 </Grid>
-                <Grid id={"deniz"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                <Grid id={"deniz"} item md={2} sm={3} className={classes.referenceImgText}
                       onMouseEnter={(event) => {
                           handleChangeTextDisplayTrue(event)
                       }}
@@ -139,7 +140,7 @@ function MainPageSectionFour() {
                         {t('Deniz')}
                     </Typography>}
                 </Grid>
-                <Grid id={"baykar"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                <Grid id={"baykar"} item md={2} sm={3} className={classes.referenceImgText}
                       onMouseEnter={(event) => {
                           handleChangeTextDisplayTrue(event)
                       }}
@@ -152,7 +153,7 @@ function MainPageSectionFour() {
                         {t('Baykar')}
                     </Typography>}
                 </Grid>
-                <Grid id={"azer"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                <Grid id={"azer"} item md={2} sm={3} className={classes.referenceImgText}
                       onMouseEnter={(event) => {
                           handleChangeTextDisplayTrue(event)
                       }}
@@ -165,7 +166,7 @@ function MainPageSectionFour() {
                         {t('Azer')}
                     </Typography>}
                 </Grid>
-                <Grid id={"ogm"} item md={2} sm={4} xs={6} className={classes.referenceImgText}
+                <Grid id={"ogm"} item md={2} sm={3} className={classes.referenceImgText}
                       onMouseEnter={(event) => {
                           handleChangeTextDisplayTrue(event)
                       }}
@@ -179,6 +180,45 @@ function MainPageSectionFour() {
                     </Typography>}
                 </Grid>
             </Grid>
+            </Hidden>
+            <Hidden smUp>
+                <Grid container direction="row"
+                      justifyContent="center"
+                      alignItems="center">
+                    <Grid item md={12} sm={12} xs={12}>
+                        <Typography className={classes.referenceText}>
+                            {t('References')}
+                        </Typography>
+                    </Grid>
+                    <Grid id={"cumhur"} item md={2} sm={3} className={classes.referenceImgText}>
+                        <img src={cumhur} alt="" className={classes.referanceImg}/>
+                    </Grid>
+                    <Grid id={"fors"} item md={2} sm={3} className={classes.referenceImgText}>
+                        <img src={fors} alt="" className={classes.referanceImg}/>
+                    </Grid>
+                    <Grid id={"katar"} item md={2} sm={3} className={classes.referenceImgText}>
+                        <img src={katar} alt="" className={classes.referanceImg}/>
+                    </Grid>
+                    <Grid id={"jandarma"} item md={2} sm={3} className={classes.referenceImgText}>
+                        <img src={jandarma} alt="" className={classes.referanceImg}/>
+                    </Grid>
+                    <Grid id={"kara"} item md={2} sm={3} className={classes.referenceImgText}>
+                        <img src={kara} alt="" className={classes.referanceImg}/>
+                    </Grid>
+                    <Grid id={"deniz"} item md={2} sm={3} className={classes.referenceImgText}>
+                        <img src={deniz} alt="" className={classes.referanceImg}/>
+                    </Grid>
+                    <Grid id={"baykar"} item md={2} sm={3} className={classes.referenceImgText}>
+                        <img src={baykar} alt="" className={classes.referanceImg}/>
+                    </Grid>
+                    <Grid id={"azer"} item md={2} sm={3} className={classes.referenceImgText}>
+                        <img src={azer} alt="" className={classes.referanceImg}/>
+                    </Grid>
+                    <Grid id={"ogm"} item md={2} sm={3} className={classes.referenceImgText}>
+                        <img src={orman} alt="" className={classes.referanceImg}/>
+                    </Grid>
+                </Grid>
+            </Hidden>
         </div>
     )
 }

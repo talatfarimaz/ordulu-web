@@ -360,7 +360,14 @@ const AppContentStyle = makeStyles(theme => ({
     },
     referanceImg: {
         marginTop: "10px",
-        height: "140px"
+        height: "140px",
+        [theme.breakpoints.only('sm')]: {
+            height: "120px",
+        },
+        [theme.breakpoints.only('xs')]: {
+            height: "60px",
+            padding: "10px"
+        },
     },
     referenceText: {
         fontSize: "50px !important",
@@ -379,13 +386,20 @@ const AppContentStyle = makeStyles(theme => ({
         fontSize: "11px !important",
         color: DefaultTheme.palette.secondary.contrastText,
         fontWeight: "bold",
-        margin: "10px"
+        margin: "10px",
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "9px !important",
+            fontWeight: "unset !important",
+        },
     },
     referenceImgText: {
         marginTop: "10px",
         marginBottom: "10px",
         height: "200px",
-        borderRadius: "4px"
+        borderRadius: "4px",
+        [theme.breakpoints.only('xs')]: {
+            height: "80px",
+        },
     },
     pageFiveImg1: {
         position: "relative"

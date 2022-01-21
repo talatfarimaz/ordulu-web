@@ -94,6 +94,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
         return (
             <Grid item xs={12} style={{position: "relative"}} id="kuzgunproduct">
                 <img src={kuzgun} width={"100%"} alt={""}/>
+{/*
                 <div className={classes.mainDiv2}>
                     <Grid container direction="column"
                           justifyContent="flex-end"
@@ -141,6 +142,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                         </Grid>
                     </Grid>
                 </div>
+*/}
             </Grid>
         )
     }
@@ -187,6 +189,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
         return (
             <Grid item xs={12} style={{position: "relative"}} id="sahinproduct">
                 <img src={sahin} width={"100%"} alt={""}/>
+{/*
                 <div className={classes.mainDiv3}>
                     <Grid container direction="column"
                           justifyContent="flex-start"
@@ -232,14 +235,15 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                                 </Grid>
                                 <Grid item md={5} sm={2} xs={2} className={classes.emptyGrid}>
                                 </Grid>
-                                {/*     <Grid item md={1} sm={1} xs={1} >
+                                     <Grid item md={1} sm={1} xs={1} >
                                         <img src={line} alt={""}/>
-                                    </Grid>*/}
+                                    </Grid>
                             </Grid>
                         </Grid>
 
                     </Grid>
                 </div>
+*/}
             </Grid>
         )
     }
@@ -286,6 +290,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
         return (
             <Grid item xs={12} style={{position: "relative"}} id="gamproduct">
                 <img src={gam} width={"100%"} alt={""}/>
+{/*
                 <div className={classes.mainDiv5}>
                     <Grid container direction="column"
                           justifyContent="flex-start"
@@ -333,6 +338,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                         </Grid>
                     </Grid>
                 </div>
+*/}
             </Grid>
 
         )
@@ -380,6 +386,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
         return (
             <Grid item xs={12} style={{position: "relative"}} id="arzproduct">
                 <img src={arz} width={"100%"} alt={""}/>
+{/*
                 <div className={classes.mainDiv4}>
                     <Grid container direction="column"
                           justifyContent="flex-end"
@@ -427,6 +434,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                         </Grid>
                     </Grid>
                 </div>
+*/}
             </Grid>
         )
     }
@@ -473,6 +481,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
         return (
             <Grid item xs={12} style={{position: "relative"}} id="ulakproduct">
                 <img src={ulak} width={"100%"} alt={""}/>
+{/*
                 <div className={classes.mainDiv6}>
                     <Grid container direction="column"
                           justifyContent="flex-end"
@@ -520,6 +529,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                         </Grid>
                     </Grid>
                 </div>
+*/}
             </Grid>
         )
     }

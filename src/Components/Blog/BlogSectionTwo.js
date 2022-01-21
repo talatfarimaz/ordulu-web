@@ -1,13 +1,67 @@
 import {useTranslation} from "react-i18next";
-import {CardActionArea, Grid, Link, Typography} from "@material-ui/core";
+import {Backdrop, CardActionArea, Dialog, Fade, Grid, Link, Typography} from "@material-ui/core";
 import React from "react";
 import BlogStyle from "../../Styles/BlogStyle";
 import kazim2 from "../../assets/images/kazım2.png"
 import nizamReportage from "../../assets/images/nizamReportage.png"
+import ReactPlayer from "react-player";
+import classNames from "classnames";
+import teaser from "../../assets/video/teaser.mp4";
 
 function BlogSectionTwo() {
     const {t} = useTranslation();
+    const [open, setOpen] = React.useState(false);
     const classes = BlogStyle();
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleGetModal = () => {
+        return (
+            <Dialog onClose={handleClose} open={open}
+                    aria-describedby="transition-modal-description"
+                    className={classes.modal}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                        classes: {
+                            timeout: 1500,
+                            root: classes.backdrop
+                        }
+                    }}
+                    maxWidth={"lg"}
+            >
+            {/*    <div
+                    className="embed-responsive embed-responsive-16by9"
+                    style={{ borderRadius: "4px" }}
+                >
+                    <iframe
+                        className="embed-responsive-item"
+                        src={  "https://www.youtube.com/embed/" +
+                            "YUsSLDgFsQQ" +
+                            "?rel=0"}
+                        allowFullScreen={true}
+                    />
+                </div>*/}
+                <Fade in={open}>
+                    <ReactPlayer
+                        classname={classNames('react-player fixed-bottom')}
+                        url={"https://www.youtube.com/watch?v=YUsSLDgFsQQ"}
+                        playing
+                        width="100%"
+                        height="100%"
+                        controls={true}
+                        style={{backgroundColor: "rgb(0 0 0 / 80%)"}}
+                    />
+                </Fade>
+            </Dialog>
+        )
+    }
 
     return (
         <div className={classes.sectionTwoDiv}>
@@ -64,7 +118,7 @@ function BlogSectionTwo() {
                     <Grid container className={classes.podcastGrid}>
                         <Grid item md={3} sm={3} xs={12}/>
                         <Grid item md={6} sm={6} xs={12}>
-                            <CardActionArea>
+                            <CardActionArea onClick={handleOpen}>
                             <img src={nizamReportage} width={"100%"} alt={""}/>
                             </CardActionArea>
                         </Grid>
@@ -85,6 +139,7 @@ function BlogSectionTwo() {
                     </Grid>
                 </Grid>
             </Grid>
+            {handleGetModal()}
         </div>
     )
 }

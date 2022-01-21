@@ -44,7 +44,7 @@ function BlogSectionThree() {
         }
     }
     return (
-        <div className={classes.sectionTwoDiv}>
+        <div className={classes.sectionTwoDiv} id={"news"}>
             <Grid container className={classes.reportageGrid} spacing={2} direction="row"
                   justifyContent="center"
                   alignItems="center">
@@ -66,7 +66,7 @@ function BlogSectionThree() {
                               }}>
                             <CardActionArea classes={{
                                 root: classes.root, focusHighlight: classes.focusHighlight
-                            }}>
+                            }} href={"https://www.cnnturk.com/turkiye/bakan-soylu-oyle-bir-yazilim-yaptik-ki-teroristler-kafalarini-bile-cikaramayacak"} target={"blank"}>
                                 <img src={haber1} alt={""} width={"100%"}/>
                                 <Typography className={!news1 ? classes.newsDate : classes.newsDate2}>
                                     {t('Date1')}
@@ -78,7 +78,9 @@ function BlogSectionThree() {
                             {news1 ?
                                 <div className={classes.readMoreButton}>
                                     <Button style={{backgroundColor: DefaultTheme.palette.inherit.main}}
-                                            variant={"contained"}><Typography
+                                            variant={"contained"}
+                                            href={"https://www.cnnturk.com/turkiye/bakan-soylu-oyle-bir-yazilim-yaptik-ki-teroristler-kafalarini-bile-cikaramayacak"} target={"blank"}
+                                    ><Typography
                                         style={{color: DefaultTheme.palette.primary.contrastText}}>{t('ReadMore')}</Typography></Button>
                                 </div> : <div style={{height: "36px"}}/>}
                         </Grid>
@@ -93,7 +95,7 @@ function BlogSectionThree() {
                               }}>
                             <CardActionArea classes={{
                                 root: classes.root, focusHighlight: classes.focusHighlight
-                            }}> <img src={haber2} alt={""} width={"100%"}/>
+                            }} href={"https://forumusa.com/teknoloji/abddeki-insansiz-hava-teknolojileri-yarismasinda-yildiz-teknik-universitesi-3-oldu/"} target={"blank"}> <img src={haber2} alt={""} width={"100%"}/>
                                 <Typography className={!news2 ? classes.newsDate : classes.newsDate2}>
                                     {t('Date2')}
                                 </Typography>
@@ -104,7 +106,9 @@ function BlogSectionThree() {
                             {news2 ?
                                 <div className={classes.readMoreButton}>
                                     <Button style={{backgroundColor: DefaultTheme.palette.inherit.main}}
-                                            variant={"contained"}><Typography
+                                            variant={"contained"}
+                                            href={"https://forumusa.com/teknoloji/abddeki-insansiz-hava-teknolojileri-yarismasinda-yildiz-teknik-universitesi-3-oldu/"} target={"blank"}
+                                    ><Typography
                                         style={{color: DefaultTheme.palette.primary.contrastText}}>{t('ReadMore')}</Typography></Button>
                                 </div> : <div style={{height: "36px"}}/>}
                         </Grid>
@@ -119,7 +123,7 @@ function BlogSectionThree() {
                               }}>
                             <CardActionArea classes={{
                                 root: classes.root, focusHighlight: classes.focusHighlight
-                            }}> <img src={haber3} alt={""} width={"100%"}/>
+                            }} href={"https://www.haberler.com/yerli-ve-milli-savunma-firmalari-saha-ya-cikiyor-12825723-haberi/"} target={"blank"}> <img src={haber3} alt={""} width={"100%"}/>
                                 <Typography className={!news3 ? classes.newsDate : classes.newsDate2}>
                                     {t('Date3')}
                                 </Typography>
@@ -130,7 +134,9 @@ function BlogSectionThree() {
                             {news3 ?
                                 <div className={classes.readMoreButton}>
                                     <Button style={{backgroundColor: DefaultTheme.palette.inherit.main}}
-                                            variant={"contained"}><Typography
+                                            variant={"contained"}
+                                            href={"https://www.haberler.com/yerli-ve-milli-savunma-firmalari-saha-ya-cikiyor-12825723-haberi/"} target={"blank"}
+                                    ><Typography
                                         style={{color: DefaultTheme.palette.primary.contrastText}}>{t('ReadMore')}</Typography></Button>
                                 </div> : <div style={{height: "36px"}}/>}
                         </Grid>
