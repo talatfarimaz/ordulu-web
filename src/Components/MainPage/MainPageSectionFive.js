@@ -22,13 +22,13 @@ function MainPageSectionFive() {
                 <Grid item md={4} sm={6} xs={12}>
                     <div className={classes.pageFiveImg1}>
                         <img src={saha} alt="" width={"100%"}/>
-                        <Button className={classes.sectionFiveButtons}>
+                        <Button className={classes.sectionFiveButtons} href={"/blog"}>
                             <Typography className={classes.sectionFiveButtonText}>{t('Blog')}</Typography>
                         </Button>
                     </div>
                     <div className={classes.pageFiveImg2}>
                         <img src={yildiz} alt="" width={"100%"}/>
-                        <Button className={classes.sectionFiveButtons}>
+                        <Button className={classes.sectionFiveButtons} href={"/blog#news"}>
                             <Typography className={classes.sectionFiveButtonText}>{t('News')}</Typography>
                         </Button>
                     </div>
@@ -36,7 +36,7 @@ function MainPageSectionFive() {
                 <Grid item md={4} sm={6} xs={12}>
                     <div className={classes.pageFiveImg3}>
                         <img src={kariyer} alt="" width={"100%"}/>
-                        <Button className={classes.sectionFiveButtons2}>
+                        <Button className={classes.sectionFiveButtons2} href={"/careerandlife"}>
                             <Typography className={classes.sectionFiveButtonText}>{t('Career')}</Typography>
                         </Button>
                     </div>
@@ -51,7 +51,7 @@ function MainPageSectionFive() {
                             <Typography className={classes.sectionFiveText2}>{t('Important')}</Typography>
                             <Typography className={classes.sectionFiveText3}>{t('CareerTech')}</Typography>
                             <Button color={"secondary"} variant={"contained"} className={classes.alignRight}
-                                    endIcon={<ArrowForwardIosIcon/>}>
+                                    endIcon={<ArrowForwardIosIcon/>} href={"/careerandlife"}>
                                 <Typography>
                                     {t('InspectALl')}
                                 </Typography>

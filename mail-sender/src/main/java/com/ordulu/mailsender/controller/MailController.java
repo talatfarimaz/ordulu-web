@@ -1,6 +1,11 @@
 package com.ordulu.mailsender.controller;
 
 import com.ordulu.mailsender.entities.ContactEntity;
+import org.springframework.mail.MailException;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,50 +22,30 @@ import java.util.Properties;
 public class MailController {
     @PostMapping("/sendcontactmail")
     public void sendMail(@RequestBody ContactEntity contact, RedirectAttributes redirectAttributes) {
+        JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
+        String host = "mail.ordulu.com";
+        javaMailSender.setHost(host);
+        javaMailSender.setPort(25);
+        javaMailSender.setPassword("ordulu58..");
+        javaMailSender.setUsername("talat.farimaz@ordulu.com");
+        Properties props = javaMailSender.getJavaMailProperties();
+        props.put("mail.smtp.auth", true);
+        props.put("mail.smtp.starttls.enable", false);
+        props.put("mail.smtp.timeout", 10000);
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.transport.protocol", "smtp");
+        MimeMessagePreparator mimeMessagePreparator = mimeMessage -> {
+            MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
+            messageHelper.setFrom("talat.farimaz@ordulu.com");
+            messageHelper.setTo("talat.farimaz@gmail.com");
+            messageHelper.setSubject("subject");
+            messageHelper.setText("content", true);
+        };
         try {
-            System.setProperty("java.net.preferIPv4Stack" , "true");
-
-            final String username = "talat.farimaz@ordulu.com";
-            final String password = "ordulu58..";
-
-            Properties prop = new Properties();
-            prop.put("mail.smtp.host", "mail.ordulu.com");
-            prop.put("mail.smtp.auth", "false");
-            prop.put("mail.smtp.port", "25");
-            prop.put("mail.smtp.starttls.enable", "false"); //TLS
-            prop.put("mail.smtp.ssl.trust", "mail.ordulu.com");
-
-
-            Session session = Session.getInstance(prop,
-                    new javax.mail.Authenticator() {
-                        protected PasswordAuthentication getPasswordAuthentication() {
-                            return new PasswordAuthentication(username, password);
-                        }
-                    });
-
-            try {
-
-                Message message = new MimeMessage(session);
-                message.setFrom(new InternetAddress("talat.farimaz@gmail.com"));
-                message.addRecipient(
-                        Message.RecipientType.TO,
-                        new InternetAddress(username)
-                );
-                message.setSubject("Testing Gmail TLS");
-                message.setText("Dear Mail Crawler,"
-                        + "\n\n Please do not spam my email!");
-
-                Transport.send(message);
-
-                System.out.println("Done");
-
-            } catch (MessagingException e) {
-                e.printStackTrace();
-            }
-        } catch (Exception e) {
-            throw e;
+            javaMailSender.send(mimeMessagePreparator);
+            System.out.println("basarili");
+        } catch (MailException e) {
+            System.out.println(e.getMessage());
         }
     }
-
-
 }

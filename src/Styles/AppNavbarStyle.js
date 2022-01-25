@@ -123,6 +123,11 @@ const AppNavbarStyle = makeStyles(theme => ({
         textDecoration: "none",
         textAlign: "center"
     },
+    tabStyle2: {
+        color: DefaultTheme.palette.secondary.main,
+        textDecoration: "none",
+        textAlign: "center"
+    },
     tabGrid: {
         margin: "auto !important",
         display: "flex",
@@ -146,6 +151,26 @@ const AppNavbarStyle = makeStyles(theme => ({
     },
     tabFont: {
         color: DefaultTheme.palette.success.contrastText,
+        [theme.breakpoints.only('xl')]: {
+            fontSize: "15px !important"
+        },
+        [theme.breakpoints.down('lg')]: {
+            fontSize: "13px !important"
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: "11px !important"
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "10px !important"
+
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "15px !important"
+
+        },
+    },
+    tabFont2: {
+        color: DefaultTheme.palette.secondary.main,
         [theme.breakpoints.only('xl')]: {
             fontSize: "15px !important"
         },
