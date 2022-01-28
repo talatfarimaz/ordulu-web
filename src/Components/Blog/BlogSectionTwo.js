@@ -6,7 +6,6 @@ import kazim2 from "../../assets/images/kazım2.png"
 import nizamReportage from "../../assets/images/nizamReportage.png"
 import ReactPlayer from "react-player";
 import classNames from "classnames";
-import teaser from "../../assets/video/teaser.mp4";
 
 function BlogSectionTwo() {
     const {t} = useTranslation();
@@ -36,7 +35,7 @@ function BlogSectionTwo() {
                     }}
                     maxWidth={"lg"}
             >
-            {/*    <div
+                {/*    <div
                     className="embed-responsive embed-responsive-16by9"
                     style={{ borderRadius: "4px" }}
                 >
@@ -118,22 +117,24 @@ function BlogSectionTwo() {
                     <Grid container className={classes.podcastGrid}>
                         <Grid item md={3} sm={3} xs={12}/>
                         <Grid item md={6} sm={6} xs={12}>
-                            <CardActionArea onClick={handleOpen}>
-                            <img src={nizamReportage} width={"100%"} alt={""}/>
+                            <CardActionArea href={"https://www.youtube.com/watch?v=YUsSLDgFsQQ"} target={"blank"}>
+                                <img src={nizamReportage} width={"100%"} alt={""}/>
                             </CardActionArea>
                         </Grid>
                         <Grid item md={3} sm={3} xs={12}/>
                         <Grid item md={2} sm={3} xs={12}/>
                         <Grid item md={8} sm={6} xs={12} className={classes.podcastText}>
-                            <Typography className={classes.questionTitle}>
-                                {t('Podcast1')}
-                            </Typography>
-                            <Typography className={classes.questionTitle2}>
-                                {t('Podcast2')}
-                            </Typography>
-                            <Typography className={classes.questionTitle}>
-                                {t('Podcast3')}
-                            </Typography>
+                            <Link href={"https://www.youtube.com/watch?v=YUsSLDgFsQQ"} target={"blank"}>
+                                <Typography className={classes.questionTitle}>
+                                    {t('Podcast1')}
+                                </Typography>
+                                <Typography className={classes.questionTitle2}>
+                                    {t('Podcast2')}
+                                </Typography>
+                                <Typography className={classes.questionTitle}>
+                                    {t('Podcast3')}
+                                </Typography>
+                            </Link>
                         </Grid>
                         <Grid item md={2} sm={3} xs={12}/>
                     </Grid>

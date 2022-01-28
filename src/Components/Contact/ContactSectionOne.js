@@ -1,6 +1,17 @@
 import {useTranslation} from "react-i18next";
 import React from "react";
-import {Button, Checkbox, FormControl, Grid, Hidden, Input, Link, Typography} from "@material-ui/core";
+import {
+    Backdrop,
+    Button,
+    Checkbox,
+    Dialog, DialogContent, DialogTitle, Fade,
+    FormControl,
+    Grid,
+    Hidden,
+    Input,
+    Link,
+    Typography
+} from "@material-ui/core";
 import ContactStyle from "../../Styles/ContactStyle";
 import contact from "../../assets/images/contact.png";
 import contact2 from "../../assets/images/contact2.png";
@@ -8,6 +19,11 @@ import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import DefaultTheme from "../../Themes/DefaultTheme";
 import MaskedInput from "react-text-mask";
 import axios from "axios";
+import BlogStyle from "../../Styles/BlogStyle";
+import ReactPlayer from "react-player";
+import classNames from "classnames";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from '@material-ui/icons/Close';
 
 function TextMaskCustom(props) {
     const {inputRef, ...other} = props;
@@ -33,6 +49,43 @@ function ContactSectionOne() {
     const [subject, setSubject] = React.useState(null);
     const [message, setMessage] = React.useState(null);
     const [checked, setChecked] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleGetModal = () => {
+        return (
+            <Dialog onClose={handleClose} open={open}
+                    aria-describedby="transition-modal-description"
+                    className={classes.modal}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                        classes: {
+                            timeout: 1500,
+                            root: classes.backdrop
+                        }
+                    }}
+                    maxWidth={"sm"}
+            >
+                <DialogTitle disableTypography className={classes.dialogTitle}>
+                    <Typography style={{fontWeight: "bold"}} variant={"h5"}>{t('kvkk')}</Typography>
+                    <IconButton onClick={handleClose}>
+                        <CloseIcon/>
+                    </IconButton>
+                </DialogTitle>
+                <DialogContent dividers>
+                    <Typography>{t('KVKKText')}</Typography>
+                </DialogContent>
+            </Dialog>
+        )
+    }
 
     const handleSendMail = () => {
         axios.post('/mail/sendcontactmail', {
@@ -202,7 +255,8 @@ function ContactSectionOne() {
                     <Grid item md={4} sm={6} xs={12}/>
                     <Grid item md={4} sm={6} xs={12}>
                         <div className={classes.sendButton}>
-                            <Button variant={"contained"} color={"secondary"} endIcon={<SendOutlinedIcon/>} onClick={handleSendMail}>
+                            <Button variant={"contained"} color={"secondary"} endIcon={<SendOutlinedIcon/>}
+                                    onClick={handleSendMail}>
                                 <Typography className={classes.buttonText}>
                                     {t('SenMessage')}
                                 </Typography>
@@ -217,16 +271,25 @@ function ContactSectionOne() {
                                 onMouseOut={(__Event) => {
                                     __Event.target.style.color = DefaultTheme.palette.success.contrastText
                                 }}
-                            ><Typography className={classes.checkBoxText}><Checkbox
-                                style={{color: DefaultTheme.palette.secondary.contrastText}}
-                                className={classes.checkBoxStyle}
-                            />{t('KVKK2')}{t('Acceptance')}
-                            </Typography></Link>
+                                onClick={handleOpen}
+                            >
+                                <Typography className={classes.checkBoxText}>
+                                    <Checkbox
+                                        checked={checked}
+                                        onChange={(event) => {
+                                            setChecked(event.target.checked)
+                                        }}
+                                        style={{color: DefaultTheme.palette.secondary.contrastText}}
+                                        className={classes.checkBoxStyle}/>
+                                    {t('KVKK2')}{t('Acceptance')}
+                                </Typography>
+                            </Link>
                         </div>
                     </Grid>
                     <Grid item md={4} sm={6} xs={12}/>
                 </Grid>
             </div>
+            {handleGetModal()}
         </div>
     )
 }

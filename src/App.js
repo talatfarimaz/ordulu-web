@@ -10,6 +10,7 @@ import Contact from "./Components/Contact";
 import Blog from "./Components/Blog";
 import Contracts from "./Components/Contracts";
 import Products from "./Components/Products";
+import Jobs from "./Components/Jobs";
 
 const theme = DefaultTheme;
 
@@ -25,6 +26,7 @@ function App() {
                     <Route path='/blog' element={<Blog/>}/>
                     <Route path='/contracts/:code' element={<Contracts/>}/>
                     <Route path='/products' element={<Products/>}/>
+                    <Route path='/jobs' element={<Jobs/>}/>
                 </Routes>
             </Router>
             <AppFooter/>

@@ -21,8 +21,8 @@ function ContactSectionTwo() {
                     </Typography>
                 </Grid>
                 <Grid item sm={6} xs={12}>
-                    <CardActionArea className={classes.cardAction}>
-                        <Grid container spacing={2} >
+                    <CardActionArea className={classes.cardAction} href={"https://goo.gl/maps/bPvYJAQAcNKrETg29"} target={"blank"}>
+                        <Grid container spacing={2}>
                             <Grid item xs={12}>
                                 <Typography className={classes.addressText1}>
                                     {t('Addres1')}
@@ -40,7 +40,7 @@ function ContactSectionTwo() {
                     </CardActionArea>
                 </Grid>
                 <Grid item sm={6} xs={12}>
-                    <CardActionArea className={classes.cardAction}>
+                    <CardActionArea className={classes.cardAction} href={"https://g.page/Ordulu?share"} target={"blank"}>
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
                                 <Typography className={classes.addressText1}>
@@ -59,7 +59,7 @@ function ContactSectionTwo() {
                     </CardActionArea>
                 </Grid>
                 <Grid item sm={6} xs={12}>
-                    <CardActionArea className={classes.cardAction}>
+                    <CardActionArea className={classes.cardAction} href={"https://goo.gl/maps/WKj1DsVM4kw9XyV46"} target={"blank"}>
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
                                 <Typography className={classes.addressText1}>
@@ -78,7 +78,7 @@ function ContactSectionTwo() {
                     </CardActionArea>
                 </Grid>
                 <Grid item sm={6} xs={12}>
-                    <CardActionArea className={classes.cardAction}>
+                    <CardActionArea className={classes.cardAction} href={"https://goo.gl/maps/kKUNFAS2E4HcS6jx9"} target={"blank"}>
                         <Grid container spacing={2}>
                             <Grid item xs={12}>
                                 <Typography className={classes.addressText1}>

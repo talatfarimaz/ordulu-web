@@ -72,6 +72,7 @@ const CareerAndLifeStyle = makeStyles(theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        padding: "10px"
     },
     paper: {},
     backdrop: {
@@ -220,7 +221,28 @@ const CareerAndLifeStyle = makeStyles(theme => ({
         [theme.breakpoints.only('xs')]: {
             fontSize: "10px !important",
         },
-    }
+    },
+    formElement: {
+        display: "block",
+    },
+    formElemetText: {
+        fontWeight: "bold !important",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "10px"
+        },
+    },
+    formElemetText2: {
+        fontWeight: "bold !important",
+        fontSize: "18px",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "13px"
+        },
+    },
+    dialogTitle: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
+    },
 }));
 
 export default CareerAndLifeStyle;

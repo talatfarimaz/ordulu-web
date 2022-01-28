@@ -1,24 +1,24 @@
-import {useTranslation} from "react-i18next";
+import JobsStyle from "../Styles/JobsStyle";
 import {
-    Backdrop, Button,
+    Backdrop,
+    Button,
     CardActionArea,
-    Dialog, DialogActions,
+    Dialog,
+    DialogActions,
     DialogContent,
-    DialogTitle,
-    FormControl,
+    DialogTitle, FormControl,
     Grid, Input, Snackbar,
     Typography
 } from "@material-ui/core";
+import {useTranslation} from "react-i18next";
 import React from "react";
-import CareerAndLifeStyle from "../../Styles/CareerAndLifeStyle";
-import intern from "../../assets/images/intern.png";
-import job from "../../assets/images/job.png";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import SendOutlinedIcon from "@material-ui/icons/SendOutlined";
 import MaskedInput from "react-text-mask";
-import axios from "axios";
 import {Alert} from "@material-ui/lab";
+import axios from "axios";
+
 
 function TextMaskCustom(props) {
     const {inputRef, ...other} = props;
@@ -35,30 +35,65 @@ function TextMaskCustom(props) {
     );
 }
 
-function CareerAndLifeSectionThree() {
+function Jobs() {
+    const classes = JobsStyle();
     const {t} = useTranslation();
-    const classes = CareerAndLifeStyle();
     const fileInput = React.createRef();
+    const [open, setOpen] = React.useState(false);
     const [openForm, setOpenForm] = React.useState(false);
     const [name, setName] = React.useState(null);
     const [surname, setSurname] = React.useState(null);
     const [identity, setIdentity] = React.useState(null);
     const [phone, setPhone] = React.useState(null);
     const [email, setEmail] = React.useState(null);
-    const [cv, setCv] = React.useState(null);
+    const [cv, setCv] = React.useState();
     const [openAlert, setOpenAlert] = React.useState(false);
     const [alert, setAlert] = React.useState("");
 
-    const handleChangeColorImage = (event) => {
-        if (event.target.id !== "" && event.target.id !== null) {
-            var element = document.getElementById(event.target.id);
-            element.style.opacity = 1;
-        } else {
-            var element = document.getElementById(event.target.parentNode.id);
-            element.style.opacity = 1;
-        }
+    const [job, setJob] = React.useState(null);
+    const jobList = [{
+        job: t('Job1'),
+        definition: t('Job1CommonQualification'),
+        application: t('Job1Application'),
+        choice: null
+    },
+        {
+            job: t('Job2'),
+            definition: t('Job2CommonQualification'),
+            application: t('Job2Application'),
+            choice: t('Job2ChoiceQualification')
+        },
+        {job: t('Job3'), definition: t('Job3CommonQualification'), application: t('Job3Application'), choice: null},
+        {job: t('Job4'), definition: t('Job4CommonQualification'), application: t('Job4Application'), choice: null},
+        {
+            job: t('Job5'),
+            definition: t('Job5CommonQualification'),
+            application: t('Job5Application'),
+            choice: t('Job5ChoiceQualification')
+        },
+        {
+            job: t('Job6'),
+            definition: t('Job6CommonQualification'),
+            application: t('Job6Application'),
+            choice: t('Job6ChoiceQualification')
+        },
+        {job: t('Job7'), definition: t('Job7CommonQualification'), application: t('Job7Application'), choice: null},
+        {
+            job: t('Job8'),
+            definition: t('Job8CommonQualification'),
+            application: t('Job8Application'),
+            choice: t('Job8ChoiceQualification')
+        },
 
-    }
+    ]
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     const handleOpenForm = () => {
         setOpenForm(true);
     };
@@ -66,15 +101,104 @@ function CareerAndLifeSectionThree() {
     const handleCloseForm = () => {
         setOpenForm(false);
     };
-    const handleResetColorImage = (event) => {
-        if (event.target.id !== "" && event.target.id !== null) {
-            var element = document.getElementById(event.target.id);
-            element.style.opacity = 0.2;
+
+    const handleGetContent = () => {
+        if (job !== null) {
+            if (job.choice !== null) {
+                return (
+                    <div>
+                        <Typography style={{fontWeight: "bold"}}>
+                            {t('JobDefinition')}
+                        </Typography>
+                        <Typography>
+                            <div dangerouslySetInnerHTML={{__html: job.definition}}/>
+                        </Typography>
+                        <Typography style={{fontWeight: "bold", marginTop: "5px"}}>
+                            {t('ApplicationConditions')}
+                        </Typography>
+                        <Typography>
+                            <div dangerouslySetInnerHTML={{__html: job.application}}/>
+                        </Typography>
+                        <Typography style={{fontWeight: "bold", marginTop: "5px"}}>
+                            {t('ChoiceQualification')}
+                        </Typography>
+                        <Typography>
+                            <div dangerouslySetInnerHTML={{__html: job.choice}}/>
+                        </Typography>
+                    </div>
+
+                )
+            } else {
+                return (
+                    <div>
+                        <Typography style={{fontWeight: "bold"}}>
+                            {t('JobDefinition')}
+                        </Typography>
+                        <Typography>
+                            <div dangerouslySetInnerHTML={{__html: job.definition}}/>
+                        </Typography>
+                        <Typography style={{fontWeight: "bold", marginTop: "5px"}}>
+                            {t('ApplicationConditions')}
+                        </Typography>
+                        <Typography>
+                            <div dangerouslySetInnerHTML={{__html: job.application}}/>
+                        </Typography>
+                    </div>
+                )
+            }
         } else {
-            var element = document.getElementById(event.target.parentNode.id);
-            element.style.opacity = 0.2;
+            return null;
+        }
+
+    }
+    const handleGetModal = () => {
+        if (job !== null) {
+            return (
+                <Dialog onClose={handleClose} open={open}
+                        aria-describedby="transition-modal-description"
+                        className={classes.modal}
+                        closeAfterTransition
+                        BackdropComponent={Backdrop}
+                        BackdropProps={{
+                            classes: {
+                                timeout: 1500,
+                                root: classes.backdrop
+                            }
+                        }}
+                        maxWidth={"sm"}
+                >
+                    <DialogTitle disableTypography className={classes.dialogTitle}>
+                        <Typography style={{fontWeight: "bold"}} variant={"h6"}>{t(job.job)}</Typography>
+                        <IconButton onClick={handleClose}>
+                            <CloseIcon/>
+                        </IconButton>
+                    </DialogTitle>
+                    <DialogContent dividers>
+                        {handleGetContent()}
+                    </DialogContent>
+                    <DialogActions>
+                        <Button variant={"contained"} color={"secondary"} endIcon={<SendOutlinedIcon/>}
+                                onClick={() => {
+                                    handleClose();
+                                    handleOpenForm();
+                                }}
+                        >
+                            <Typography className={classes.buttonText}>
+                                {t('Accept')}
+                            </Typography>
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+            )
+        } else {
+            return null;
         }
     }
+
+    const handleCloseAlert = () => {
+        setOpenAlert(false)
+    }
+
     const handleSaveApplication = () => {
         if (name !== null && name !== "") {
             if (surname !== null && surname !== "") {
@@ -84,22 +208,32 @@ function CareerAndLifeSectionThree() {
                             if (cv !== null) {
                                 const formData = new FormData();
                                 formData.append(
-                                    "myCv",
-                                    cv,
-                                    cv.name
+                                    "file",
+                                    fileInput.current.files[0]
                                 );
-                                axios.post('/mail/sendcontactmail', {
-                                }).then(function (response) {
-                                    console.log("fdsfds")
-                                }).catch(function (error) {
-                                    console.log("fdsfds")
+
+                                axios({
+                                    method: "post",
+                                    url: "/mail/sendjobappmail",
+                                    data: formData,
+                                    headers: { 'Content-Type': 'multipart/form-data',
+                                        'Accept': 'application/json, application/xml, text/plain, text/html, *.*', },
                                 })
+                                    .then(function (response) {
+                                        //handle success
+                                        console.log(response);
+                                    })
+                                    .catch(function (response) {
+                                        //handle error
+                                        console.log(response);
+                                    });
 
                             }
                             else {
                                 setOpenAlert(true);
                                 setAlert(t('AddCv'));
                             }
+
                         } else {
                             setOpenAlert(true);
                             setAlert(t('Phone'));
@@ -121,9 +255,7 @@ function CareerAndLifeSectionThree() {
             setAlert(t('Name'));
         }
     }
-    const handleCloseAlert = () => {
-        setOpenAlert(false)
-    }
+
     const handleGetFormModal = () => {
         return (
             <Dialog onClose={handleCloseForm} open={openForm}
@@ -140,7 +272,7 @@ function CareerAndLifeSectionThree() {
                     maxWidth={"sm"}
             >
                 <DialogTitle disableTypography className={classes.dialogTitle}>
-                    <Typography style={{fontWeight: "bold"}} variant={"h5"}>{t('InternApp')}</Typography>
+                    <Typography style={{fontWeight: "bold"}} variant={"h5"}>{t('JobApp')}</Typography>
                     <IconButton onClick={handleCloseForm}>
                         <CloseIcon/>
                     </IconButton>
@@ -250,11 +382,17 @@ function CareerAndLifeSectionThree() {
                                 />
                             </FormControl>
                         </Grid>
+                        <Grid item xs={12}>
+                            <Typography className={classes.formElemetText2}>
+                                {job && t('JobApplication', {value: job.job})}
+                            </Typography>
+                        </Grid>
                     </Grid>
 
                 </DialogContent>
                 <DialogActions>
-                    <Button variant={"contained"} color={"secondary"} endIcon={<SendOutlinedIcon/>} onClick={handleSaveApplication}>
+                    <Button variant={"contained"} color={"secondary"} endIcon={<SendOutlinedIcon/>}
+                            onClick={handleSaveApplication}>
                         <Typography className={classes.buttonText}>
                             {t('Accept')}
                         </Typography>
@@ -279,54 +417,52 @@ function CareerAndLifeSectionThree() {
             </Snackbar>
         )
     }
-
-
     return (
-        <div style={{justifyContent: "center", display: "flex"}}>
-            <Grid container spacing={2} className={classes.imagesDiv} direction="row"
+        <div className={classes.bodyDivStyle}>
+            <Grid container
+                  direction="row"
                   justifyContent="center"
-                  alignItems="center">
-                <Grid item sm={12} xs={12}>
-                    <Typography className={classes.lifeText}>
-                        {t('CareerText')}
+                  alignItems="center"
+                  spacing={4}
+                  className={classes.jobsGrid}
+            >
+                <Grid item xs={12} className={classes.jobTitleGrid}>
+                    <Typography className={classes.jobTitle}>
+                        {t('jobTitle')}
                     </Typography>
                 </Grid>
-                <Grid item sm={5} xs={12} style={{position: "relative"}}>
-                    <CardActionArea className={classes.cardAction1}
-                                    href={"/jobs"}
+                <Grid item xs={12}>
+                    <Grid container
+                          direction="row"
+                          justifyContent="center"
+                          alignItems="stretch"
+                          spacing={4}
+                          style={{
+                              display: "flex"
+                          }}
                     >
-                        <img src={job} id="job" alt="" width={"100%"} className={classes.jobGradient}
-                             onMouseEnter={(event) => {
-                                 handleChangeColorImage(event)
-                             }}
-                             onMouseLeave={(event) => {
-                                 handleResetColorImage(event)
-                             }}/>
-                    </CardActionArea>
-                    <Typography className={classes.imgJob}>
-                        {t('Job')}
-                    </Typography>
-                </Grid>
-                <Grid item sm={2} xs={12}/>
-                <Grid item sm={5} xs={12} style={{position: "relative"}}>
-                    <CardActionArea className={classes.cardAction2} onClick={handleOpenForm}>
-                        <img src={intern} id="intern" alt="" width={"100%"} className={classes.internGradient}
-                             onMouseEnter={(event) => {
-                                 handleChangeColorImage(event)
-                             }}
-                             onMouseLeave={(event) => {
-                                 handleResetColorImage(event)
-                             }}/>
-                    </CardActionArea>
-                    <Typography className={classes.imgJob}>
-                        {t('Intern')}
-                    </Typography>
+                        {jobList.map((job) => {
+                            return (
+                                <Grid item md={3} sm={6} xs={12}>
+                                    <CardActionArea className={classes.jobCard} onClick={() => {
+                                        setJob(job);
+                                        handleOpen();
+                                    }}>
+                                        <Typography className={classes.jobDefinition}>
+                                            <div dangerouslySetInnerHTML={{__html: t(job.job)}}/>
+                                        </Typography>
+                                    </CardActionArea>
+                                </Grid>
+                            )
+                        })}
+                    </Grid>
                 </Grid>
             </Grid>
+            {handleGetModal()}
             {handleGetFormModal()}
             {handleGetAlert()}
         </div>
-    )
+    );
 }
 
-export default CareerAndLifeSectionThree
+export default Jobs;

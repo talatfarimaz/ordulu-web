@@ -224,7 +224,8 @@ const ContactStyle = makeStyles(theme => ({
         backgroundColor: DefaultTheme.palette.secondary.contrastText,
         padding: theme.spacing(6),
         borderRadius: "2px",
-        height: "100%",
+        height: "unset !important",
+        width: "unset !important",
         [theme.breakpoints.only('sm')]: {
             padding: theme.spacing(3),
         },
@@ -243,6 +244,33 @@ const ContactStyle = makeStyles(theme => ({
     },
     mapsArea: {
         paddingBottom: theme.spacing(6),
+    },
+    backdrop: {
+        backgroundColor: "rgb(0 0 0 / 80%) !important"
+    },
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    kvkkTitle: {
+        fontSize: "70px !important",
+        color: DefaultTheme.palette.secondary.contrastText,
+        fontWeight: "bolder !important",
+        [theme.breakpoints.down('md')]: {
+            fontSize: "55px !important",
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "35px !important",
+        },
+        [theme.breakpoints.only('xs')]: {
+            fontSize: "20px !important",
+        },
+    },
+    dialogTitle: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
     }
 }));
 
