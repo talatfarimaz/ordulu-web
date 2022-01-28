@@ -17,10 +17,10 @@ function Contracts(props) {
     }, [])
     const [openMenu, setOpenMenu] = React.useState(false);
     const [selectedDetail, setSelectedDetail] = React.useState("");
-    const contracts = [{Code: "kvkk", Detail: t('KVKKText')}, {
+    const contracts = [{Code: "infosecurity", Detail: t('InfoSecurityText')},{Code: "entegre", Detail: t('EntegreText')},{Code: "kvkk", Detail: t('KVKKText')}, {
         Code: "contact",
         Detail: t('ContactText')
-    }, {Code: "press", Detail: t('PressText')}, {Code: "society", Detail: t('SocietyText')}];
+    }, {Code: "press", Detail: t('PressText')}];
 
     const handleGetWeb = () => {
         return (

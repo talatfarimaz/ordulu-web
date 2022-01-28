@@ -11,6 +11,7 @@ import Blog from "./Components/Blog";
 import Contracts from "./Components/Contracts";
 import Products from "./Components/Products";
 import Jobs from "./Components/Jobs";
+import About from "./Components/About";
 
 const theme = DefaultTheme;
 
@@ -27,6 +28,7 @@ function App() {
                     <Route path='/contracts/:code' element={<Contracts/>}/>
                     <Route path='/products' element={<Products/>}/>
                     <Route path='/jobs' element={<Jobs/>}/>
+                    <Route path='/about' element={<About/>}/>
                 </Routes>
             </Router>
             <AppFooter/>

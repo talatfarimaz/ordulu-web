@@ -243,6 +243,12 @@ const CareerAndLifeStyle = makeStyles(theme => ({
         justifyContent: "space-between",
         alignItems: "center"
     },
+    advantageText: {
+        fontSize: "20px",
+        fontWeight: "bold",
+        marginTop: theme.spacing(4),
+        paddingBottom: theme.spacing(4)
+    }
 }));
 
 export default CareerAndLifeStyle;

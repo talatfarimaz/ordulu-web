@@ -68,7 +68,7 @@ function AppFooter() {
                         root: classes.dividerColor
                     }}/>
                 </Grid>
-                <Grid item sm={4} xs={12} className={classNames(classes.subGrids, classes.grid4)}>
+                <Grid item sm={3} xs={12} className={classNames(classes.subGrids, classes.grid4)}>
                     <Button startIcon={<MailOutlineIcon style={{color: DefaultTheme.palette.inherit.main}}/>}
                             onClick={() => {
                                 handleSendEmail()
@@ -78,48 +78,58 @@ function AppFooter() {
                         </Typography>
                     </Button>
                 </Grid>
-                <Grid item sm={4} xs={12} className={classNames(classes.subGrids, classes.grid5)}>
+                <Grid item sm={5} xs={12} className={classNames(classes.subGrids, classes.grid5)}>
                     <Grid spacing={1} container
                           justifyContent="space-evenly"
                           alignItems="center"
                     >
-                        <Grid item md={3} sm={6} xs={12}>
+                        <Grid item md={2} sm={4} xs={12}>
                             <Link
                                 underline={"none"}
-                                href={'/contracts/kvkk'}
+                                href={'/contracts/infosecurity'}
+                            >
+                                <Typography className={classes.mailTo}>
+                                    {t('InfoSecurity')}
+                                </Typography>
+                            </Link>
+                        </Grid>
+                        <Grid item md={2} sm={4} xs={12}>
+                            <Link
+                                underline={"none"}
+                                href={'/contracts/entegre'}
+                            >
+                                <Typography className={classes.mailTo}>
+                                    {t('EntegreManagement')}
+                                </Typography>
+                            </Link>
+                        </Grid>
+                        <Grid item md={2} sm={4} xs={12}>
+                            <Link
+                                underline={"none"}
+                                href={'/contracts/contact'}
                             >
                                 <Typography className={classes.mailTo}>
                                     {t('KVKK')}
                                 </Typography>
                             </Link>
                         </Grid>
-                        <Grid item md={3} sm={6} xs={12}>
+                        <Grid item md={2} sm={4} xs={12}>
                             <Link
                                 underline={"none"}
-                                href={'/contracts/society'}
+                                href={'/contracts/press'}
                             >
                                 <Typography className={classes.mailTo}>
                                     {t('InfoFooter')}
                                 </Typography>
                             </Link>
                         </Grid>
-                        <Grid item md={3} sm={6} xs={12}>
+                        <Grid item md={2} sm={4} xs={12}>
                             <Link
                                 underline={"none"}
-                                href={'/contracts/press'}
+                                href={'/contracts/kvkk'}
                             >
                                 <Typography className={classes.mailTo}>
                                     {t('InfoFooter2')}
-                                </Typography>
-                            </Link>
-                        </Grid>
-                        <Grid item md={3} sm={6} xs={12}>
-                            <Link
-                                underline={"none"}
-                                href={'/contracts/contact'}
-                            >
-                                <Typography className={classes.mailTo}>
-                                    {t('Contact')}
                                 </Typography>
                             </Link>
                         </Grid>

@@ -24,6 +24,7 @@
     "react-google-maps": "^9.4.5",
     "react-i18next": "^11.15.3",
     "react-material-ui-carousel": "^2.3.8",
+    "react-pdf": "^5.7.0",
     "react-player": "^2.9.0",
     "react-responsive-masonry": "^2.1.4",
     "react-router-dom": "^6.2.1",

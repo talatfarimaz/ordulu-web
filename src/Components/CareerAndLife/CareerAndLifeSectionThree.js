@@ -47,7 +47,10 @@ function CareerAndLifeSectionThree() {
     const [email, setEmail] = React.useState(null);
     const [cv, setCv] = React.useState(null);
     const [openAlert, setOpenAlert] = React.useState(false);
+    const [openAlert2, setOpenAlert2] = React.useState(false);
     const [alert, setAlert] = React.useState("");
+    const [alert2, setAlert2] = React.useState("");
+    const [severity, setSeverity] = React.useState("");
 
     const handleChangeColorImage = (event) => {
         if (event.target.id !== "" && event.target.id !== null) {
@@ -75,6 +78,27 @@ function CareerAndLifeSectionThree() {
             element.style.opacity = 0.2;
         }
     }
+    const handleCloseAlert2 = () => {
+        setOpenAlert2(false)
+    }
+
+    const handleGetAlert2 = () => {
+        return (
+            <Snackbar
+                anchorOrigin={{vertical: 'top', horizontal: 'center'}}
+                open={openAlert2}
+                onClose={handleCloseAlert2}
+                autoHideDuration={4000}
+            >
+                <Alert onClose={() => {
+                    setOpenAlert2(false)
+                }} severity={severity}>
+                    {alert2}
+                </Alert>
+            </Snackbar>
+        )
+    }
+
     const handleSaveApplication = () => {
         if (name !== null && name !== "") {
             if (surname !== null && surname !== "") {
@@ -84,16 +108,34 @@ function CareerAndLifeSectionThree() {
                             if (cv !== null) {
                                 const formData = new FormData();
                                 formData.append(
-                                    "myCv",
-                                    cv,
-                                    cv.name
+                                    'file',
+                                    fileInput.current.files[0]
                                 );
-                                axios.post('/mail/sendcontactmail', {
-                                }).then(function (response) {
-                                    console.log("fdsfds")
-                                }).catch(function (error) {
-                                    console.log("fdsfds")
+                                formData.append("name", name);
+                                formData.append("surname", surname);
+                                formData.append("identity", identity);
+                                formData.append("email", email);
+                                formData.append("phone", phone);
+                                axios({
+                                    method: "post",
+                                    url: "/mail/sendinternappmail",
+                                    data: formData,
+                                    headers: { "Content-Type": "multipart/form-data" },
                                 })
+                                    .then(function (response) {
+                                        setOpenAlert(false);
+                                        setOpenAlert2(true);
+                                        setAlert2("Başarılı!");
+                                        setSeverity("success");
+                                        setOpenForm(false);
+                                    })
+                                    .catch(function (response) {
+                                        setOpenAlert(false);
+                                        setOpenAlert2(true);
+                                        setAlert2("Bir hata oluştu!!");
+                                        setSeverity("error");
+                                        setOpenForm(false);
+                                    });
 
                             }
                             else {
@@ -325,6 +367,7 @@ function CareerAndLifeSectionThree() {
             </Grid>
             {handleGetFormModal()}
             {handleGetAlert()}
+            {handleGetAlert2()}
         </div>
     )
 }

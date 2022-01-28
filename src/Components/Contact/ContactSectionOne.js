@@ -9,7 +9,7 @@ import {
     Grid,
     Hidden,
     Input,
-    Link,
+    Link, Snackbar,
     Typography
 } from "@material-ui/core";
 import ContactStyle from "../../Styles/ContactStyle";
@@ -24,6 +24,7 @@ import ReactPlayer from "react-player";
 import classNames from "classnames";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from '@material-ui/icons/Close';
+import {Alert} from "@material-ui/lab";
 
 function TextMaskCustom(props) {
     const {inputRef, ...other} = props;
@@ -50,6 +51,11 @@ function ContactSectionOne() {
     const [message, setMessage] = React.useState(null);
     const [checked, setChecked] = React.useState(false);
     const [open, setOpen] = React.useState(false);
+    const [openAlert, setOpenAlert] = React.useState(false);
+    const [openAlert2, setOpenAlert2] = React.useState(false);
+    const [alert, setAlert] = React.useState("");
+    const [alert2, setAlert2] = React.useState("");
+    const [severity, setSeverity] = React.useState("");
 
     const handleOpen = () => {
         setOpen(true);
@@ -86,19 +92,91 @@ function ContactSectionOne() {
             </Dialog>
         )
     }
-
+    const handleCloseAlert = () => {
+        setOpenAlert(false)
+    }
+    const handleCloseAlert2 = () => {
+        setOpenAlert2(false)
+    }
     const handleSendMail = () => {
-        axios.post('/mail/sendcontactmail', {
-            nameSurname: nameSurname,
-            email: email,
-            phone: phone,
-            subject: subject,
-            message: message
-        }).then(function (response) {
-            console.log("fdsfds")
-        }).catch(function (error) {
-            console.log("fdsfds")
-        })
+        if (nameSurname !== null && nameSurname !== "") {
+            if (subject !== null && subject !== "") {
+                if (email !== null && email !== "") {
+                    if (phone !== null && phone !== "") {
+                        if (message !== null && message !== "") {
+                            axios.post('/mail/sendcontactmail', {
+                                nameSurname: nameSurname,
+                                email: email,
+                                phone: phone,
+                                subject: subject,
+                                message: message
+                            }).then(function (response) {
+                                setOpenAlert(false);
+                                setOpenAlert2(true);
+                                setAlert2("Başarılı!");
+                                setSeverity("success");
+                            })
+                                .catch(function (response) {
+                                    setOpenAlert(false);
+                                    setOpenAlert2(true);
+                                    setAlert2("Bir hata oluştu!!");
+                                    setSeverity("error");
+                                });
+                        } else {
+                            setOpenAlert(true);
+                            setAlert(t('YourMessage'));
+                        }
+
+                    } else {
+                        setOpenAlert(true);
+                        setAlert(t('Phone'));
+                    }
+                } else {
+                    setOpenAlert(true);
+                    setAlert(t('EMail'));
+                }
+            } else {
+                setOpenAlert(true);
+                setAlert(t('Subject'));
+            }
+
+        } else {
+            setOpenAlert(true);
+            setAlert(t('NameSurname'));
+        }
+
+    }
+    const handleGetAlert = () => {
+        return (
+            <Snackbar
+                anchorOrigin={{vertical: 'top', horizontal: 'center'}}
+                open={openAlert}
+                onClose={handleCloseAlert}
+                autoHideDuration={4000}
+            >
+                <Alert onClose={() => {
+                    setOpenAlert(false)
+                }} severity={"error"}>
+                    {alert !== t('AddCv') ? t('NullCheckValue', {value: alert}): t('AddCv')}
+                </Alert>
+            </Snackbar>
+        )
+    }
+    const handleGetAlert2 = () => {
+        return (
+            <Snackbar
+                anchorOrigin={{vertical: 'top', horizontal: 'center'}}
+                open={openAlert2}
+                onClose={handleCloseAlert2}
+                autoHideDuration={4000}
+            >
+                <Alert onClose={() => {
+                    setOpenAlert2(false)
+                }} severity={severity}>
+                    {alert2}
+                </Alert>
+            </Snackbar>
+        )
     }
     return (
         <div className={classes.sectionOneBackground}>
@@ -290,6 +368,8 @@ function ContactSectionOne() {
                 </Grid>
             </div>
             {handleGetModal()}
+            {handleGetAlert()}
+            {handleGetAlert2()}
         </div>
     )
 }

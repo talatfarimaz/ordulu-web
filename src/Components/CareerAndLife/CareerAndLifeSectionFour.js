@@ -28,23 +28,35 @@ function CareerAndLifeSectionFour() {
                         </Typography>
                     </Grid>
                     <Grid item md={3} sm={3} xs={6}>
-                        <Paper elevation={3}>
-                            <img src={adv1} alt={""} width={"100%"}/>
+                        <Paper elevation={3} style={{textAlign: "center"}}>
+                            <img src={adv1} alt={""} width={"40%"} style={{paddingTop: "10px"}}/>
+                            <Typography className={classes.advantageText}>
+                                {t('adv1')}
+                            </Typography>
                         </Paper>
                     </Grid>
                     <Grid item md={3} sm={3} xs={6}>
-                        <Paper elevation={3}>
-                            <img src={adv2} alt={""} width={"100%"}/>
+                        <Paper elevation={3} style={{textAlign: "center"}}>
+                            <img src={adv2} alt={""} width={"40%"} style={{paddingTop: "10px"}}/>
+                            <Typography className={classes.advantageText}>
+                                {t('adv2')}
+                            </Typography>
                         </Paper>
                     </Grid>
                     <Grid item md={3} sm={3} xs={6}>
-                        <Paper elevation={3}>
-                            <img src={adv3} alt={""} width={"100%"}/>
+                        <Paper elevation={3} style={{textAlign: "center"}}>
+                            <img src={adv3} alt={""} width={"40%"} style={{paddingTop: "10px"}}/>
+                            <Typography className={classes.advantageText}>
+                                {t('adv3')}
+                            </Typography>
                         </Paper>
                     </Grid>
                     <Grid item md={3} sm={3} xs={6}>
-                        <Paper elevation={3}>
-                        <img src={adv4} alt={""} width={"100%"}/>
+                        <Paper elevation={3} style={{textAlign: "center"}}>
+                            <img src={adv4} alt={""} width={"40%"} style={{paddingTop: "10px"}}/>
+                            <Typography className={classes.advantageText}>
+                                {t('adv4')}
+                            </Typography>
                         </Paper>
                     </Grid>
                 </Grid>

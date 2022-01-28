@@ -145,6 +145,17 @@ function AppNavbar(props) {
                         <Link
                             underline={"none"}
                             className={classes.tabStyle}
+                            href={'/about'}
+                        >
+                            <Typography className={classes.menuItem}>
+                                {t('About')}
+                            </Typography>
+                        </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseMobile}>
+                        <Link
+                            underline={"none"}
+                            className={classes.tabStyle}
                             href={'/products'}
                         >
                             <Typography className={classes.menuItem}>
@@ -241,7 +252,6 @@ function AppNavbar(props) {
                         <Grid item lg={7} md={9} sm={8} xs={6} className={classes.tabGrid}>
                             <Hidden smDown>
                                 <Grid container className={classes.tabButtons}>
-                                    <Grid ite xs={2}/>
                                     <Grid item xs={2} style={{margin: "auto"}}>
                                         <Link
                                             underline={"none"}
@@ -259,6 +269,26 @@ function AppNavbar(props) {
                                             <Typography
                                                 className={activeTab === "/" ? classes.tabFont2 : classes.tabFont}>
                                                 {t('MainPage')}
+                                            </Typography>
+                                        </Link>
+                                    </Grid>
+                                    <Grid item xs={2} style={{margin: "auto"}}>
+                                        <Link
+                                            underline={"none"}
+                                            className={classes.tabStyle}
+                                            onMouseEnter={(__Event) => {
+                                                __Event.target.style.color = DefaultTheme.palette.secondary.main
+                                            }}
+                                            onMouseOut={(__Event) => {
+                                                if (activeTab !== "/about") {
+                                                    __Event.target.style.color = DefaultTheme.palette.success.contrastText
+                                                }
+                                            }}
+                                            href={'/about'}
+                                        >
+                                            <Typography
+                                                className={activeTab === "/about" ? classes.tabFont2 : classes.tabFont}>
+                                                {t('About')}
                                             </Typography>
                                         </Link>
                                     </Grid>

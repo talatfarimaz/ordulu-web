@@ -48,7 +48,11 @@ function Jobs() {
     const [email, setEmail] = React.useState(null);
     const [cv, setCv] = React.useState();
     const [openAlert, setOpenAlert] = React.useState(false);
+    const [openAlert2, setOpenAlert2] = React.useState(false);
     const [alert, setAlert] = React.useState("");
+    const [alert2, setAlert2] = React.useState("");
+    const [severity, setSeverity] = React.useState("");
+
 
     const [job, setJob] = React.useState(null);
     const jobList = [{
@@ -198,6 +202,9 @@ function Jobs() {
     const handleCloseAlert = () => {
         setOpenAlert(false)
     }
+    const handleCloseAlert2 = () => {
+        setOpenAlert2(false)
+    }
 
     const handleSaveApplication = () => {
         if (name !== null && name !== "") {
@@ -208,24 +215,33 @@ function Jobs() {
                             if (cv !== null) {
                                 const formData = new FormData();
                                 formData.append(
-                                    "file",
+                                    'file',
                                     fileInput.current.files[0]
                                 );
-
+                                formData.append("name", name);
+                                formData.append("surname", surname);
+                                formData.append("identity", identity);
+                                formData.append("email", email);
+                                formData.append("phone", phone);
                                 axios({
                                     method: "post",
                                     url: "/mail/sendjobappmail",
                                     data: formData,
-                                    headers: { 'Content-Type': 'multipart/form-data',
-                                        'Accept': 'application/json, application/xml, text/plain, text/html, *.*', },
+                                    headers: { "Content-Type": "multipart/form-data" },
                                 })
                                     .then(function (response) {
-                                        //handle success
-                                        console.log(response);
+                                        setOpenAlert(false);
+                                        setOpenAlert2(true);
+                                        setAlert2("Başarılı!");
+                                        setSeverity("success");
+                                        setOpenForm(false);
                                     })
                                     .catch(function (response) {
-                                        //handle error
-                                        console.log(response);
+                                        setOpenAlert(false);
+                                        setOpenAlert2(true);
+                                        setAlert2("Bir hata oluştu!!");
+                                        setSeverity("error");
+                                        setOpenForm(false);
                                     });
 
                             }
@@ -417,6 +433,22 @@ function Jobs() {
             </Snackbar>
         )
     }
+    const handleGetAlert2 = () => {
+        return (
+            <Snackbar
+                anchorOrigin={{vertical: 'top', horizontal: 'center'}}
+                open={openAlert2}
+                onClose={handleCloseAlert2}
+                autoHideDuration={4000}
+            >
+                <Alert onClose={() => {
+                    setOpenAlert2(false)
+                }} severity={severity}>
+                    {alert2}
+                </Alert>
+            </Snackbar>
+        )
+    }
     return (
         <div className={classes.bodyDivStyle}>
             <Grid container
@@ -461,6 +493,7 @@ function Jobs() {
             {handleGetModal()}
             {handleGetFormModal()}
             {handleGetAlert()}
+            {handleGetAlert2()}
         </div>
     );
 }

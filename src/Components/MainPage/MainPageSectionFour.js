@@ -70,7 +70,7 @@ function MainPageSectionFour() {
                           handleChangeTextDisplayFalse(event)
                       }}>
                     <img src={cumhur} alt="" className={classes.referanceImg}/>
-                    {changeText &&
+                    {changeText && selectedDiv === "cumhur" &&
                     <Typography className={classes.referenceName}>
                         {t('Cumhur')}
                     </Typography>}
@@ -83,7 +83,7 @@ function MainPageSectionFour() {
                           handleChangeTextDisplayFalse(event)
                       }}>
                     <img src={fors} alt="" className={classes.referanceImg}/>
-                    {changeText &&
+                    {changeText && selectedDiv === "fors" &&
                     <Typography className={classes.referenceName}>
                         {t('Fors')}
                     </Typography>}
@@ -96,7 +96,7 @@ function MainPageSectionFour() {
                           handleChangeTextDisplayFalse(event)
                       }}>
                     <img src={katar} alt="" className={classes.referanceImg}/>
-                    {changeText &&
+                    {changeText && selectedDiv === "katar" &&
                     <Typography className={classes.referenceName}>
                         {t('Katar')}
                     </Typography>}
@@ -109,7 +109,7 @@ function MainPageSectionFour() {
                           handleChangeTextDisplayFalse(event)
                       }}>
                     <img src={jandarma} alt="" className={classes.referanceImg}/>
-                    {changeText &&
+                    {changeText && selectedDiv === "jandarma" &&
                     <Typography className={classes.referenceName}>
                         {t('Jandarma')}
                     </Typography>}
@@ -122,7 +122,7 @@ function MainPageSectionFour() {
                           handleChangeTextDisplayFalse(event)
                       }}>
                     <img src={kara} alt="" className={classes.referanceImg}/>
-                    {changeText &&
+                    {changeText && selectedDiv === "kara" &&
                     <Typography className={classes.referenceName}>
                         {t('Kara')}
                     </Typography>}
@@ -135,7 +135,7 @@ function MainPageSectionFour() {
                           handleChangeTextDisplayFalse(event)
                       }}>
                     <img src={deniz} alt="" className={classes.referanceImg}/>
-                    {changeText &&
+                    {changeText && selectedDiv === "deniz" &&
                     <Typography className={classes.referenceName}>
                         {t('Deniz')}
                     </Typography>}
@@ -148,7 +148,7 @@ function MainPageSectionFour() {
                           handleChangeTextDisplayFalse(event)
                       }}>
                     <img src={baykar} alt="" className={classes.referanceImg}/>
-                    {changeText &&
+                    {changeText && selectedDiv === "baykar" &&
                     <Typography className={classes.referenceName}>
                         {t('Baykar')}
                     </Typography>}
@@ -161,7 +161,7 @@ function MainPageSectionFour() {
                           handleChangeTextDisplayFalse(event)
                       }}>
                     <img src={azer} alt="" className={classes.referanceImg}/>
-                    {changeText &&
+                    {changeText && selectedDiv === "azer" &&
                     <Typography className={classes.referenceName}>
                         {t('Azer')}
                     </Typography>}
@@ -174,7 +174,7 @@ function MainPageSectionFour() {
                           handleChangeTextDisplayFalse(event)
                       }}>
                     <img src={orman} alt="" className={classes.referanceImg}/>
-                    {changeText &&
+                    {changeText && selectedDiv === "ogm" &&
                     <Typography className={classes.referenceName}>
                         {t('OGM')}
                     </Typography>}
