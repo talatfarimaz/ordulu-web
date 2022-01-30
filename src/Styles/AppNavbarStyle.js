@@ -204,6 +204,21 @@ const AppNavbarStyle = makeStyles(theme => ({
             fontSize: "12px !important"
         },
 
+    },
+    emptyGrid: {
+        [theme.breakpoints.only('sm')]: {
+            display: "none"
+        },
+    },
+    emptyGrid2: {
+        [theme.breakpoints.only('xs')]: {
+            display: "none"
+        },
+    },
+    emptyGrid3: {
+        [theme.breakpoints.only('md')]: {
+            display: "none"
+        },
     }
 }));
 

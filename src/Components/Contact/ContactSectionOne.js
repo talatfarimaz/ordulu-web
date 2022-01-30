@@ -44,11 +44,11 @@ function TextMaskCustom(props) {
 function ContactSectionOne() {
     const {t} = useTranslation();
     const classes = ContactStyle();
-    const [nameSurname, setNameSurname] = React.useState(null);
-    const [email, setEmail] = React.useState(null);
-    const [phone, setPhone] = React.useState(null);
-    const [subject, setSubject] = React.useState(null);
-    const [message, setMessage] = React.useState(null);
+    const [nameSurname, setNameSurname] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [phone, setPhone] = React.useState("");
+    const [subject, setSubject] = React.useState("");
+    const [message, setMessage] = React.useState("");
     const [checked, setChecked] = React.useState(false);
     const [open, setOpen] = React.useState(false);
     const [openAlert, setOpenAlert] = React.useState(false);

@@ -248,7 +248,7 @@ function AppNavbar(props) {
                                 <Avatar className={classes.mainLogo} src={logo}/>
                             </Link>
                         </Grid>
-                        <Grid item lg={1} md={0} sm={1} xs={2}/>
+                        <Grid item lg={1} md={12} sm={1} xs={2} className={classes.emptyGrid3}/>
                         <Grid item lg={7} md={9} sm={8} xs={6} className={classes.tabGrid}>
                             <Hidden smDown>
                                 <Grid container className={classes.tabButtons}>
@@ -378,7 +378,7 @@ function AppNavbar(props) {
                                 {handleGetMobileMenu()}
                             </Hidden>
                         </Grid>
-                        <Grid item lg={1} md={1} sm={0} xs={1}>
+                        <Grid item lg={1} md={1} sm={12} xs={1} className={classes.emptyGrid}>
                             <Hidden smDown>
                                 <Grid container>
                                     <Grid item xs={3}>
@@ -420,7 +420,7 @@ function AppNavbar(props) {
                                 </Grid>
                             </Hidden>
                         </Grid>
-                        <Grid item lg={1} md={1} sm={1} xs={0}/>
+                        <Grid item lg={1} md={1} sm={1} xs={12} className={classes.emptyGrid2}/>
                     </Grid>
                 </Toolbar>
             </AppBar>

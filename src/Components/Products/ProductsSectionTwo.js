@@ -164,7 +164,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                             <Grid container spacing={1}>
                                 {kuzgunIconAndText.map((kuzgun) => {
                                     return (
-                                        <Grid item xs={2} className={classes.iconGrid}>
+                                        <Grid item xs={2} className={classes.iconGrid} key={kuzgun.text}>
                                             <img src={kuzgun.icon} alt={""} className={classes.miniIcons}/>
                                             <Typography className={classes.iconText}>
                                                 {kuzgun.text}
@@ -265,7 +265,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                             <Grid container spacing={1}>
                                 {sahinIconAndText.map((sahin) => {
                                     return (
-                                        <Grid item xs={2} className={classes.iconGrid}>
+                                        <Grid item xs={2} key={sahin.text} className={classes.iconGrid}>
                                             <img src={sahin.icon} alt={""} className={classes.miniIcons}/>
                                             <Typography className={classes.iconText}>
                                                 {sahin.text}
@@ -361,7 +361,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                             <Grid container spacing={1}>
                                 {gamIconAndText.map((gam) => {
                                     return (
-                                        <Grid item xs={2} className={classes.iconGrid}>
+                                        <Grid item xs={2} key={gam.text} className={classes.iconGrid}>
                                             <img src={gam.icon} alt={""} className={classes.miniIcons}/>
                                             <Typography className={classes.iconText}>
                                                 {gam.text}
@@ -456,7 +456,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                             <Grid container spacing={1}>
                                 {arzIconAndText.map((arz) => {
                                     return (
-                                        <Grid item xs={2} className={classes.iconGrid}>
+                                        <Grid item xs={2} key={arz.text} className={classes.iconGrid}>
                                             <img src={arz.icon} alt={""} className={classes.miniIcons}/>
                                             <Typography className={classes.iconText}>
                                                 {arz.text}
@@ -551,7 +551,7 @@ const ProductsSectionTwo = forwardRef((props, ref) => {
                             <Grid container spacing={1}>
                                 {ulakIconAndText.map((ulak) => {
                                     return (
-                                        <Grid item xs={2} className={classes.iconGrid}>
+                                        <Grid item xs={2} key={ulak.text} className={classes.iconGrid}>
                                             <img src={ulak.icon} alt={""} className={classes.miniIcons}/>
                                             <Typography className={classes.iconText}>
                                                 {ulak.text}
